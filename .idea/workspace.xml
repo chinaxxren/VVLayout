@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_AFB2CE95-5A6F-452D-BE0B-048379F09194" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVLayout.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockTInfo.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockT.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockTInfo.m">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockT.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVLayout.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2346">
+              <caret line="138" column="3" lean-forward="true" selection-start-line="138" selection-start-column="3" selection-end-line="138" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/UIView+VVExtend.h">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/UIView+VVLayout.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/UIView+VVLayout.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/ViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1105">
+              <caret line="65" column="7" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+              <folding>
+                <element signature="e#125#151#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>NUI</find>
+      <find>nui</find>
+      <find>leftRelationXForView</find>
+      <find>relationType</find>
+      <find>installFrames</find>
+      <find>VVFramer</find>
+      <find>valueForRelationType</find>
+      <find>self.view</find>
+      <find>setHighPriorityValue</find>
+      <find>NUIFramer</find>
+      <find>/ 2</find>
+      <find>__weak typeof(self) weakSelf = self;</find>
+      <find>__strong typeof(weakSelf) strongSelf = weakSelf;</find>
+      <find>strongSelf</find>
+      <find>framer</find>
+      <find>setFrameValue</find>
+      <find>frame</find>
+      <find>handlerInfos</find>
+      <find>infoForType</find>
+      <find>handle</find>
+      <find>handler</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>VV</replace>
+      <replace>vv</replace>
+      <replace>VVFramer</replace>
+      <replace>makelFrames</replace>
+      <replace>VVFrame</replace>
+      <replace>* 0.5f</replace>
+      <replace>VVWeakify(self);</replace>
+      <replace>VVStrongify(self);</replace>
+      <replace>self</replace>
+      <replace>block_t</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/VVFrame/Source/NUIHandler.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/Framer.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/Macroses.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/NUIFramer.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/NUIHandler.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/NUIHandlerInfo.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/NUIHandlerInfo.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+NUIAdditions.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+NUIAdditions.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+NUIInstaller.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+NUIInstaller.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/VVMacroses.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/NUIFramer.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/VVHandler.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/VVHandler.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/VVHandlerInfo.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+VVAdditions.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+VVAdditions.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+VVInstaller.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+VVInstaller.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+VVCreate.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+VVCreate.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+VVExtend.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/VVHandlerInfo.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/VVFrame.m" />
+        <option value="$PROJECT_DIR$/VVFrame/ViewController.m" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/VVFrame.h" />
+        <option value="$PROJECT_DIR$/VVFrame/Source/UIView+VVMake.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVLayout.h" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/UIView+VVLayout.h" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVHandler.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVBlockInfo.h" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVBlock.h" />
+        <option value="$PROJECT_DIR$/VVLayout/ViewController.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVBlock.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVLayout.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVBlockT.m" />
+      </list>
+    </option>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Cidr.FilesView" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="VVLayout" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="VVLayout" type="1d218c8b:XcodeProjectNode" />
+              <item name="VVLayout" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="VVLayout" type="1d218c8b:XcodeProjectNode" />
+              <item name="VVLayout" type="fcab9f18:XcodeViewNode" />
+              <item name="Source" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="VVLayout" type="1d218c8b:XcodeProjectNode" />
+              <item name="VVLayoutTests" type="fcab9f18:XcodeViewNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="stylesheet.code.style.group" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="VVFrame" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="VVLayout" TARGET_NAME="VVLayout" CONFIG_NAME="Debug" SCHEME_NAME="VVFrame" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="VVLayout" RUN_TARGET_NAME="VVLayout" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="" />
+      <created>1565071608814</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1565071608814</updated>
+      <workItem from="1565071610185" duration="2225000" />
+      <workItem from="1565256687610" duration="6164000" />
+      <workItem from="1565577117468" duration="3299000" />
+      <workItem from="1565663246991" duration="3576000" />
+      <workItem from="1565667539466" duration="1529000" />
+      <workItem from="1565750823137" duration="499000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="17292000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26495728" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" x="0" y="0" width="370" height="827" id="Documentation" order="5" side_tool="true" weight="0.32967034" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25885227" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32894737" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32894737" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVFramer.h" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVMacroses.h" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/ViewController.h" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/UIView+VVExtend.h" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/UIView+VVExtend.m" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVFrame.m" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/ViewController.m" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVFrame.h" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/UIView+VVMake.h" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/UIView+VVMake.m" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVHandler.h" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVHandler.m" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVHandlerInfo.h" />
+    <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVHandlerInfo.m" />
+    <entry file="file://$PROJECT_DIR$/VVLayout/AppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/ViewController.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/dispatch/object.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2941">
+          <caret line="173" column="15" selection-start-line="173" selection-start-column="15" selection-end-line="173" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/UIView+VVExtend.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="7" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+          <folding>
+            <element signature="e#125#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockTInfo.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/UIView+VVLayout.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockT.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockT.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockTInfo.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVLayout.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="138" column="3" lean-forward="true" selection-start-line="138" selection-start-column="3" selection-end-line="138" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/UIView+VVLayout.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVLayout.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
