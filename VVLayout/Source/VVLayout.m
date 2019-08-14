@@ -32,17 +32,22 @@
         _blockInfos = [NSMutableArray new];
         _blcoks = [NSMutableArray new];
 
+#ifdef VVOBS
         [self addObserver:self forKeyPath:@"newFrame" options:NSKeyValueObservingOptionNew context:nil];
+#endif
+
     }
     return self;
 }
 
+#ifdef VVOBS
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey, id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"newFrame"]) {
         VVLayout *vvf = (VVLayout *) object;
         NSLog(@"%@", NSStringFromCGRect(vvf.newFrame));
     }
 }
+#endif
 
 #pragma mark - Configurate methods
 
