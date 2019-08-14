@@ -67,10 +67,10 @@
     NSLog(@"view1->%@", NSStringFromCGRect(self.view1.frame));
 
     [self.view2 makeLayout:^(VVLayout *_Nonnull layout) {
-        layout.top(10);
-        layout.bottom(10);
-        layout.left(10);
-        layout.width_to(self.view2.vv_width, 0.5); // width*0.5
+        layout.top(12);
+        layout.bottom(14);
+        layout.left(16);
+        layout.width_to(self.view2.vv_height, 0.5); // width * 0.5 = 50
     }];
     NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
 }
