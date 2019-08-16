@@ -5,6 +5,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "VVLayoutUtils.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, VVMakeLayoutType) {
@@ -17,6 +19,7 @@ typedef NS_ENUM(NSUInteger, VVMakeLayoutType) {
     VVMakeLayoutTypeCenterY,
     VVMakeLayoutTypeHeight,
     VVMakeLayoutTypeWidth,
+    VVMakeLayoutTypeSize,
     VVMakeLayoutTypeEdges,
 };
 
@@ -24,11 +27,16 @@ typedef NS_ENUM(NSUInteger, VVMakeLayoutType) {
 
 @property(nonatomic, assign) VVMakeLayoutType makeLayoutType;
 @property(nonatomic, assign) VVMakeLayoutType viewLayoutType;
-@property(nonatomic, assign) CGFloat value;
+@property(nonatomic, strong) id attribute;
 @property(nonatomic, assign) BOOL isNum;
 @property(nonatomic, assign) CGFloat multiplied;
 @property(nonatomic, assign) NSInteger priority;
 @property(nonatomic, weak) UIView *view;
+
+@property(nonatomic, assign, readonly) CGFloat value;
+@property(nonatomic, assign, readonly) CGPoint point;
+@property(nonatomic, assign, readonly) CGSize size;
+@property(nonatomic, assign, readonly) VVEdgeInsets insets;
 
 - (instancetype)initWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType;
 

@@ -120,8 +120,12 @@
                 [self heightWithMakeInfo:makeInfo];
             }
                 break;
+            case VVMakeLayoutTypeSize: {
+                [self sizeWithMakeInfo:makeInfo];
+            }
+                break;
             case VVMakeLayoutTypeEdges: {
-                // [self edgesWithMakeInfo:makeInfo];
+                [self edgesWithMakeInfo:makeInfo];
             }
                 break;
             default:
@@ -196,16 +200,22 @@
     return self;
 }
 
+- (VVMakeLayout *)size {
+    self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeSize];
+    [self.makeInfos addObject:self.makeLayoutInfo];
+    return self;
+}
+
 - (VVMakeLayout *)edges {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeEdges];
     [self.makeInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
-- (VVMakeLayout *(^)(CGFloat))vv_equalTo {
-    return ^id(CGFloat inset) {
+- (VVMakeLayout *(^)(id))equal_to {
+    return ^id(id attribute) {
         self.makeLayoutInfo.isNum = YES;
-        self.makeLayoutInfo.value = inset;
+        self.makeLayoutInfo.attribute = attribute;
         self.makeLayoutInfo.viewLayoutType = self.makeLayoutInfo.makeLayoutType;
         return self;
     };
@@ -224,9 +234,9 @@
     };
 }
 
-- (VVMakeLayout *(^)(CGFloat))offset {
-    return ^id(CGFloat inset) {
-        self.makeLayoutInfo.value = inset;
+- (VVMakeLayout *(^)(id))offset {
+    return ^id(id attribute) {
+        self.makeLayoutInfo.attribute = attribute;
         return self;
     };
 }
@@ -592,6 +602,33 @@
             break;
     }
     self.newFrame = frame;
+}
+
+- (VVMakeLayout *)sizeWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
+    CGSize size = makeInfo.size;
+    VVWeakify(self);
+    dispatch_block_t block_t = ^{
+        VVStrongify(self);
+        CGRect frame = self.newFrame;
+        frame.size = size;
+        self.newFrame = frame;
+    };
+    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
+    return self;
+}
+
+- (VVMakeLayout *)edgesWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
+    UIEdgeInsets insets = makeInfo.insets;
+    VVWeakify(self);
+    dispatch_block_t block_t = ^{
+        VVStrongify(self);
+        CGFloat width = CGRectGetWidth(self.view.superview.bounds) - (insets.left + insets.right);
+        CGFloat height = CGRectGetHeight(self.view.superview.bounds) - (insets.top + insets.bottom);
+        CGRect frame = CGRectMake(insets.left, insets.top, width, height);
+        self.newFrame = frame;
+    };
+    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
+    return self;
 }
 
 #pragma mark Container

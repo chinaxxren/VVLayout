@@ -5,6 +5,14 @@
 
 #import "VVMakeLayoutInfo.h"
 
+@interface VVMakeLayoutInfo ()
+
+@property(nonatomic, assign) CGFloat value;
+@property(nonatomic, assign) CGPoint point;
+@property(nonatomic, assign) CGSize size;
+@property(nonatomic, assign) VVEdgeInsets insets;
+
+@end
 
 @implementation VVMakeLayoutInfo
 
@@ -21,6 +29,31 @@
 
 + (instancetype)infoWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType {
     return [[self alloc] initWithMakeLayoutType:makeLayoutType];
+}
+
+- (void)setAttribute:(id)attribute {
+    _attribute = attribute;
+    [self setAttributeValue:_attribute];
+}
+
+- (void)setAttributeValue:(NSValue *)value {
+    if ([value isKindOfClass:NSNumber.class]) {
+        self.value = [(NSNumber *) value floatValue];
+    } else if (strcmp(value.objCType, @encode(CGPoint)) == 0) {
+        CGPoint point;
+        [value getValue:&point];
+        self.point = point;
+    } else if (strcmp(value.objCType, @encode(CGSize)) == 0) {
+        CGSize size;
+        [value getValue:&size];
+        self.size = size;
+    } else if (strcmp(value.objCType, @encode(VVEdgeInsets)) == 0) {
+        VVEdgeInsets insets;
+        [value getValue:&insets];
+        self.insets = insets;
+    } else {
+        NSAssert(NO, @"attempting to set layout constant with unsupported value: %@", value);
+    }
 }
 
 @end
