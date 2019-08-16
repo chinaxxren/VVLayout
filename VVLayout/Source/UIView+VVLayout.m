@@ -12,7 +12,7 @@
 }
 
 - (void)makeLayout:(MakeLayout)makeLayout forState:(NSNumber *)state {
-    [VVLayout configView:self forState:state makeLayout:makeLayout];
+    [VVMakeLayout configView:self forState:state makeLayout:makeLayout];
 }
 
 #pragma mark - Runtime

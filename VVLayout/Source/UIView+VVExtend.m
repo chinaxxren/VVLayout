@@ -1,3 +1,8 @@
+//
+// Created by Tank on 2019-08-16.
+// Copyright (c) 2019 Tank. All rights reserved.
+//
+
 
 #import "UIView+VVExtend.h"
 
@@ -6,53 +11,53 @@
 @implementation UIView (VVExtend)
 
 - (UIView *)vv_width {
-    self.relationType = VVRelationTypeWidth;
+    self.viewLayoutType = VVMakeLayoutTypeWidth;
     return self;
 }
 
 - (UIView *)vv_height {
-    self.relationType = VVRelationTypeHeight;
+    self.viewLayoutType = VVMakeLayoutTypeHeight;
     return self;
 }
 
 - (UIView *)vv_left {
-    self.relationType = VVRelationTypeLeft;
+    self.viewLayoutType = VVMakeLayoutTypeLeft;
     return self;
 }
 
 - (UIView *)vv_right {
-    self.relationType = VVRelationTypeRight;
+    self.viewLayoutType = VVMakeLayoutTypeRight;
     return self;
 }
 
 - (UIView *)vv_top {
-    self.relationType = VVRelationTypeTop;
+    self.viewLayoutType = VVMakeLayoutTypeTop;
     return self;
 }
 
 - (UIView *)vv_bottom {
-    self.relationType = VVRelationTypeBottom;
+    self.viewLayoutType = VVMakeLayoutTypeBottom;
     return self;
 }
 
 - (UIView *)vv_centerX {
-    self.relationType = VVRelationTypeCenterX;
+    self.viewLayoutType = VVMakeLayoutTypeCenterX;
     return self;
 }
 
 - (UIView *)vv_centerY {
-    self.relationType = VVRelationTypeCenterY;
+    self.viewLayoutType = VVMakeLayoutTypeCenterY;
     return self;
 }
 
 #pragma mark - Runtime
 
-- (void)setRelationType:(VVRelationType)relationType {
-    objc_setAssociatedObject(self, @selector(relationType), @(relationType), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setViewLayoutType:(VVMakeLayoutType)viewLayoutType {
+    objc_setAssociatedObject(self, @selector(viewLayoutType), @(viewLayoutType), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (VVRelationType)relationType {
-    return (VVRelationType) [objc_getAssociatedObject(self, @selector(relationType)) integerValue];
+- (VVMakeLayoutType)viewLayoutType {
+    return (VVMakeLayoutType) [objc_getAssociatedObject(self, @selector(viewLayoutType)) integerValue];
 }
 
 @end

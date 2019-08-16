@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "VVLayout.h"
+#import "VVMakeLayout.h"
 #import "UIView+VVLayout.h"
 #import "UIView+VVExtend.h"
 
@@ -35,44 +35,49 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+
 /*
- [self.view addSubview:self.view1];
- [self.view addSubview:self.view2];
- 
-    [self.view1 makeLayout:^(VVLayout *_Nonnull layout) {
-        layout.width(100).height(100);
-        layout.super_centerX(0);
-        layout.super_centerY(0);
+    [self.view addSubview:self.view1];
+    [self.view addSubview:self.view2];
+
+    [self.view1 makeBlock:^(VVMake *make) {
+        make.width.vv_equalTo(100);
+        make.height.vv_equalTo(100);
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
     }];
 
     NSLog(@"view1->%@", NSStringFromCGRect(self.view1.frame));
 
-    [self.view2 makeLayout:^(VVLayout *_Nonnull layout) {
-        layout.width(50).height(50);
-        layout.bottom_to(self.view1.vv_top, 0);
-        layout.left_to(self.view1.vv_right, 20);
+    [self.view2 makeBlock:^(VVMake *make) {
+        make.width.vv_equalTo(50.0f);
+        make.height.vv_equalTo(50.0f);
+        make.bottom.equalTo(self.view1.vv_top);
+        make.left.equalTo(self.view1.vv_right).offset(20.0f);
     }];
-
+    
     NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
-*/
+ */
 
     [self.view addSubview:self.view1];
     [self.view1 addSubview:self.view2];
-    
-    [self.view1 makeLayout:^(VVLayout *_Nonnull layout) {
-        layout.width(100);
-        layout.height(100);
-        layout.super_centerX(0).and.super_centerY(0);
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.width.vv_equalTo(100);
+        make.height.vv_equalTo(100);
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
     }];
     NSLog(@"view1->%@", NSStringFromCGRect(self.view1.frame));
 
-    [self.view2 makeLayout:^(VVLayout *_Nonnull layout) {
-        layout.top(12);
-        layout.bottom(14);
-        layout.left(16);
-        layout.width_to(self.view2.vv_height, 0.5); // width * 0.5 = 50
+    [self.view2 makeLayout:^(VVMakeLayout *make) {
+        make.top.vv_equalTo(12.0f);
+        make.bottom.vv_equalTo(14.0f);
+        make.left.vv_equalTo(16.0f);
+        make.width.equalTo(self.view1.vv_height).multipliedBy(0.5f);
     }];
     NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
+
 }
 
 

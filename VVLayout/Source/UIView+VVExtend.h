@@ -1,32 +1,15 @@
+//
+// Created by Tank on 2019-08-16.
+// Copyright (c) 2019 Tank. All rights reserved.
+//
 
-
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-/*!
- * @typedef VVRelationType
- * @brief A list of relations.
- */
-typedef NS_ENUM(NSInteger, VVRelationType) {
-    VVRelationTypeWidth,
-    VVRelationTypeWidthTo,
-    VVRelationTypeHeight,
-    VVRelationTypeHeightTo,
-    VVRelationTypeLeft,
-    VVRelationTypeRight,
-    VVRelationTypeTop,
-    VVRelationTypeBottom,
-    VVRelationTypeCenterX,
-    VVRelationTypeCenterY
-};
-
-NS_ASSUME_NONNULL_BEGIN
+#import "VVMakeLayoutInfo.h"
 
 @interface UIView (VVExtend)
 
-/**
- *  Current relation type for configuration.
- */
-@property(nonatomic, readonly) VVRelationType relationType;
+@property(nonatomic, readonly) VVMakeLayoutType viewLayoutType;
 
 @property(nonatomic, readonly) UIView *vv_width;
 @property(nonatomic, readonly) UIView *vv_height;
@@ -38,5 +21,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) UIView *vv_centerY;
 
 @end
-
-NS_ASSUME_NONNULL_END
