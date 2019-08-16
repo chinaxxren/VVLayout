@@ -61,6 +61,7 @@
 		B99CCCEA22F95029000D517F /* VVMakeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVMakeBlock.m; sourceTree = "<group>"; };
 		B99CCCEE22F95029000D517F /* VVMakeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeBlock.h; sourceTree = "<group>"; };
 		C3AE63BC5FA8E86C63738547 /* UIView+VVExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VVExtend.h"; sourceTree = "<group>"; };
+		C3AE656BB0CBBD4FF666427D /* VVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVLayout.h; sourceTree = "<group>"; };
 		C3AE687859D351CCCA6A4931 /* VVMakeLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVMakeLayoutInfo.m; sourceTree = "<group>"; };
 		C3AE693ACBDD054CAFA0B2A1 /* UIView+VVExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VVExtend.m"; sourceTree = "<group>"; };
 		C3AE69E950098C4F0C9CF8AD /* VVMakeLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeLayoutInfo.h; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 				C3AE69E950098C4F0C9CF8AD /* VVMakeLayoutInfo.h */,
 				C3AE693ACBDD054CAFA0B2A1 /* UIView+VVExtend.m */,
 				C3AE63BC5FA8E86C63738547 /* UIView+VVExtend.h */,
+				C3AE656BB0CBBD4FF666427D /* VVLayout.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";
