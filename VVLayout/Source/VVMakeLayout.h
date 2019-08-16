@@ -43,6 +43,8 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *(^)(NSInteger))priority;
 
+- (VVMakeLayout *)container;
+
 - (VVMakeLayout *)sizeToFit;
 
 - (VVMakeLayout *)widthToFit;

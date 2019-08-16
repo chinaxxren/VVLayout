@@ -78,6 +78,11 @@
     }];
     NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
 
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.sizeThatFits(CGSizeMake(100, 100)).offset(10);
+    }];
+
 }
 
 

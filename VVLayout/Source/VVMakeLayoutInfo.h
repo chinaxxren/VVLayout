@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, VVMakeLayoutType) {
 
 @property(nonatomic, assign) VVMakeLayoutType makeLayoutType;
 @property(nonatomic, assign) VVMakeLayoutType viewLayoutType;
-@property(nonatomic, assign) CGFloat inset;
+@property(nonatomic, assign) CGFloat value;
 @property(nonatomic, assign) BOOL isNum;
 @property(nonatomic, assign) CGFloat multiplied;
 @property(nonatomic, assign) NSInteger priority;
