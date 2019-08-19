@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 #import "UIView+VVExtend.h"
-#import "UIView+VVExtend.h"
+#import "UIView+VVLayout.h"
 #import "VVMakeBlock.h"
 #import "VVMakeLayout.h"
 #import "VVMakeLayoutInfo.h"
