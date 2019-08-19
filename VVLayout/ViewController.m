@@ -135,8 +135,8 @@
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.centerX.equalTo(@110);
-        make.centerY.equalTo(@100);
+        make.top.equalTo(@110);
+        make.centerX.equalTo(@100);
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
 
