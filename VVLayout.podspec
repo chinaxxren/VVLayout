@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "VVLayout"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "VVLayout采用Masonry接口的高性能的Frame布局框架"
   spec.homepage     = "https://github.com/chinaxxren/VVLayout"
   spec.license      = "MIT"
