@@ -495,101 +495,122 @@
 #pragma mark Width / Height relations
 
 - (void)widthWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
-    VVWeakify(self);
-    VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
-    dispatch_block_t block_t = ^{
-        VVStrongify(self);
+    dispatch_block_t block_t;
+    if (makeInfo.isNum) {
+        VVWeakify(self);
+        block_t = ^{
+            VVStrongify(self);
+            CGRect frame = self.newFrame;
+            frame.size.width = makeInfo.value;
+            self.newFrame = frame;
+        };
+    } else {
+        VVWeakify(self);
+        VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
+        block_t = ^{
+            VVStrongify(self);
 
-        if (makeInfo.view && makeInfo.view != self.view) {
-            CGFloat width = [self sizeForView:makeInfo.view withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
-            [self setFrameValue:width type:VVMakeLayoutTypeWidth];
-        } else {
-            VVMakeLayoutInfo *heightInfo = [self infoForType:VVMakeLayoutTypeHeight];
-            if (heightInfo && heightInfo.isNum) {
-                CGFloat width = heightInfo.value;
-                [self setFrameValue:width * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
-
-            } else if (heightInfo && !heightInfo.isNum) {
-                UIView *tempView = heightInfo.view;
-                CGFloat tempMultiplier = heightInfo.multiplied;
-                VVMakeLayoutType makeType = heightInfo.makeLayoutType;
-
-                CGFloat width = [self sizeForView:tempView withMakeLayoutType:makeType] * (tempMultiplier * makeInfo.multiplied);
+            if (makeInfo.view && makeInfo.view != self.view) {
+                CGFloat width = [self sizeForView:makeInfo.view withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
                 [self setFrameValue:width type:VVMakeLayoutTypeWidth];
-
             } else {
-                VVMakeLayoutInfo *topInfo = [self infoForType:VVMakeLayoutTypeTop];
-                VVMakeLayoutInfo *bottomInfo = [self infoForType:VVMakeLayoutTypeBottom];
+                VVMakeLayoutInfo *heightInfo = [self infoForType:VVMakeLayoutTypeHeight];
+                if (heightInfo && heightInfo.isNum) {
+                    CGFloat width = heightInfo.value;
+                    [self setFrameValue:width * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
 
-                if (topInfo && bottomInfo) {
-                    UIView *topView = topInfo.view;
-                    CGFloat topInset = topInfo.value;
-                    VVMakeLayoutType topMakeLayoutType = topInfo.makeLayoutType;
+                } else if (heightInfo && !heightInfo.isNum) {
+                    UIView *tempView = heightInfo.view;
+                    CGFloat tempMultiplier = heightInfo.multiplied;
+                    VVMakeLayoutType makeType = heightInfo.makeLayoutType;
 
-                    CGFloat topViewY = [self topYForView:topView withValue:topInset makeLayoutType:topMakeLayoutType];
+                    CGFloat width = [self sizeForView:tempView withMakeLayoutType:makeType] * (tempMultiplier * makeInfo.multiplied);
+                    [self setFrameValue:width type:VVMakeLayoutTypeWidth];
 
-                    UIView *bottomView = bottomInfo.view;
-                    CGFloat bottomInset = bottomInfo.value;
-                    VVMakeLayoutType bottomMakeLayoutType = bottomInfo.makeLayoutType;
+                } else {
+                    VVMakeLayoutInfo *topInfo = [self infoForType:VVMakeLayoutTypeTop];
+                    VVMakeLayoutInfo *bottomInfo = [self infoForType:VVMakeLayoutTypeBottom];
 
-                    CGFloat bottomViewY = [self valueForMakeLayoutType:bottomMakeLayoutType forView:bottomView] - bottomInset;
+                    if (topInfo && bottomInfo) {
+                        UIView *topView = topInfo.view;
+                        CGFloat topInset = topInfo.value;
+                        VVMakeLayoutType topMakeLayoutType = topInfo.makeLayoutType;
 
-                    [self setFrameValue:(bottomViewY - topViewY) * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
+                        CGFloat topViewY = [self topYForView:topView withValue:topInset makeLayoutType:topMakeLayoutType];
+
+                        UIView *bottomView = bottomInfo.view;
+                        CGFloat bottomInset = bottomInfo.value;
+                        VVMakeLayoutType bottomMakeLayoutType = bottomInfo.makeLayoutType;
+
+                        CGFloat bottomViewY = [self valueForMakeLayoutType:bottomMakeLayoutType forView:bottomView] - bottomInset;
+
+                        [self setFrameValue:(bottomViewY - topViewY) * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
+                    }
                 }
             }
-        }
-    };
+        };
+    }
 
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
 
 - (void)heightWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
-    VVWeakify(self);
-    VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
-    dispatch_block_t block_t = ^{
-        VVStrongify(self);
-
-        if (makeInfo.view && makeInfo.view != self.view) {
-            CGFloat height = [self sizeForView:makeInfo.view withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
-            [self setFrameValue:height type:VVMakeLayoutTypeHeight];
-        } else {
-            VVMakeLayoutInfo *widthInfo = [self infoForType:VVMakeLayoutTypeWidth];
-            if (widthInfo && widthInfo.isNum) {
-                CGFloat height = widthInfo.value;
-                [self setFrameValue:height * widthInfo.multiplied type:VVMakeLayoutTypeHeight];
-
-            } else if (widthInfo && !widthInfo.isNum) {
-                VVMakeLayoutInfo *widthToInfo = [self infoForType:VVMakeLayoutTypeWidth];
-
-                UIView *tempView = widthToInfo.view;
-                CGFloat tempMultiplier = widthToInfo.multiplied;
-                VVMakeLayoutType makeType = widthToInfo.makeLayoutType;
-
-                CGFloat height = [self sizeForView:tempView withMakeLayoutType:makeType] * (tempMultiplier * makeInfo.multiplied);
+    dispatch_block_t block_t;
+    if (makeInfo.isNum) {
+        VVWeakify(self);
+        block_t = ^{
+            VVStrongify(self);
+            CGRect frame = self.newFrame;
+            frame.size.height = makeInfo.value;
+            self.newFrame = frame;
+        };
+    } else {
+        VVWeakify(self);
+        VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
+        block_t = ^{
+            VVStrongify(self);
+            if (makeInfo.view && makeInfo.view != self.view) {
+                CGFloat height = [self sizeForView:makeInfo.view withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
                 [self setFrameValue:height type:VVMakeLayoutTypeHeight];
-
             } else {
-                VVMakeLayoutInfo *leftInfo = [self infoForType:VVMakeLayoutTypeLeft];
-                VVMakeLayoutInfo *rightInfo = [self infoForType:VVMakeLayoutTypeRight];
+                VVMakeLayoutInfo *widthInfo = [self infoForType:VVMakeLayoutTypeWidth];
+                if (widthInfo && widthInfo.isNum) {
+                    CGFloat height = widthInfo.value;
+                    [self setFrameValue:height * widthInfo.multiplied type:VVMakeLayoutTypeHeight];
 
-                if (leftInfo && rightInfo) {
-                    UIView *leftView = leftInfo.view;
-                    CGFloat leftInset = leftInfo.value;
-                    VVMakeLayoutType leftMakeLayoutType = leftInfo.makeLayoutType;
+                } else if (widthInfo && !widthInfo.isNum) {
+                    VVMakeLayoutInfo *widthToInfo = [self infoForType:VVMakeLayoutTypeWidth];
 
-                    CGFloat leftViewX = [self leftXForView:leftView withValue:leftInset makeLayoutType:leftMakeLayoutType];
+                    UIView *tempView = widthToInfo.view;
+                    CGFloat tempMultiplier = widthToInfo.multiplied;
+                    VVMakeLayoutType makeType = widthToInfo.makeLayoutType;
 
-                    UIView *rightView = rightInfo.view;
-                    CGFloat rightInset = rightInfo.value;
-                    VVMakeLayoutType rightMakeLayoutType = rightInfo.makeLayoutType;
+                    CGFloat height = [self sizeForView:tempView withMakeLayoutType:makeType] * (tempMultiplier * makeInfo.multiplied);
+                    [self setFrameValue:height type:VVMakeLayoutTypeHeight];
 
-                    CGFloat rightViewX = [self valueForMakeLayoutType:rightMakeLayoutType forView:rightView] - rightInset;
+                } else {
+                    VVMakeLayoutInfo *leftInfo = [self infoForType:VVMakeLayoutTypeLeft];
+                    VVMakeLayoutInfo *rightInfo = [self infoForType:VVMakeLayoutTypeRight];
 
-                    [self setFrameValue:(rightViewX - leftViewX) * makeInfo.multiplied type:VVMakeLayoutTypeHeight];
+                    if (leftInfo && rightInfo) {
+                        UIView *leftView = leftInfo.view;
+                        CGFloat leftInset = leftInfo.value;
+                        VVMakeLayoutType leftMakeLayoutType = leftInfo.makeLayoutType;
+
+                        CGFloat leftViewX = [self leftXForView:leftView withValue:leftInset makeLayoutType:leftMakeLayoutType];
+
+                        UIView *rightView = rightInfo.view;
+                        CGFloat rightInset = rightInfo.value;
+                        VVMakeLayoutType rightMakeLayoutType = rightInfo.makeLayoutType;
+
+                        CGFloat rightViewX = [self valueForMakeLayoutType:rightMakeLayoutType forView:rightView] - rightInset;
+
+                        [self setFrameValue:(rightViewX - leftViewX) * makeInfo.multiplied type:VVMakeLayoutTypeHeight];
+                    }
                 }
             }
-        }
-    };
+        };
+    }
 
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
@@ -601,7 +622,8 @@
     } else if (makeLayoutType == VVMakeLayoutTypeHeight) {
         return CGRectGetHeight(view.bounds);
     }
-    return 0;
+
+    return 0.0f;
 }
 
 - (void)setHighPriorityValue:(CGFloat)value withType:(VVMakeLayoutType)type {

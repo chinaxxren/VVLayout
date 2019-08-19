@@ -122,10 +122,15 @@
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.center.equalTo(self.view);
         make.width.equalTo(@100);
-        make.height.equalTo(@100);
+        make.height.equalTo(@160);
 //        make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.width.equalTo(@150);
+    }];
+}
 
 @end
