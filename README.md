@@ -7,5 +7,5 @@
 pod 'VVLayout'
 
 # 感谢
-https://github.com/cloudkite/Masonry
-https://github.com/Otbivnoe/Framer
+* https://github.com/cloudkite/Masonry
+* https://github.com/Otbivnoe/Framer
