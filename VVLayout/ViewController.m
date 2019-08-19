@@ -86,7 +86,6 @@
     }];
     NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
 
-
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.sizeThatFits(CGSizeMake(100, 100)).offset(10);
     }];
@@ -101,7 +100,7 @@
         make.sizeThatFits(CGSizeMake(200, 40.0f));
     }];
 */
-
+/*
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
@@ -109,7 +108,7 @@
         make.centerY.equalTo(self.view);
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
-
+*/
 /*
     [self.view addSubview:self.view1];
 
@@ -118,6 +117,12 @@
         make.edges.equalTo(self.view).vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
     }];
 */
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.center.equalTo(self.view);
+        make.size.vv_equalTo(CGSizeMake(100, 100));
+    }];
 }
 
 

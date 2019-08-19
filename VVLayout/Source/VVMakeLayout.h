@@ -44,6 +44,8 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *)centerY;
 
+- (VVMakeLayout *)center;
+
 - (VVMakeLayout *)width;
 
 - (VVMakeLayout *)height;

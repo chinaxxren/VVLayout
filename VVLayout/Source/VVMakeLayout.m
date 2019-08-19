@@ -111,6 +111,9 @@
             case VVMakeLayoutTypeCenterY: {
                 [self centerYWithMakeInfo:makeInfo];
             }
+            case VVMakeLayoutTypeCenter: {
+                [self centerWithMakeInfo:makeInfo];
+            }
                 break;
             case VVMakeLayoutTypeWidth: {
                 [self widthWithMakeInfo:makeInfo];
@@ -184,6 +187,12 @@
 
 - (VVMakeLayout *)centerY {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeCenterY];
+    [self.makeInfos addObject:self.makeLayoutInfo];
+    return self;
+}
+
+- (VVMakeLayout *)center {
+    self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeCenter];
     [self.makeInfos addObject:self.makeLayoutInfo];
     return self;
 }
@@ -299,7 +308,7 @@
     dispatch_block_t block_t = ^{
         VVStrongify(self);
         CGFloat x = [self leftRelationXForView:makeInfo.view
-                                     withInset:makeInfo.value
+                                     withValue:makeInfo.value
                                 makeLayoutType:makeLayoutType];
         CGRect frame = self.newFrame;
         frame.origin.x = x;
@@ -310,9 +319,9 @@
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
 
-- (CGFloat)leftRelationXForView:(UIView *)view withInset:(CGFloat)inset makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+- (CGFloat)leftRelationXForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat x = [self valueForMakeLayoutType:makeLayoutType forView:view];
-    return x + inset;
+    return x + value;
 }
 
 
@@ -323,7 +332,7 @@
     VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
     dispatch_block_t block_t = ^{
         VVStrongify(self);
-        CGFloat y = [self topRelationYForView:makeInfo.view withInset:makeInfo.value makeLayoutType:makeLayoutType];
+        CGFloat y = [self topRelationYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
         CGRect frame = self.newFrame;
         frame.origin.y = y;
         self.newFrame = frame;
@@ -333,9 +342,9 @@
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
 
-- (CGFloat)topRelationYForView:(UIView *)view withInset:(CGFloat)inset makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+- (CGFloat)topRelationYForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat y = [self valueForMakeLayoutType:makeLayoutType forView:view];
-    return y + inset;
+    return y + value;
 }
 
 
@@ -348,10 +357,10 @@
         VVStrongify(self);
         CGRect frame = self.newFrame;
         if (!self.isTopFrameInstalled) {
-            CGFloat y = [self bottomRelationYForView:makeInfo.view withInset:makeInfo.value makeLayoutType:makeLayoutType];
+            CGFloat y = [self bottomRelationYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
             frame.origin.y = y;
         } else {
-            frame.size.height = [self bottomRelationHeightForView:makeInfo.view withInset:makeInfo.value makeLayoutType:makeLayoutType];;
+            frame.size.height = [self bottomRelationHeightForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];;
         }
         self.newFrame = frame;
     };
@@ -360,15 +369,15 @@
 }
 
 //当前view在传入view下面
-- (CGFloat)bottomRelationHeightForView:(UIView *)view withInset:(CGFloat)inset makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+- (CGFloat)bottomRelationHeightForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat height = fabs(CGRectGetMinY(self.newFrame) - [self valueForMakeLayoutType:makeLayoutType forView:view]);
-    return height - inset;
+    return height - value;
 }
 
 //当前view在传入view上面
-- (CGFloat)bottomRelationYForView:(UIView *)view withInset:(CGFloat)inset makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+- (CGFloat)bottomRelationYForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat y = [self valueForMakeLayoutType:makeLayoutType forView:view];
-    return y - inset - CGRectGetHeight(self.newFrame);
+    return y - value - CGRectGetHeight(self.newFrame);
 }
 
 #pragma mark Right relations
@@ -380,10 +389,10 @@
         VVStrongify(self);
         CGRect frame = self.newFrame;
         if (!self.isLeftFrameInstalled) {
-            CGFloat x = [self rightRelationXForView:makeInfo.view withInset:makeInfo.value makeLayoutType:makeLayoutType];
+            CGFloat x = [self rightRelationXForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
             frame.origin.x = x;
         } else {
-            frame.size.width = [self rightRelationWidthForView:makeInfo.view withInset:makeInfo.value makeLayoutType:makeLayoutType];;
+            frame.size.width = [self rightRelationWidthForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];;
         }
         self.newFrame = frame;
     };
@@ -391,14 +400,14 @@
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
 }
 
-- (CGFloat)rightRelationWidthForView:(UIView *)view withInset:(CGFloat)inset makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+- (CGFloat)rightRelationWidthForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat width = fabs(CGRectGetMinX(self.newFrame) - [self valueForMakeLayoutType:makeLayoutType forView:view]);
-    return width - inset;
+    return width - value;
 }
 
-- (CGFloat)rightRelationXForView:(UIView *)view withInset:(CGFloat)inset makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+- (CGFloat)rightRelationXForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat x = [self valueForMakeLayoutType:makeLayoutType forView:view];
-    return x - inset - CGRectGetWidth(self.newFrame);
+    return x - value - CGRectGetWidth(self.newFrame);
 }
 
 #pragma mark - Low priority
@@ -427,21 +436,40 @@
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
 }
 
+- (void)centerWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
+    VVWeakify(self);
+    VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
+    dispatch_block_t block_t = ^{
+        VVStrongify(self);
+        CGRect frame = self.newFrame;
+        if (makeLayoutType == VVMakeLayoutTypeCenter) {
+            frame.origin.x = [self centerRelationXForView:makeInfo.view withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterX];
+            frame.origin.y = [self centerRelationYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterY];
+        } else {
+            frame.origin.x = [self centerRelationXForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
+            frame.origin.y = [self centerRelationYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
+        }
+
+        self.newFrame = frame;
+    };
+    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+}
+
 - (void)centerXWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
     VVWeakify(self);
     VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
     dispatch_block_t block_t = ^{
         VVStrongify(self);
         CGRect frame = self.newFrame;
-        frame.origin.x = [self centerRelationXForView:makeInfo.view withInset:makeInfo.value makeLayoutType:makeLayoutType];
+        frame.origin.x = [self centerRelationXForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
         self.newFrame = frame;
     };
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
 }
 
-- (CGFloat)centerRelationXForView:(UIView *)view withInset:(CGFloat)inset makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+- (CGFloat)centerRelationXForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat x = [self valueForMakeLayoutType:makeLayoutType forView:view];
-    return x - CGRectGetWidth(self.newFrame) * 0.5f - inset;
+    return x - CGRectGetWidth(self.newFrame) * 0.5f - value;
 }
 
 #pragma mark Center Y relations
@@ -452,15 +480,15 @@
     dispatch_block_t block_t = ^{
         VVStrongify(self);
         CGRect frame = self.newFrame;
-        frame.origin.y = [self centerRelationYForView:makeInfo.view withInset:makeInfo.value makeLayoutType:makeLayoutType];
+        frame.origin.y = [self centerRelationYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
         self.newFrame = frame;
     };
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
 }
 
-- (CGFloat)centerRelationYForView:(UIView *)view withInset:(CGFloat)inset makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+- (CGFloat)centerRelationYForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat y = [self valueForMakeLayoutType:makeLayoutType forView:view];
-    return y - CGRectGetHeight(self.newFrame) * 0.5f - inset;
+    return y - CGRectGetHeight(self.newFrame) * 0.5f - value;
 }
 
 #pragma mark - Top priority
@@ -499,7 +527,7 @@
                     CGFloat topInset = topInfo.value;
                     VVMakeLayoutType topMakeLayoutType = topInfo.makeLayoutType;
 
-                    CGFloat topViewY = [self topRelationYForView:topView withInset:topInset makeLayoutType:topMakeLayoutType];
+                    CGFloat topViewY = [self topRelationYForView:topView withValue:topInset makeLayoutType:topMakeLayoutType];
 
                     UIView *bottomView = bottomInfo.view;
                     CGFloat bottomInset = bottomInfo.value;
@@ -550,7 +578,7 @@
                     CGFloat leftInset = leftInfo.value;
                     VVMakeLayoutType leftMakeLayoutType = leftInfo.makeLayoutType;
 
-                    CGFloat leftViewX = [self leftRelationXForView:leftView withInset:leftInset makeLayoutType:leftMakeLayoutType];
+                    CGFloat leftViewX = [self leftRelationXForView:leftView withValue:leftInset makeLayoutType:leftMakeLayoutType];
 
                     UIView *rightView = rightInfo.view;
                     CGFloat rightInset = rightInfo.value;

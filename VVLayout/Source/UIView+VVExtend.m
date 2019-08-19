@@ -50,6 +50,11 @@
     return self;
 }
 
+- (UIView *)vv_center {
+    self.viewLayoutType = VVMakeLayoutTypeCenter;
+    return self;
+}
+
 #pragma mark - Runtime
 
 - (void)setViewLayoutType:(VVMakeLayoutType)viewLayoutType {

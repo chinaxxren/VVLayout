@@ -19,5 +19,6 @@
 @property(nonatomic, readonly) UIView *vv_bottom;
 @property(nonatomic, readonly) UIView *vv_centerX;
 @property(nonatomic, readonly) UIView *vv_centerY;
+@property(nonatomic, readonly) UIView *vv_center;
 
 @end

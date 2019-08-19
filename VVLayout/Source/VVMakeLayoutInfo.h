@@ -17,6 +17,7 @@ typedef NS_ENUM(NSUInteger, VVMakeLayoutType) {
     VVMakeLayoutTypeBottom,
     VVMakeLayoutTypeCenterX,
     VVMakeLayoutTypeCenterY,
+    VVMakeLayoutTypeCenter,
     VVMakeLayoutTypeHeight,
     VVMakeLayoutTypeWidth,
     VVMakeLayoutTypeSize,
