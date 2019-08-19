@@ -221,24 +221,26 @@
     return self;
 }
 
-- (VVMakeLayout *(^)(id))equal_to {
-    return ^id(id attribute) {
-        self.makeLayoutInfo.isNum = YES;
+- (VVMakeLayout *(^)(id))equalTo {
+    return ^(id attribute) {
         self.makeLayoutInfo.attribute = attribute;
-        self.makeLayoutInfo.viewLayoutType = self.makeLayoutInfo.makeLayoutType;
+        self.makeLayoutInfo.equalType = VVEqualTo;
         return self;
     };
 }
 
-- (VVMakeLayout *(^)(UIView *))equalTo {
-    return ^(UIView *view) {
-        self.makeLayoutInfo.isNum = NO;
-        self.makeLayoutInfo.view = view;
-        if (view.viewLayoutType == VVMakeLayoutTypeNone) {
-            self.makeLayoutInfo.viewLayoutType = self.makeLayoutInfo.makeLayoutType;
-        } else {
-            self.makeLayoutInfo.viewLayoutType = view.viewLayoutType;
-        }
+- (VVMakeLayout *(^)(id))greaterThanOrEqualTo {
+    return ^(id attribute) {
+        self.makeLayoutInfo.attribute = attribute;
+        self.makeLayoutInfo.equalType = VVGreaterThanOrEqualTo;
+        return self;
+    };
+}
+
+- (VVMakeLayout *(^)(id))lessThanOrEqualTo {
+    return ^(id attribute) {
+        self.makeLayoutInfo.attribute = attribute;
+        self.makeLayoutInfo.equalType = VVLessThanOrEqualTo;
         return self;
     };
 }
@@ -346,7 +348,6 @@
     CGFloat y = [self valueForMakeLayoutType:makeLayoutType forView:view];
     return y + value;
 }
-
 
 #pragma mark Bottom relations
 

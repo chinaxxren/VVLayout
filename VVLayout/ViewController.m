@@ -121,7 +121,9 @@
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.center.equalTo(self.view);
-        make.size.vv_equalTo(CGSizeMake(100, 100));
+        make.width.equalTo(@100);
+        make.height.equalTo(@100);
+//        make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
 }
 

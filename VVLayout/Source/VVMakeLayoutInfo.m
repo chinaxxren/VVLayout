@@ -4,6 +4,7 @@
 //
 
 #import "VVMakeLayoutInfo.h"
+#import "UIView+VVExtend.h"
 
 @interface VVMakeLayoutInfo ()
 
@@ -32,8 +33,22 @@
 }
 
 - (void)setAttribute:(id)attribute {
-    _attribute = attribute;
-    [self setAttributeValue:_attribute];
+    if ([attribute isKindOfClass:UIView.class]) {
+        self.view = (UIView *) attribute;
+        self.isNum = NO;
+
+        if (self.view.viewLayoutType == VVMakeLayoutTypeNone) {
+            self.viewLayoutType = self.makeLayoutType;
+        } else {
+            self.viewLayoutType = self.view.viewLayoutType;
+        }
+    } else {
+        _attribute = attribute;
+        [self setAttributeValue:_attribute];
+        self.isNum = YES;
+
+        self.viewLayoutType = self.makeLayoutType;
+    }
 }
 
 - (void)setAttributeValue:(NSValue *)value {

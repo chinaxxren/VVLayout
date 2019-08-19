@@ -24,10 +24,17 @@ typedef NS_ENUM(NSUInteger, VVMakeLayoutType) {
     VVMakeLayoutTypeEdges,
 };
 
+typedef NS_ENUM(NSUInteger, VVEqualType) {
+    VVEqualTo,
+    VVGreaterThanOrEqualTo,
+    VVLessThanOrEqualTo,
+};
+
 @interface VVMakeLayoutInfo : NSObject
 
 @property(nonatomic, assign) VVMakeLayoutType makeLayoutType;
 @property(nonatomic, assign) VVMakeLayoutType viewLayoutType;
+@property(nonatomic, assign) VVEqualType equalType;
 @property(nonatomic, strong) id attribute;
 @property(nonatomic, assign) BOOL isNum;
 @property(nonatomic, assign) CGFloat multiplied;
