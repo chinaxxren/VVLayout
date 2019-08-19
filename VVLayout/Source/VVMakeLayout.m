@@ -111,6 +111,7 @@
             case VVMakeLayoutTypeCenterY: {
                 [self centerYWithMakeInfo:makeInfo];
             }
+                break;
             case VVMakeLayoutTypeCenter: {
                 [self centerWithMakeInfo:makeInfo];
             }
@@ -129,8 +130,8 @@
                 break;
             case VVMakeLayoutTypeEdges: {
                 [self edgesWithMakeInfo:makeInfo];
-            }
                 break;
+            }
             default:
                 break;
         }
@@ -413,28 +414,6 @@
 
 #pragma mark Center X relations
 
-- (void)vv_centerXWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
-    VVWeakify(self);
-    dispatch_block_t block_t = ^{
-        VVStrongify(self);
-        CGRect frame = self.newFrame;
-        frame.origin.x = makeInfo.value - CGRectGetWidth(frame) * 0.5f;
-        self.newFrame = frame;
-    };
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
-}
-
-- (void)vv_centerYWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
-    VVWeakify(self);
-    dispatch_block_t block_t = ^{
-        VVStrongify(self);
-        CGRect frame = self.newFrame;
-        frame.origin.y = makeInfo.value - CGRectGetHeight(frame) * 0.5f;
-        self.newFrame = frame;
-    };
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
-}
-
 - (void)centerWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
     VVWeakify(self);
     VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
@@ -451,6 +430,7 @@
 
         self.newFrame = frame;
     };
+
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
 }
 
@@ -468,7 +448,7 @@
 
 - (CGFloat)centerXForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat x = [self valueForMakeLayoutType:makeLayoutType forView:view];
-    return x - CGRectGetWidth(self.newFrame) * 0.5f - value;
+    return x - CGRectGetWidth(self.newFrame) * 0.5f + value;
 }
 
 #pragma mark Center Y relations
@@ -482,12 +462,13 @@
         frame.origin.y = [self centerYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
         self.newFrame = frame;
     };
+
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
 }
 
 - (CGFloat)centerYForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat y = [self valueForMakeLayoutType:makeLayoutType forView:view];
-    return y - CGRectGetHeight(self.newFrame) * 0.5f - value;
+    return y - CGRectGetHeight(self.newFrame) * 0.5f + value;
 }
 
 #pragma mark - Top priority
