@@ -224,24 +224,21 @@
 
 - (VVMakeLayout *(^)(id))equalTo {
     return ^(id attribute) {
-        self.makeLayoutInfo.attribute = attribute;
-        self.makeLayoutInfo.equalType = VVEqualTo;
+        [self.makeLayoutInfo changeAttribute:attribute equalType:VVEqualTo];
         return self;
     };
 }
 
 - (VVMakeLayout *(^)(id))greaterThanOrEqualTo {
     return ^(id attribute) {
-        self.makeLayoutInfo.attribute = attribute;
-        self.makeLayoutInfo.equalType = VVGreaterThanOrEqualTo;
+        [self.makeLayoutInfo changeAttribute:attribute equalType:VVGreaterThanOrEqualTo];
         return self;
     };
 }
 
 - (VVMakeLayout *(^)(id))lessThanOrEqualTo {
     return ^(id attribute) {
-        self.makeLayoutInfo.attribute = attribute;
-        self.makeLayoutInfo.equalType = VVLessThanOrEqualTo;
+        [self.makeLayoutInfo changeAttribute:attribute equalType:VVLessThanOrEqualTo];
         return self;
     };
 }
@@ -276,7 +273,7 @@
 
 - (VVMakeLayout *(^)(NSValue *))valueOffset {
     return ^id(NSValue *value) {
-        self.makeLayoutInfo.attribute = value;
+        [self.makeLayoutInfo setAttribute:value];
         return self;
     };
 }

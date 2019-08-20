@@ -36,12 +36,11 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
 @property(nonatomic, assign) VVMakeLayoutType makeLayoutType;
 @property(nonatomic, assign) VVMakeLayoutType viewLayoutType;
 @property(nonatomic, assign) VVEqualType equalType;
-@property(nonatomic, strong) id attribute;
 @property(nonatomic, assign) BOOL isNum;
 @property(nonatomic, assign) CGFloat multiplied;
 @property(nonatomic, assign) NSInteger priority;
-@property(nonatomic, weak) UIView *relateView;
 
+@property(nonatomic, weak) UIView *relateView;
 @property(nonatomic, assign) CGFloat value;
 @property(nonatomic, assign) CGPoint point;
 @property(nonatomic, assign) CGSize size;
@@ -50,6 +49,10 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
 - (instancetype)initWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType;
 
 + (instancetype)infoWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType;
+
+- (void)changeAttribute:(id)attribute equalType:(VVEqualType)equalType;
+
+- (void)setAttribute:(NSValue *)value;
 
 @end
 

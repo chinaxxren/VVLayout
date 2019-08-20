@@ -29,19 +29,20 @@
     return [[self alloc] initWithMakeLayoutType:makeLayoutType];
 }
 
-- (void)setAttribute:(id)attribute {
+- (void)changeAttribute:(id)attribute equalType:(VVEqualType)equalType {
+    self.equalType = equalType;
+
     if ([attribute isKindOfClass:UIView.class]) {
         self.relateView = (UIView *) attribute;
         self.isNum = NO;
         self.viewLayoutType = self.relateView.viewLayoutType;
     } else {
-        _attribute = attribute;
-        [self setAttributeValue:_attribute];
+        [self setAttribute:attribute];
         self.isNum = YES;
     }
 }
 
-- (void)setAttributeValue:(NSValue *)value {
+- (void)setAttribute:(NSValue *)value {
     if ([value isKindOfClass:NSNumber.class]) {
         self.value = [(NSNumber *) value floatValue];
     } else if (strcmp(value.objCType, @encode(CGPoint)) == 0) {
