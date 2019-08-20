@@ -131,12 +131,21 @@
         make.width.equalTo(@50);
     }             forState:@1];
     */
-
+/*
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.top.equalTo(@110);
         make.centerX.equalTo(@100);
+        make.size.vv_equalTo(CGSizeMake(100, 100));
+    }];
+*/
+
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view).offset(10.0f);
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
 

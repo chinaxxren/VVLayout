@@ -23,6 +23,7 @@
         self.makeLayoutType = makeLayoutType;
         self.multiplied = 1.0f;
         self.viewLayoutType = VVMakeLayoutTypeNone;
+        self.equalType = VVEqualNone;
     }
 
     return self;
@@ -34,13 +35,13 @@
 
 - (void)setAttribute:(id)attribute {
     if ([attribute isKindOfClass:UIView.class]) {
-        self.view = (UIView *) attribute;
+        self.relateView = (UIView *) attribute;
         self.isNum = NO;
 
-        if (self.view.viewLayoutType == VVMakeLayoutTypeNone) {
+        if (self.relateView.viewLayoutType == VVMakeLayoutTypeNone) {
             self.viewLayoutType = self.makeLayoutType;
         } else {
-            self.viewLayoutType = self.view.viewLayoutType;
+            self.viewLayoutType = self.relateView.viewLayoutType;
         }
     } else {
         _attribute = attribute;

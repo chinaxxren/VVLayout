@@ -246,9 +246,9 @@
     };
 }
 
-- (VVMakeLayout *(^)(id))offset {
-    return ^id(id attribute) {
-        self.makeLayoutInfo.attribute = attribute;
+- (VVMakeLayout *(^)(CGFloat))offset {
+    return ^id(CGFloat value) {
+        self.makeLayoutInfo.attribute = @(value);
         return self;
     };
 }
@@ -310,7 +310,7 @@
     VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
     dispatch_block_t block_t = ^{
         VVStrongify(self);
-        CGFloat x = [self leftXForView:makeInfo.view
+        CGFloat x = [self leftXForView:makeInfo.relateView
                              withValue:makeInfo.value
                         makeLayoutType:makeLayoutType];
         CGRect frame = self.newFrame;
@@ -335,7 +335,7 @@
     VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
     dispatch_block_t block_t = ^{
         VVStrongify(self);
-        CGFloat y = [self topYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
+        CGFloat y = [self topYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
         CGRect frame = self.newFrame;
         frame.origin.y = y;
         self.newFrame = frame;
@@ -359,10 +359,10 @@
         VVStrongify(self);
         CGRect frame = self.newFrame;
         if (!self.isTopFrameInstalled) {
-            CGFloat y = [self bottomYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
+            CGFloat y = [self bottomYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
             frame.origin.y = y;
         } else {
-            frame.size.height = [self bottomHeightForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];;
+            frame.size.height = [self bottomHeightForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];;
         }
         self.newFrame = frame;
     };
@@ -389,10 +389,10 @@
         VVStrongify(self);
         CGRect frame = self.newFrame;
         if (!self.isLeftFrameInstalled) {
-            CGFloat x = [self rightXForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
+            CGFloat x = [self rightXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
             frame.origin.x = x;
         } else {
-            frame.size.width = [self rightWidthForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];;
+            frame.size.width = [self rightWidthForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];;
         }
         self.newFrame = frame;
     };
@@ -421,11 +421,11 @@
         VVStrongify(self);
         CGRect frame = self.newFrame;
         if (makeLayoutType == VVMakeLayoutTypeCenter) {
-            frame.origin.x = [self centerXForView:makeInfo.view withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterX];
-            frame.origin.y = [self centerYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterY];
+            frame.origin.x = [self centerXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterX];
+            frame.origin.y = [self centerYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterY];
         } else {
-            frame.origin.x = [self centerXForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
-            frame.origin.y = [self centerYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
+            frame.origin.x = [self centerXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
+            frame.origin.y = [self centerYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
         }
 
         self.newFrame = frame;
@@ -440,7 +440,7 @@
     dispatch_block_t block_t = ^{
         VVStrongify(self);
         CGRect frame = self.newFrame;
-        frame.origin.x = [self centerXForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
+        frame.origin.x = [self centerXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
         self.newFrame = frame;
     };
     [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
@@ -459,7 +459,7 @@
     dispatch_block_t block_t = ^{
         VVStrongify(self);
         CGRect frame = self.newFrame;
-        frame.origin.y = [self centerYForView:makeInfo.view withValue:makeInfo.value makeLayoutType:makeLayoutType];
+        frame.origin.y = [self centerYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
         self.newFrame = frame;
     };
 
@@ -491,8 +491,8 @@
         block_t = ^{
             VVStrongify(self);
 
-            if (makeInfo.view && makeInfo.view != self.view) {
-                CGFloat width = [self sizeForView:makeInfo.view withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
+            if (makeInfo.relateView && makeInfo.relateView != self.view) {
+                CGFloat width = [self sizeForView:makeInfo.relateView withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
                 [self setFrameValue:width type:VVMakeLayoutTypeWidth];
             } else {
                 VVMakeLayoutInfo *heightInfo = [self infoForType:VVMakeLayoutTypeHeight];
@@ -501,7 +501,7 @@
                     [self setFrameValue:width * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
 
                 } else if (heightInfo && !heightInfo.isNum) {
-                    UIView *tempView = heightInfo.view;
+                    UIView *tempView = heightInfo.relateView;
                     CGFloat tempMultiplier = heightInfo.multiplied;
                     VVMakeLayoutType makeType = heightInfo.makeLayoutType;
 
@@ -513,13 +513,13 @@
                     VVMakeLayoutInfo *bottomInfo = [self infoForType:VVMakeLayoutTypeBottom];
 
                     if (topInfo && bottomInfo) {
-                        UIView *topView = topInfo.view;
+                        UIView *topView = topInfo.relateView;
                         CGFloat topInset = topInfo.value;
                         VVMakeLayoutType topMakeLayoutType = topInfo.makeLayoutType;
 
                         CGFloat topViewY = [self topYForView:topView withValue:topInset makeLayoutType:topMakeLayoutType];
 
-                        UIView *bottomView = bottomInfo.view;
+                        UIView *bottomView = bottomInfo.relateView;
                         CGFloat bottomInset = bottomInfo.value;
                         VVMakeLayoutType bottomMakeLayoutType = bottomInfo.makeLayoutType;
 
@@ -550,8 +550,8 @@
         VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
         block_t = ^{
             VVStrongify(self);
-            if (makeInfo.view && makeInfo.view != self.view) {
-                CGFloat height = [self sizeForView:makeInfo.view withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
+            if (makeInfo.relateView && makeInfo.relateView != self.view) {
+                CGFloat height = [self sizeForView:makeInfo.relateView withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
                 [self setFrameValue:height type:VVMakeLayoutTypeHeight];
             } else {
                 VVMakeLayoutInfo *widthInfo = [self infoForType:VVMakeLayoutTypeWidth];
@@ -562,7 +562,7 @@
                 } else if (widthInfo && !widthInfo.isNum) {
                     VVMakeLayoutInfo *widthToInfo = [self infoForType:VVMakeLayoutTypeWidth];
 
-                    UIView *tempView = widthToInfo.view;
+                    UIView *tempView = widthToInfo.relateView;
                     CGFloat tempMultiplier = widthToInfo.multiplied;
                     VVMakeLayoutType makeType = widthToInfo.makeLayoutType;
 
@@ -574,13 +574,13 @@
                     VVMakeLayoutInfo *rightInfo = [self infoForType:VVMakeLayoutTypeRight];
 
                     if (leftInfo && rightInfo) {
-                        UIView *leftView = leftInfo.view;
+                        UIView *leftView = leftInfo.relateView;
                         CGFloat leftInset = leftInfo.value;
                         VVMakeLayoutType leftMakeLayoutType = leftInfo.makeLayoutType;
 
                         CGFloat leftViewX = [self leftXForView:leftView withValue:leftInset makeLayoutType:leftMakeLayoutType];
 
-                        UIView *rightView = rightInfo.view;
+                        UIView *rightView = rightInfo.relateView;
                         CGFloat rightInset = rightInfo.value;
                         VVMakeLayoutType rightMakeLayoutType = rightInfo.makeLayoutType;
 
@@ -652,8 +652,12 @@
     VVWeakify(self);
     dispatch_block_t block_t = ^{
         VVStrongify(self);
-        CGFloat width = CGRectGetWidth(self.view.superview.bounds) - (insets.left + insets.right);
-        CGFloat height = CGRectGetHeight(self.view.superview.bounds) - (insets.top + insets.bottom);
+        UIView *relateView = makeInfo.relateView;
+        if (!relateView) {
+            relateView = [self.view superview];
+        }
+        CGFloat width = CGRectGetWidth(relateView.bounds) - (insets.left + insets.right);
+        CGFloat height = CGRectGetHeight(relateView.bounds) - (insets.top + insets.bottom);
         CGRect frame = CGRectMake(insets.left, insets.top, width, height);
         self.newFrame = frame;
     };

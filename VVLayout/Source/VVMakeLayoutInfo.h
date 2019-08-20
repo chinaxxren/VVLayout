@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger, VVMakeLayoutType) {
 };
 
 typedef NS_ENUM(NSUInteger, VVEqualType) {
+    VVEqualNone,
     VVEqualTo,
     VVGreaterThanOrEqualTo,
     VVLessThanOrEqualTo,
@@ -39,7 +40,7 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
 @property(nonatomic, assign) BOOL isNum;
 @property(nonatomic, assign) CGFloat multiplied;
 @property(nonatomic, assign) NSInteger priority;
-@property(nonatomic, weak) UIView *view;
+@property(nonatomic, weak) UIView *relateView;
 
 @property(nonatomic, assign, readonly) CGFloat value;
 @property(nonatomic, assign, readonly) CGPoint point;
