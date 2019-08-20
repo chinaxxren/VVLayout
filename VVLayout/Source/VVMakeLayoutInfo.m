@@ -8,11 +8,6 @@
 
 @interface VVMakeLayoutInfo ()
 
-@property(nonatomic, assign) CGFloat value;
-@property(nonatomic, assign) CGPoint point;
-@property(nonatomic, assign) CGSize size;
-@property(nonatomic, assign) VVEdgeInsets insets;
-
 @end
 
 @implementation VVMakeLayoutInfo
@@ -37,18 +32,11 @@
     if ([attribute isKindOfClass:UIView.class]) {
         self.relateView = (UIView *) attribute;
         self.isNum = NO;
-
-        if (self.relateView.viewLayoutType == VVMakeLayoutTypeNone) {
-            self.viewLayoutType = self.makeLayoutType;
-        } else {
-            self.viewLayoutType = self.relateView.viewLayoutType;
-        }
+        self.viewLayoutType = self.relateView.viewLayoutType;
     } else {
         _attribute = attribute;
         [self setAttributeValue:_attribute];
         self.isNum = YES;
-
-        self.viewLayoutType = self.makeLayoutType;
     }
 }
 
@@ -70,6 +58,14 @@
     } else {
         NSAssert(NO, @"attempting to set layout constant with unsupported value: %@", value);
     }
+}
+
+- (VVMakeLayoutType)viewLayoutType {
+    if (_viewLayoutType == VVMakeLayoutTypeNone) {
+        return _makeLayoutType;
+    }
+
+    return _viewLayoutType;
 }
 
 @end

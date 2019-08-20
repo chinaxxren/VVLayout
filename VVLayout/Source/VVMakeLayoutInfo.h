@@ -42,10 +42,10 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
 @property(nonatomic, assign) NSInteger priority;
 @property(nonatomic, weak) UIView *relateView;
 
-@property(nonatomic, assign, readonly) CGFloat value;
-@property(nonatomic, assign, readonly) CGPoint point;
-@property(nonatomic, assign, readonly) CGSize size;
-@property(nonatomic, assign, readonly) VVEdgeInsets insets;
+@property(nonatomic, assign) CGFloat value;
+@property(nonatomic, assign) CGPoint point;
+@property(nonatomic, assign) CGSize size;
+@property(nonatomic, assign) VVEdgeInsets insets;
 
 - (instancetype)initWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType;
 

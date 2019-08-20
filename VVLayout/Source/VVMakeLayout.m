@@ -248,7 +248,7 @@
 
 - (VVMakeLayout *(^)(CGFloat))offset {
     return ^id(CGFloat value) {
-        self.makeLayoutInfo.attribute = @(value);
+        self.makeLayoutInfo.value = value;
         return self;
     };
 }
