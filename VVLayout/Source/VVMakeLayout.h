@@ -7,15 +7,19 @@
 
 #import "VVLayoutUtils.h"
 
-#define vv_equalTo(...)                    equalTo(VVBoxValue((__VA_ARGS__)))
+#define vv_equalTo(...)                 equalTo(VVBoxValue((__VA_ARGS__)))
 // #define vv_greaterThanOrEqualTo(...)    greaterThanOrEqualTo(VVBoxValue((__VA_ARGS__)))
 // #define vv_lessThanOrEqualTo(...)       lessThanOrEqualTo(VVBoxValue((__VA_ARGS__)))
 
+#define vv_offset(...)                  valueOffset(VVBoxValue((__VA_ARGS__)))
+
 #ifdef VV_SHORTHAND_GLOBALS
 
-#define equalTo(...)                        vv_equalTo(__VA_ARGS__)
+#define equalTo(...)                     vv_equalTo(__VA_ARGS__)
 // #define greaterThanOrEqualTo(...)        vv_greaterThanOrEqualTo(__VA_ARGS__)
 // #define lessThanOrEqualTo(...)           vv_lessThanOrEqualTo(__VA_ARGS__)
+
+#define offset(...)                      vv_offset(__VA_ARGS__)
 
 #endif
 

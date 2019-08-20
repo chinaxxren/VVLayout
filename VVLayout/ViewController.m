@@ -140,7 +140,7 @@
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
 */
-
+/*
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
@@ -148,7 +148,13 @@
         make.centerX.equalTo(self.view);
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
+    */
 
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(150, 80, 200, 100));
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
