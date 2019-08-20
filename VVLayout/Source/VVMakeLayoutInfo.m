@@ -19,6 +19,7 @@
         self.multiplied = 1.0f;
         self.viewLayoutType = VVMakeLayoutTypeNone;
         self.equalType = VVEqualNone;
+        self.isNum = NO;
     }
 
     return self;
