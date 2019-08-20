@@ -144,8 +144,8 @@
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.top.offset(300);
         make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view).offset(200.0f);
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
 
