@@ -253,6 +253,34 @@
     };
 }
 
+- (VVMakeLayout *(^)(CGSize))sizeOffset {
+    return ^id(CGSize size) {
+        self.makeLayoutInfo.size = size;
+        return self;
+    };
+}
+
+- (VVMakeLayout *(^)(CGPoint))centerOffset {
+    return ^id(CGPoint point) {
+        self.makeLayoutInfo.point = point;
+        return self;
+    };
+}
+
+- (VVMakeLayout *(^)(VVEdgeInsets))insets {
+    return ^id(VVEdgeInsets insets) {
+        self.makeLayoutInfo.insets = insets;
+        return self;
+    };
+}
+
+- (VVMakeLayout *(^)(NSValue *))valueOffset {
+    return ^id(NSValue *value) {
+        self.makeLayoutInfo.attribute = value;
+        return self;
+    };
+}
+
 - (VVMakeLayout *(^)(CGFloat))multipliedBy {
     return ^id(CGFloat multiplied) {
         self.makeLayoutInfo.multiplied = multiplied;
@@ -281,9 +309,7 @@
 
 // 得到当前 view 的对应位置的值
 - (CGFloat)valueForMakeLayoutType:(VVMakeLayoutType)type forView:(UIView *)view {
-    if (!view) {
-        view = self.view.superview;
-    }
+    view = view ?: self.view.superview;
     CGRect convertedRect = [self.view.superview convertRect:view.frame fromView:view.superview];
     switch (type) {
         case VVMakeLayoutTypeTop:

@@ -5,6 +5,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "VVLayoutUtils.h"
+
 #define vv_equalTo(...)                    equalTo(VVBoxValue((__VA_ARGS__)))
 // #define vv_greaterThanOrEqualTo(...)    greaterThanOrEqualTo(VVBoxValue((__VA_ARGS__)))
 // #define vv_lessThanOrEqualTo(...)       lessThanOrEqualTo(VVBoxValue((__VA_ARGS__)))
@@ -50,6 +52,14 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 - (VVMakeLayout *)size;
 
 - (VVMakeLayout *(^)(CGFloat))offset;
+
+- (VVMakeLayout *(^)(CGSize))sizeOffset;
+
+- (VVMakeLayout *(^)(CGPoint))centerOffset;
+
+- (VVMakeLayout *(^)(VVEdgeInsets))insets;
+
+- (VVMakeLayout *(^)(NSValue *))valueOffset;
 
 - (VVMakeLayout *(^)(id))equalTo;
 
