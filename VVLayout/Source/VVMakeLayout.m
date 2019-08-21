@@ -229,6 +229,13 @@
     };
 }
 
+- (VVMakeLayout *(^)(id))vv_equalTo {
+    return ^(id attribute) {
+        [self.makeLayoutInfo changeAttribute:attribute equalType:VVEqualTo];
+        return self;
+    };
+}
+
 - (VVMakeLayout *(^)(id))greaterThanOrEqualTo {
     return ^(id attribute) {
         [self.makeLayoutInfo changeAttribute:attribute equalType:VVGreaterThanOrEqualTo];
@@ -732,5 +739,36 @@
         return self;
     };
 }
+
+- (VVMakeLayout *(^)(CGFloat))fitHeight {
+    return ^id(CGFloat height) {
+        VVWeakify(self);
+        dispatch_block_t block_t = ^{
+            VVStrongify(self);
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), height)];
+            CGRect frame = self.newFrame;
+            frame.size.height = fitSize.height;
+            self.newFrame = frame;
+        };
+        [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+        return self;
+    };
+}
+
+- (VVMakeLayout *(^)(CGFloat))fitWidth {
+    return ^id(CGFloat width) {
+        VVWeakify(self);
+        dispatch_block_t block_t = ^{
+            VVStrongify(self);
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(width, CGRectGetHeight(self.newFrame))];
+            CGRect frame = self.newFrame;
+            frame.size.width = fitSize.width;
+            self.newFrame = frame;
+        };
+        [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+        return self;
+    };
+}
+
 
 @end

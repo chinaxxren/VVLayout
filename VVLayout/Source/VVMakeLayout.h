@@ -67,6 +67,8 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *(^)(id))equalTo;
 
+- (VVMakeLayout *(^)(id))vv_equalTo;
+
 //- (VVMakeLayout *(^)(id))greaterThanOrEqualTo;
 //
 //- (VVMakeLayout *(^)(id))lessThanOrEqualTo;
@@ -84,5 +86,9 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 - (VVMakeLayout *)heightToFit;
 
 - (VVMakeLayout *(^)(CGSize size))sizeThatFits;
+
+- (VVMakeLayout *(^)(CGFloat))fitHeight;
+
+- (VVMakeLayout *(^)(CGFloat))fitWidth;
 
 @end

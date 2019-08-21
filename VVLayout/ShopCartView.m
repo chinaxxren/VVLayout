@@ -58,7 +58,7 @@
 
 - (void)configure {
     self.titleLab.text = @"小熊（bear）煮蛋器系列jdq-c31";
-    self.descLab.text = @"单层dq-c311 送1架子 单层dq-c311 送1架子 单层dq-c311 送1架子 单层dq-c311 送1架子";
+    self.descLab.text = @"单层dq-c311 送1架子 单层dq-c311 单层dq-c311 送1架子 单层dq-c311";
 }
 
 - (void)layoutSubviews {
@@ -98,7 +98,7 @@
         make.top.equalTo(self.titleLab.vv_bottom).offset(6.0f);
         make.right.offset(-12.0f);
         make.left.equalTo(self.titleLab.vv_left);
-        make.bottom.equalTo(self.priceLab.vv_top);
+        make.fitHeight(CGFLOAT_MAX);
     }];
 
     [self.minusBtn makeLayout:^(VVMakeLayout *make) {
