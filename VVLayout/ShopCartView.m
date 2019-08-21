@@ -98,7 +98,7 @@
         make.top.equalTo(self.titleLab.vv_bottom).offset(6.0f);
         make.right.offset(-12.0f);
         make.left.equalTo(self.titleLab.vv_left);
-        make.fitHeight(CGFLOAT_MAX);
+        make.autoHeight(CGFLOAT_MAX);
     }];
 
     [self.minusBtn makeLayout:^(VVMakeLayout *make) {

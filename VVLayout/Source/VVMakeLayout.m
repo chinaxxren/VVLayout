@@ -740,12 +740,12 @@
     };
 }
 
-- (VVMakeLayout *(^)(CGFloat))fitHeight {
-    return ^id(CGFloat height) {
+- (VVMakeLayout *(^)(CGFloat))autoHeight {
+    return ^id(CGFloat maxHeight) {
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), height)];
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), maxHeight)];
             CGRect frame = self.newFrame;
             frame.size.height = fitSize.height;
             self.newFrame = frame;
@@ -755,12 +755,12 @@
     };
 }
 
-- (VVMakeLayout *(^)(CGFloat))fitWidth {
-    return ^id(CGFloat width) {
+- (VVMakeLayout *(^)(CGFloat))autoWidth {
+    return ^id(CGFloat maxWidth) {
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(width, CGRectGetHeight(self.newFrame))];
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(maxWidth, CGRectGetHeight(self.newFrame))];
             CGRect frame = self.newFrame;
             frame.size.width = fitSize.width;
             self.newFrame = frame;

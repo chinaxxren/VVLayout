@@ -87,8 +87,8 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *(^)(CGSize size))sizeThatFits;
 
-- (VVMakeLayout *(^)(CGFloat))fitHeight;
+- (VVMakeLayout *(^)(CGFloat))autoHeight;
 
-- (VVMakeLayout *(^)(CGFloat))fitWidth;
+- (VVMakeLayout *(^)(CGFloat))autoWidth;
 
 @end
