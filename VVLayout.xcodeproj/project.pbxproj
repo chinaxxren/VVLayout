@@ -21,6 +21,7 @@
 		C3AE650B24CA28807A02255F /* VVMakeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6AF75B159CF407382C50 /* VVMakeLayout.m */; };
 		C3AE65F2F60F38E061390F1D /* UIView+VVExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE693ACBDD054CAFA0B2A1 /* UIView+VVExtend.m */; };
 		C3AE6B8DAA275AD574848CDF /* VVLayoutUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6DCA10ACEB0BC2322F2E /* VVLayoutUtils.m */; };
+		C3AE6F40667D41F428B89F21 /* ShopCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6E9011E438D6AC1B1D64 /* ShopCartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B99CCCEE22F95029000D517F /* VVMakeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeBlock.h; sourceTree = "<group>"; };
 		C3AE63BC5FA8E86C63738547 /* UIView+VVExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VVExtend.h"; sourceTree = "<group>"; };
 		C3AE656BB0CBBD4FF666427D /* VVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVLayout.h; sourceTree = "<group>"; };
+		C3AE66BF4266717D7E014AEA /* ShopCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartView.h; sourceTree = "<group>"; };
 		C3AE68729C3D78CD25B44968 /* VVLayoutUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVLayoutUtils.h; sourceTree = "<group>"; };
 		C3AE687859D351CCCA6A4931 /* VVMakeLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVMakeLayoutInfo.m; sourceTree = "<group>"; };
 		C3AE693ACBDD054CAFA0B2A1 /* UIView+VVExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VVExtend.m"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		C3AE6AF75B159CF407382C50 /* VVMakeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVMakeLayout.m; sourceTree = "<group>"; };
 		C3AE6DB31C4E508AB0E4614C /* VVMakeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeLayout.h; sourceTree = "<group>"; };
 		C3AE6DCA10ACEB0BC2322F2E /* VVLayoutUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVLayoutUtils.m; sourceTree = "<group>"; };
+		C3AE6E9011E438D6AC1B1D64 /* ShopCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				B99CCCBF22F94FE2000D517F /* LaunchScreen.storyboard */,
 				B99CCCC222F94FE2000D517F /* Info.plist */,
 				B99CCCC322F94FE2000D517F /* main.m */,
+				C3AE6E9011E438D6AC1B1D64 /* ShopCartView.m */,
+				C3AE66BF4266717D7E014AEA /* ShopCartView.h */,
 			);
 			path = VVLayout;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				C3AE64F6B800CA47647910B9 /* VVMakeLayoutInfo.m in Sources */,
 				C3AE65F2F60F38E061390F1D /* UIView+VVExtend.m in Sources */,
 				C3AE6B8DAA275AD574848CDF /* VVLayoutUtils.m in Sources */,
+				C3AE6F40667D41F428B89F21 /* ShopCartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, VVMakeLayoutType) {
-    VVMakeLayoutTypeNone = 0,
     VVMakeLayoutTypeLeft,
     VVMakeLayoutTypeRight,
     VVMakeLayoutTypeTop,

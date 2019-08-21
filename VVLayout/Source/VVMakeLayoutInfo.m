@@ -16,8 +16,8 @@
     self = [super init];
     if (self) {
         self.makeLayoutType = makeLayoutType;
+        self.viewLayoutType = makeLayoutType;
         self.multiplied = 1.0f;
-        self.viewLayoutType = VVMakeLayoutTypeNone;
         self.equalType = VVEqualNone;
         self.isNum = NO;
     }
@@ -60,14 +60,6 @@
     } else {
         NSAssert(NO, @"attempting to set layout constant with unsupported value: %@", value);
     }
-}
-
-- (VVMakeLayoutType)viewLayoutType {
-    if (_viewLayoutType == VVMakeLayoutTypeNone) {
-        return _makeLayoutType;
-    }
-
-    return _viewLayoutType;
 }
 
 @end
