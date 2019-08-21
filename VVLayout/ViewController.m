@@ -151,13 +151,17 @@
         make.edges.equalTo(_view).insets(UIEdgeInsetsMake(150, 80, 200, 100));
     }];
     */
+
+    [self.shopCartView makeLayout:^(VVMakeLayout *make) {
+        make.center.equalTo(self.view);
+        make.width.equalTo(self.view);
+        make.height.vv_equalTo(132.0f);
+    }];
 }
 
 - (ShopCartView *)shopCartView {
     if (!_shopCartView) {
-        CGRect bounds = self.view.bounds;
-        _shopCartView = [[ShopCartView alloc] initWithFrame:CGRectMake(0, 0, bounds.size.width, 132.0f)];
-        _shopCartView.center = self.view.center;
+        _shopCartView = [ShopCartView new];
     }
     return _shopCartView;
 }

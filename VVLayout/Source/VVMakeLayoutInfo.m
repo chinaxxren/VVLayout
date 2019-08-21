@@ -35,7 +35,10 @@
     if ([attribute isKindOfClass:UIView.class]) {
         self.relateView = (UIView *) attribute;
         self.isNum = NO;
-        self.viewLayoutType = self.relateView.viewLayoutType;
+        
+        if(self.relateView.viewLayoutType != VVMakeLayoutTypeNone) {
+            self.viewLayoutType = self.relateView.viewLayoutType;
+        }
     } else {
         [self setAttribute:attribute];
         self.isNum = YES;
