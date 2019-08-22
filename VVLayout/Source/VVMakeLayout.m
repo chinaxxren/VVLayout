@@ -19,8 +19,8 @@
 
 @property(nonatomic, strong) VVMakeLayoutInfo *makeLayoutInfo;
 
-@property(nonatomic, getter=isTopFrameInstalled) BOOL topFrameInstalled;
-@property(nonatomic, getter=isLeftFrameInstalled) BOOL leftFrameInstalled;
+@property(nonatomic, getter=isTopMaked) BOOL topMaked;
+@property(nonatomic, getter=isLeftMaked) BOOL leftMaked;
 @property(nonatomic) CGRect newFrame;
 
 @property(nonatomic, nonnull) NSMutableArray <VVMakeLayoutInfo *> *makeLayoutInfos;
@@ -344,7 +344,7 @@
         CGRect frame = self.newFrame;
         frame.origin.x = x;
         self.newFrame = frame;
-        self.leftFrameInstalled = YES;
+        self.leftMaked = YES;
     };
 
     [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
@@ -367,7 +367,7 @@
         CGRect frame = self.newFrame;
         frame.origin.y = y;
         self.newFrame = frame;
-        self.topFrameInstalled = YES;
+        self.topMaked = YES;
     };
 
     [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
@@ -386,7 +386,7 @@
     dispatch_block_t block_t = ^{
         VVStrongify(self);
         CGRect frame = self.newFrame;
-        if (!self.isTopFrameInstalled) {
+        if (!self.topMaked) {
             CGFloat y = [self bottomYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
             frame.origin.y = y;
         } else {
@@ -416,7 +416,7 @@
     dispatch_block_t block_t = ^{
         VVStrongify(self);
         CGRect frame = self.newFrame;
-        if (!self.isLeftFrameInstalled) {
+        if (!self.leftMaked) {
             CGFloat x = [self rightXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
             frame.origin.x = x;
         } else {
