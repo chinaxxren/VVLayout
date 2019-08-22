@@ -4,9 +4,6 @@
     <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/xcuserdata/jiangmingz.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/xcuserdata/jiangmingz.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/ShopCartView.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/ShopCartView.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
+            <state relative-caret-position="184">
+              <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
               <folding>
                 <element signature="e#90#114#0" expanded="true" />
                 <element signature="e#938#1034#0" expanded="true" />
@@ -65,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="67" selection-start-line="67" selection-end-line="67" selection-end-column="32" />
+            <state relative-caret-position="607">
+              <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
               <folding>
                 <element signature="e#90#113#0" expanded="true" />
                 <element signature="e#506#794#0" expanded="true" />
@@ -323,7 +320,7 @@
       <workItem from="1566233935421" duration="4622000" />
       <workItem from="1566272534712" duration="758000" />
       <workItem from="1566353837176" duration="6976000" />
-      <workItem from="1566440356387" duration="869000" />
+      <workItem from="1566440356387" duration="1126000" />
     </task>
     <task id="LOCAL-00001" summary="增加检测">
       <created>1565751606814</created>
@@ -472,11 +469,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566367851542</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="优化方法">
+      <created>1566441363370</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1566441363370</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69096000" />
+    <option name="totallyTimeSpent" value="69353000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -553,7 +557,8 @@
     <MESSAGE value="优化代码" />
     <MESSAGE value="0.0.8" />
     <MESSAGE value="0.0.9 修复默认值view layout bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.0.9 修复默认值view layout bug" />
+    <MESSAGE value="优化方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化方法" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/VVFrame/Source/VVFramer.h" />
@@ -744,8 +749,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="67" selection-start-line="67" selection-end-line="67" selection-end-column="32" />
+        <state relative-caret-position="607">
+          <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
           <folding>
             <element signature="e#90#113#0" expanded="true" />
             <element signature="e#506#794#0" expanded="true" />
@@ -755,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="230" lean-forward="true" selection-start-line="230" selection-end-line="230" />
+        <state relative-caret-position="184">
+          <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
           <folding>
             <element signature="e#90#114#0" expanded="true" />
             <element signature="e#938#1034#0" expanded="true" />

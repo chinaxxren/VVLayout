@@ -10,6 +10,11 @@
 #import "UIView+VVLayout.h"
 #import "UIView+VVExtend.h"
 
+#define EmptyMethodExcetion() \
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException \
+                                   reason:[NSString stringWithFormat:@"This is a empty %@ method.", NSStringFromSelector(_cmd)] \
+                                 userInfo:nil]
+
 @interface VVMakeLayout ()
 
 @property(nonatomic, strong) VVMakeLayoutInfo *makeLayoutInfo;
@@ -768,9 +773,7 @@
 @implementation VVMakeLayout (AutoboxingSupport)
 
 - (VVMakeLayout *(^)(id))vv_equalTo {
-    return ^(id attribute) {
-        return self;
-    };
+    EmptyMethodExcetion();
 }
 
 @end
