@@ -67,8 +67,6 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *(^)(id))equalTo;
 
-- (VVMakeLayout *(^)(id))vv_equalTo;
-
 //- (VVMakeLayout *(^)(id))greaterThanOrEqualTo;
 //
 //- (VVMakeLayout *(^)(id))lessThanOrEqualTo;
@@ -87,8 +85,14 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *(^)(CGSize size))sizeThatFits;
 
-- (VVMakeLayout *(^)(CGFloat))autoHeight;
+- (VVMakeLayout *(^)(CGFloat))heightThatFits;
 
-- (VVMakeLayout *(^)(CGFloat))autoWidth;
+- (VVMakeLayout *(^)(CGFloat))widthThatFits;
+
+@end
+
+@interface VVMakeLayout (AutoboxingSupport)
+
+- (VVMakeLayout *(^)(id))vv_equalTo;
 
 @end

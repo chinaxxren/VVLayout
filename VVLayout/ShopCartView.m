@@ -98,7 +98,7 @@
         make.top.equalTo(self.titleLab.vv_bottom).offset(6.0f);
         make.right.offset(-12.0f);
         make.left.equalTo(self.titleLab.vv_left);
-        make.autoHeight(CGFLOAT_MAX);
+        make.heightThatFits(CGFLOAT_MAX);
     }];
 
     [self.minusBtn makeLayout:^(VVMakeLayout *make) {
@@ -207,7 +207,7 @@
     if (!_countField) {
         _countField = [UITextField new];
         _countField.backgroundColor = [UIColor cyanColor];
-        _countField.font = [UIFont systemFontOfSize:6.0f];
+        _countField.font = [UIFont systemFontOfSize:11.0f];
         _countField.textColor = [UIColor blackColor];
         _countField.textAlignment = NSTextAlignmentCenter;
         _countField.text = @"1";

@@ -18,8 +18,8 @@
 @property(nonatomic, getter=isLeftFrameInstalled) BOOL leftFrameInstalled;
 @property(nonatomic) CGRect newFrame;
 
-@property(nonatomic, nonnull) NSMutableArray <VVMakeLayoutInfo *> *makeInfos;
-@property(nonatomic, nonnull) NSMutableArray <VVMakeBlock *> *blcoks;
+@property(nonatomic, nonnull) NSMutableArray <VVMakeLayoutInfo *> *makeLayoutInfos;
+@property(nonatomic, nonnull) NSMutableArray <VVMakeBlock *> *makeBlcoks;
 @property(nonatomic, weak, nullable) UIView *view;
 
 @end
@@ -32,8 +32,8 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _makeInfos = [NSMutableArray new];
-        _blcoks = [NSMutableArray new];
+        _makeLayoutInfos = [NSMutableArray new];
+        _makeBlcoks = [NSMutableArray new];
 
 #ifdef VVOBS
         [self addObserver:self forKeyPath:@"newFrame" options:NSKeyValueObservingOptionNew context:nil];
@@ -86,7 +86,7 @@
 
 // 按照优先级进行排序
 - (void)configOrderHandlers {
-    for (VVMakeLayoutInfo *makeInfo in self.makeInfos) {
+    for (VVMakeLayoutInfo *makeInfo in self.makeLayoutInfos) {
         switch (makeInfo.makeLayoutType) {
             case VVMakeLayoutTypeTop: {
                 [self topWithMakeInfo:makeInfo];
@@ -137,7 +137,7 @@
         }
     }
 
-    [self.blcoks sortUsingComparator:^NSComparisonResult(VVMakeBlock *_Nonnull block_t1, VVMakeBlock *block_t2) {
+    [self.makeBlcoks sortUsingComparator:^NSComparisonResult(VVMakeBlock *_Nonnull block_t1, VVMakeBlock *block_t2) {
         if (block_t1.priority > block_t2.priority) {
             return NSOrderedAscending;
         }
@@ -149,7 +149,7 @@
 - (void)configFrames {
     [self configOrderHandlers];
 
-    [self.blcoks enumerateObjectsUsingBlock:^(VVMakeBlock *_Nonnull block_t, NSUInteger idx, BOOL *_Nonnull stop) {
+    [self.makeBlcoks enumerateObjectsUsingBlock:^(VVMakeBlock *_Nonnull block_t, NSUInteger idx, BOOL *_Nonnull stop) {
         block_t.make_block_t();
     }];
 
@@ -158,78 +158,71 @@
 
 - (VVMakeLayout *)left {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeLeft];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)right {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeRight];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)top {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeTop];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)bottom {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeBottom];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)centerX {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeCenterX];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)centerY {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeCenterY];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)center {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeCenter];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)width {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeWidth];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)height {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeHeight];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)size {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeSize];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *)edges {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeEdges];
-    [self.makeInfos addObject:self.makeLayoutInfo];
+    [self.makeLayoutInfos addObject:self.makeLayoutInfo];
     return self;
 }
 
 - (VVMakeLayout *(^)(id))equalTo {
-    return ^(id attribute) {
-        [self.makeLayoutInfo changeAttribute:attribute equalType:VVEqualTo];
-        return self;
-    };
-}
-
-- (VVMakeLayout *(^)(id))vv_equalTo {
     return ^(id attribute) {
         [self.makeLayoutInfo changeAttribute:attribute equalType:VVEqualTo];
         return self;
@@ -302,7 +295,7 @@
 #pragma mark - Helpers
 
 - (VVMakeLayoutInfo *)infoForType:(VVMakeLayoutType)type {
-    for (VVMakeLayoutInfo *mi in self.makeInfos) {
+    for (VVMakeLayoutInfo *mi in self.makeLayoutInfos) {
         if (mi.makeLayoutType == type && mi.isNum) {
             return mi;
         }
@@ -349,7 +342,7 @@
         self.leftFrameInstalled = YES;
     };
 
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
 
 - (CGFloat)leftXForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
@@ -372,7 +365,7 @@
         self.topFrameInstalled = YES;
     };
 
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
 
 - (CGFloat)topYForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
@@ -397,7 +390,7 @@
         self.newFrame = frame;
     };
 
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
 }
 
 - (CGFloat)bottomHeightForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
@@ -427,7 +420,7 @@
         self.newFrame = frame;
     };
 
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
 }
 
 - (CGFloat)rightWidthForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
@@ -461,7 +454,7 @@
         self.newFrame = frame;
     };
 
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
 }
 
 - (void)centerXWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
@@ -473,7 +466,7 @@
         frame.origin.x = [self centerXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
         self.newFrame = frame;
     };
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
 }
 
 - (CGFloat)centerXForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
@@ -493,7 +486,7 @@
         self.newFrame = frame;
     };
 
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
 }
 
 - (CGFloat)centerYForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
@@ -562,7 +555,7 @@
         };
     }
 
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
 
 - (void)heightWithMakeInfo:(VVMakeLayoutInfo *)makeInfo {
@@ -623,7 +616,7 @@
         };
     }
 
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
 
 // 得到当前view的宽或者高
@@ -645,7 +638,7 @@
     };
 
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:type];
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
 }
 
 // 改变Frame的值
@@ -673,7 +666,7 @@
         frame.size = size;
         self.newFrame = frame;
     };
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityHigh]];
     return self;
 }
 
@@ -691,7 +684,7 @@
         CGRect frame = CGRectMake(insets.left, insets.top, width, height);
         self.newFrame = frame;
     };
-    [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
+    [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
     return self;
 }
 
@@ -740,7 +733,7 @@
     };
 }
 
-- (VVMakeLayout *(^)(CGFloat))autoHeight {
+- (VVMakeLayout *(^)(CGFloat))heightThatFits {
     return ^id(CGFloat maxHeight) {
         VVWeakify(self);
         dispatch_block_t block_t = ^{
@@ -750,12 +743,12 @@
             frame.size.height = fitSize.height;
             self.newFrame = frame;
         };
-        [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+        [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
         return self;
     };
 }
 
-- (VVMakeLayout *(^)(CGFloat))autoWidth {
+- (VVMakeLayout *(^)(CGFloat))widthThatFits {
     return ^id(CGFloat maxWidth) {
         VVWeakify(self);
         dispatch_block_t block_t = ^{
@@ -765,10 +758,19 @@
             frame.size.width = fitSize.width;
             self.newFrame = frame;
         };
-        [self.blcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+        [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
         return self;
     };
 }
 
+@end
+
+@implementation VVMakeLayout (AutoboxingSupport)
+
+- (VVMakeLayout *(^)(id))vv_equalTo {
+    return ^(id attribute) {
+        return self;
+    };
+}
 
 @end
