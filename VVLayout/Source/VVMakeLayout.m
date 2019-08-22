@@ -15,6 +15,12 @@
                                    reason:[NSString stringWithFormat:@"This is a empty %@ method.", NSStringFromSelector(_cmd)] \
                                  userInfo:nil]
 
+#if DEBUG && OPENLOG
+# define VVLog(fmt,...) NSLog((@"[file:%s]\n" "[method:%s]\n" "[line:%d] \n" fmt), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+# define VVLog(...);
+#endif
+
 @interface VVMakeLayout ()
 
 @property(nonatomic, strong) VVMakeLayoutInfo *makeLayoutInfo;
@@ -52,7 +58,7 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey, id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"newFrame"]) {
         VVLayout *vvf = (VVLayout *) object;
-        NSLog(@"%@", NSStringFromCGRect(vvf.newFrame));
+        VVLog(@"%@", NSStringFromCGRect(vvf.newFrame));
     }
 }
 #endif
@@ -81,12 +87,12 @@
 
 // 将记录当前 View的frame的值
 - (void)startConfig {
-    self.newFrame = self.view.frame;
+    self.newFrame = self.view.frame;VVLog(@"start %@ %@", self.view, NSStringFromCGRect(self.newFrame));
 }
 
 // 将新的frame赋值给当前 View
 - (void)endConfig {
-    self.view.frame = self.newFrame;
+    self.view.frame = self.newFrame;VVLog(@"end %@ %@", self.view, NSStringFromCGRect(self.newFrame));
 }
 
 // 按照优先级进行排序
