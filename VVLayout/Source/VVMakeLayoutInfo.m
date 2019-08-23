@@ -4,7 +4,9 @@
 //
 
 #import "VVMakeLayoutInfo.h"
+
 #import "UIView+VVExtend.h"
+#import "VVLayoutAppearance.h"
 
 @interface VVMakeLayoutInfo ()
 
@@ -47,20 +49,21 @@
 }
 
 - (void)setAttribute:(NSValue *)value {
+    CGFloat scale = [VVLayoutAppearance scale];
     if ([value isKindOfClass:NSNumber.class]) {
-        self.value = [(NSNumber *) value floatValue];
+        self.value = [(NSNumber *) value floatValue] * scale;
     } else if (strcmp(value.objCType, @encode(CGPoint)) == 0) {
         CGPoint point;
         [value getValue:&point];
-        self.point = point;
+        self.point = CGPointMake(point.x * scale, point.y * scale);
     } else if (strcmp(value.objCType, @encode(CGSize)) == 0) {
         CGSize size;
         [value getValue:&size];
-        self.size = size;
+        self.size = CGSizeMake(size.width * scale, size.height * scale);
     } else if (strcmp(value.objCType, @encode(VVEdgeInsets)) == 0) {
         VVEdgeInsets insets;
         [value getValue:&insets];
-        self.insets = insets;
+        self.insets = UIEdgeInsetsMake(insets.top * scale, insets.left * scale, insets.bottom * scale, insets.right * scale);
     } else {
         NSAssert(NO, @"attempting to set layout constant with unsupported value: %@", value);
     }

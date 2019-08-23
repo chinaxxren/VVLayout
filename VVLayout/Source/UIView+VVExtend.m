@@ -58,7 +58,7 @@
 #pragma mark - Runtime
 
 - (void)setViewLayoutType:(VVMakeLayoutType)viewLayoutType {
-    objc_setAssociatedObject(self, @selector(viewLayoutType), @(viewLayoutType), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, @selector(viewLayoutType), @(viewLayoutType), OBJC_ASSOCIATION_ASSIGN);
 }
 
 - (VVMakeLayoutType)viewLayoutType {

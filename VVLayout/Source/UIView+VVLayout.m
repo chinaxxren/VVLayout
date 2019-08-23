@@ -26,4 +26,12 @@
     return (vv_state) ?: @0;
 }
 
+- (void)setScale:(CGFloat)scale {
+    objc_setAssociatedObject(self, @selector(scale), @(scale), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (CGFloat)scale {
+    return [objc_getAssociatedObject(self, @selector(scale)) floatValue];
+}
+
 @end

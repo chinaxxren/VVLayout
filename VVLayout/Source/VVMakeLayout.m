@@ -9,6 +9,7 @@
 #import "VVMakeBlock.h"
 #import "UIView+VVLayout.h"
 #import "UIView+VVExtend.h"
+#import "VVLayoutAppearance.h"
 
 #define EmptyMethodExcetion() \
     @throw [NSException exceptionWithName:NSInternalInconsistencyException \
@@ -87,12 +88,14 @@
 
 // 将记录当前 View的frame的值
 - (void)startConfig {
-    self.newFrame = self.view.frame;VVLog(@"start %@ %@", self.view, NSStringFromCGRect(self.newFrame));
+    VVLog(@"start %@ %@", self.view, NSStringFromCGRect(self.view.frame));
+    self.newFrame = self.view.frame;
 }
 
 // 将新的frame赋值给当前 View
 - (void)endConfig {
-    self.view.frame = self.newFrame;VVLog(@"end %@ %@", self.view, NSStringFromCGRect(self.newFrame));
+    VVLog(@"end %@ %@", self.view, NSStringFromCGRect(self.newFrame));
+    self.view.frame = self.newFrame;
 }
 
 // 按照优先级进行排序
@@ -264,28 +267,31 @@
 
 - (VVMakeLayout *(^)(CGFloat))offset {
     return ^id(CGFloat value) {
-        self.makeLayoutInfo.value = value;
+        self.makeLayoutInfo.value = value * [VVLayoutAppearance scale];
         return self;
     };
 }
 
 - (VVMakeLayout *(^)(CGSize))sizeOffset {
     return ^id(CGSize size) {
-        self.makeLayoutInfo.size = size;
+        CGFloat scale = [VVLayoutAppearance scale];
+        self.makeLayoutInfo.size = CGSizeMake(size.width * scale, size.height * scale);
         return self;
     };
 }
 
 - (VVMakeLayout *(^)(CGPoint))centerOffset {
     return ^id(CGPoint point) {
-        self.makeLayoutInfo.point = point;
+        CGFloat scale = [VVLayoutAppearance scale];
+        self.makeLayoutInfo.point = CGPointMake(point.x * scale, point.y * scale);
         return self;
     };
 }
 
 - (VVMakeLayout *(^)(VVEdgeInsets))insets {
     return ^id(VVEdgeInsets insets) {
-        self.makeLayoutInfo.insets = insets;
+        CGFloat scale = [VVLayoutAppearance scale];
+        self.makeLayoutInfo.insets = UIEdgeInsetsMake(insets.top * scale, insets.left * scale, insets.bottom * scale, insets.right * scale);
         return self;
     };
 }
@@ -743,9 +749,10 @@
 
 - (VVMakeLayout *(^)(CGSize size))sizeThatFits {
     return ^id(CGSize size) {
+        CGFloat scale = [VVLayoutAppearance scale];
         CGSize fitSize = [self.view sizeThatFits:size];
-        CGFloat width = MIN(size.width, fitSize.width);
-        CGFloat height = MIN(size.height, fitSize.height);
+        CGFloat width = MIN(size.width * scale, fitSize.width);
+        CGFloat height = MIN(size.height * scale, fitSize.height);
         [self setHighPriorityValue:width withType:VVMakeLayoutTypeWidth];
         [self setHighPriorityValue:height withType:VVMakeLayoutTypeHeight];
         return self;
@@ -757,7 +764,7 @@
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), maxHeight)];
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), maxHeight * [VVLayoutAppearance scale])];
             CGRect frame = self.newFrame;
             frame.size.height = fitSize.height;
             self.newFrame = frame;
@@ -772,7 +779,7 @@
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(maxWidth, CGRectGetHeight(self.newFrame))];
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(maxWidth * [VVLayoutAppearance scale], CGRectGetHeight(self.newFrame))];
             CGRect frame = self.newFrame;
             frame.size.width = fitSize.width;
             self.newFrame = frame;

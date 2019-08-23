@@ -10,6 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
     Apply new configuration state without frame updating.
  */
 @property(nonatomic) NSNumber *vv_state;
+@property(nonatomic, assign) CGFloat scale;
 
 - (void)makeLayout:(MakeLayout)makeLayout;
 
