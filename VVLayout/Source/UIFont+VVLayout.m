@@ -28,7 +28,7 @@
 }
 
 + (UIFont *)_systemFontOfSize_:(CGFloat)fontSize {
-    if ([VVLayoutAppearance openScaleFont]) {
+    if ([VVLayoutAppearance hasGlobalFontScale]) {
         return [UIFont _systemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
     }
 
@@ -36,14 +36,14 @@
 }
 
 + (UIFont *)_boldSystemFontOfSize_:(CGFloat)fontSize {
-    if ([VVLayoutAppearance openScaleFont]) {
+    if ([VVLayoutAppearance hasGlobalFontScale]) {
         return [UIFont _boldSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
     }
     return [UIFont _boldSystemFontOfSize_:fontSize];
 }
 
 + (UIFont *)_italicSystemFontOfSize_:(CGFloat)fontSize {
-    if ([VVLayoutAppearance openScaleFont]) {
+    if ([VVLayoutAppearance hasGlobalFontScale]) {
         return [UIFont _italicSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
     }
 

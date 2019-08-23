@@ -107,11 +107,18 @@
     }];
 */
 
-    [VVLayoutAppearance setOpenScale:YES];
-
+    self.label.font = [UIFont systemFontOfSize:14.0f];
+    NSLog(@"before fontSize-->%f",self.label.font.pointSize);
+    
+    [VVLayoutAppearance setGlobalViewScale:YES];
+    [VVLayoutAppearance setGlobalScaleFont:YES];
+    
+    self.label.font = [UIFont systemFontOfSize:14.0f];
+    NSLog(@"after fontSize-->%f",self.label.font.pointSize);
+    
     self.label.text = @"分块下载还有一个比较使用的场景是断点续传，可以将文件分为若干个块，然后维护一个下载状态文件用以记录每一个块的状态，这样即使在网络中断后，也可以恢复中断前的状态，具体实现读者可以自己尝试一下，还是有一些细节需要特别注意的，比如分块大小多少合适？下载到一半的块如何处理？要不要维护一个任务队列";
     [self.view addSubview:self.label];
-
+    
     [self.label makeLayout:^(VVMakeLayout *make) {
         make.centerX.equalTo(self.view);
         make.centerY.equalTo(self.view);
@@ -225,7 +232,7 @@
 - (UILabel *)label {
     if (!_label) {
         _label = [UILabel new];
-        _label.font = [UIFont vv_systemFontOfSize:14.0f];
+        _label.font = [UIFont systemFontOfSize:14.0f];
         _label.backgroundColor = [UIColor greenColor];
         _label.textColor = [UIColor whiteColor];
         _label.numberOfLines = 0;

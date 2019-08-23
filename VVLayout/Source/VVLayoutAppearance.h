@@ -7,16 +7,30 @@
 
 @interface VVLayoutAppearance : NSObject
 
-+ (BOOL)openScaleFont;
++ (CGFloat)width;
 
-+ (void)setScaleFont:(BOOL)scaleFont;
++ (CGFloat)height;
 
-+ (void)setOpenScale:(BOOL)open;
++ (CGFloat)xMinWidth;
 
-+ (BOOL)openGlobalScale;
++ (CGFloat)xMaxHeight;
 
+// 是否全局的字体屏幕适配
++ (BOOL)hasGlobalFontScale;
+
+// 设置全局的字体屏幕适配是否开启
++ (void)setGlobalScaleFont:(BOOL)scaleFont;
+
+// 是否全局的View屏幕适配
++ (BOOL)hasGlobalViewScale;
+
+// 设置全局的View屏幕适配是否开启
++ (void)setGlobalViewScale:(BOOL)open;
+
+// 设置全局的屏幕适配的比例
 + (void)setGlobalScale:(CGFloat)value;
 
+// 返回屏幕适配的比例
 + (CGFloat)globalScale;
 
 @end

@@ -11,6 +11,8 @@
 #import "UIView+VVExtend.h"
 #import "VVLayoutAppearance.h"
 
+#define MAX_LAYOUT_VALUE 10000.f
+
 #define EmptyMethodExcetion() \
     @throw [NSException exceptionWithName:NSInternalInconsistencyException \
                                    reason:[NSString stringWithFormat:@"This is a empty %@ method.", NSStringFromSelector(_cmd)] \
@@ -751,8 +753,8 @@
     return ^id(CGSize size) {
         CGFloat scale = [VVLayoutAppearance globalScale];
         CGSize fitSize = [self.view sizeThatFits:size];
-        CGFloat width = size.width >= CGFLOAT_MAX ? CGFLOAT_MAX : size.width * scale;
-        CGFloat height = size.height >= CGFLOAT_MAX ? CGFLOAT_MAX : size.height * scale;
+        CGFloat width = size.width > MAX_LAYOUT_VALUE ? MAX_LAYOUT_VALUE : size.width * scale;
+        CGFloat height = size.height > MAX_LAYOUT_VALUE ? MAX_LAYOUT_VALUE : size.height * scale;
         width = MIN(width, fitSize.width);
         height = MIN(height, fitSize.height);
         [self setHighPriorityValue:width withType:VVMakeLayoutTypeWidth];
@@ -766,7 +768,7 @@
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGFloat height = maxHeight >= CGFLOAT_MAX ? CGFLOAT_MAX : maxHeight * [VVLayoutAppearance globalScale];
+            CGFloat height = maxHeight > MAX_LAYOUT_VALUE ? MAX_LAYOUT_VALUE : maxHeight * [VVLayoutAppearance globalScale];
             CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), height)];
             CGRect frame = self.newFrame;
             frame.size.height = fitSize.height;
@@ -782,7 +784,7 @@
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGFloat height = maxWidth >= CGFLOAT_MAX ? CGFLOAT_MAX : maxWidth * [VVLayoutAppearance globalScale];
+            CGFloat height = maxWidth > MAX_LAYOUT_VALUE ? MAX_LAYOUT_VALUE : maxWidth * [VVLayoutAppearance globalScale];
             CGSize fitSize = [self.view sizeThatFits:CGSizeMake(height, CGRectGetHeight(self.newFrame))];
             CGRect frame = self.newFrame;
             frame.size.width = fitSize.width;

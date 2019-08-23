@@ -6,8 +6,8 @@
 #import "VVLayoutAppearance.h"
 
 static CGFloat vv_global_scale;
-static BOOL vv_open_scale;
-static BOOL vv_scale_font;
+static BOOL vv_open_view_scale;
+static BOOL vv_font_scale;
 
 @implementation VVLayoutAppearance
 
@@ -19,38 +19,38 @@ static BOOL vv_scale_font;
     return [[UIScreen mainScreen] bounds].size.height;
 }
 
-+ (CGFloat)xMin {
++ (CGFloat)xMinWidth {
     return MIN([VVLayoutAppearance height], [VVLayoutAppearance width]);
 }
 
-+ (CGFloat)xMax {
++ (CGFloat)xMaxHeight {
     return MAX([VVLayoutAppearance height], [VVLayoutAppearance width]);
 }
 
-+ (BOOL)openScaleFont {
-    return vv_scale_font;
++ (BOOL)hasGlobalFontScale {
+    return vv_font_scale;
 }
 
-+ (void)setScaleFont:(BOOL)scaleFont {
-    vv_scale_font = scaleFont;
++ (void)setGlobalScaleFont:(BOOL)scaleFont {
+    vv_font_scale = scaleFont;
 }
 
-+ (BOOL)openGlobalScale {
-    return vv_open_scale;
++ (BOOL)hasGlobalViewScale {
+    return vv_open_view_scale;
 }
 
-+ (void)setOpenScale:(BOOL)open {
-    vv_open_scale = open;
++ (void)setGlobalViewScale:(BOOL)open {
+    vv_open_view_scale = open;
 }
 
 + (CGFloat)globalScale {
-    if (!vv_open_scale) {
+    if (!vv_open_view_scale) {
         return 1.0f;
     }
 
     static dispatch_once_t once_t;
     dispatch_once(&once_t, ^{
-        vv_global_scale = [VVLayoutAppearance xMin] / 375.0f;
+        vv_global_scale = [VVLayoutAppearance xMinWidth] / 375.0f;
     });
 
     return vv_global_scale;
