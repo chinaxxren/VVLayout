@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B99CCCB022F94FE1000D517F"
+               BlueprintIdentifier = "7F84571E8BF1804FFA7BFD29ED8A3011"
                BuildableName = "VVLayout.app"
                BlueprintName = "VVLayout"
                ReferencedContainer = "container:VVLayout.xcodeproj">
@@ -45,7 +45,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B99CCCB022F94FE1000D517F"
+            BlueprintIdentifier = "7F84571E8BF1804FFA7BFD29ED8A3011"
             BuildableName = "VVLayout.app"
             BlueprintName = "VVLayout"
             ReferencedContainer = "container:VVLayout.xcodeproj">
