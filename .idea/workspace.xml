@@ -6,13 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/xcuserdata/jiangmingz.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/xcuserdata/jiangmingz.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,8 +24,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+            <state relative-caret-position="374">
+              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -44,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+            <state relative-caret-position="522">
+              <caret line="232" column="33" selection-start-line="232" selection-start-column="33" selection-end-line="232" selection-end-column="33" />
               <folding>
                 <element signature="e#125#151#0" expanded="true" />
               </folding>
@@ -59,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+            <state relative-caret-position="590">
+              <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
               <folding>
                 <element signature="e#91#118#0" expanded="true" />
               </folding>
@@ -77,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="770" column="76" selection-start-line="770" selection-start-column="76" selection-end-line="770" selection-end-column="76" />
+            <state relative-caret-position="-5">
+              <caret line="761" column="20" lean-forward="true" selection-start-line="761" selection-start-column="20" selection-end-line="761" selection-end-column="20" />
               <folding>
                 <element signature="e#90#114#0" expanded="true" />
                 <element signature="e#534#666#0" expanded="true" />
@@ -121,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+            <state relative-caret-position="508">
+              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#90#113#0" expanded="true" />
                 <element signature="e#506#794#0" expanded="true" />
@@ -135,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>VVMakeLayoutTypeCenter</find>
       <find>inset</find>
       <find>priority</find>
       <find>Relation</find>
@@ -165,6 +162,7 @@
       <find>[_</find>
       <find>const struct objc_selector *</find>
       <find>scale</find>
+      <find>CGFloat_m</find>
     </findStrings>
     <replaceStrings>
       <replace>VVFramer</replace>
@@ -251,11 +249,11 @@
         <option value="$PROJECT_DIR$/VVLayout/Source/UIView+VVLayout.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayoutInfo.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.h" />
-        <option value="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.h" />
         <option value="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" />
       </list>
     </option>
   </component>
@@ -359,7 +357,7 @@
       <workItem from="1566440356387" duration="1419000" />
       <workItem from="1566446347317" duration="597000" />
       <workItem from="1566467914335" duration="4183000" />
-      <workItem from="1566494658886" duration="11251000" />
+      <workItem from="1566494658886" duration="11859000" />
     </task>
     <task id="LOCAL-00001" summary="增加检测">
       <created>1565751606814</created>
@@ -564,17 +562,24 @@
       <option name="project" value="LOCAL" />
       <updated>1566542919228</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="增加适配屏幕尺寸">
+      <created>1566544476023</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1566544476023</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87763000" />
+    <option name="totallyTimeSpent" value="88371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21184371" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21184371" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -878,17 +883,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="89" column="38" lean-forward="true" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
-          <folding>
-            <element signature="e#90#113#0" expanded="true" />
-            <element signature="e#506#794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -913,12 +907,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/stdint.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="109" column="38" selection-start-line="109" selection-start-column="38" selection-end-line="109" selection-end-column="38" />
+        <state relative-caret-position="-345">
+          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
           <folding>
-            <element signature="e#125#151#0" expanded="true" />
+            <element signature="e#90#113#0" expanded="true" />
+            <element signature="e#506#794#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -932,22 +934,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/stdint.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-345">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
+        <state relative-caret-position="374">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="54" column="1" lean-forward="true" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
+        <state relative-caret-position="590">
+          <caret line="55" column="1" lean-forward="true" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
           <folding>
             <element signature="e#91#118#0" expanded="true" />
           </folding>
@@ -956,12 +951,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="770" column="76" selection-start-line="770" selection-start-column="76" selection-end-line="770" selection-end-column="76" />
+        <state relative-caret-position="-5">
+          <caret line="761" column="20" lean-forward="true" selection-start-line="761" selection-start-column="20" selection-end-line="761" selection-end-column="20" />
           <folding>
             <element signature="e#90#114#0" expanded="true" />
             <element signature="e#534#666#0" expanded="true" />
             <element signature="e#1542#1851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="232" column="33" selection-start-line="232" selection-start-column="33" selection-end-line="232" selection-end-column="33" />
+          <folding>
+            <element signature="e#125#151#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -39,6 +39,7 @@
     if ([VVLayoutAppearance hasGlobalFontScale]) {
         return [UIFont _boldSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
     }
+    
     return [UIFont _boldSystemFontOfSize_:fontSize];
 }
 
@@ -51,15 +52,15 @@
 }
 
 + (UIFont *)vv_systemFontOfSize:(CGFloat)fontSize {
-    return [UIFont systemFontOfSize:fontSize * [VVLayoutAppearance globalScale]];
+    return [UIFont _systemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
 }
 
 + (UIFont *)vv_boldSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont boldSystemFontOfSize:fontSize * [VVLayoutAppearance globalScale]];
+    return [UIFont _boldSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
 }
 
 + (UIFont *)vv_italicSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont italicSystemFontOfSize:fontSize * [VVLayoutAppearance globalScale]];
+    return [UIFont _italicSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
 }
 
 @end
