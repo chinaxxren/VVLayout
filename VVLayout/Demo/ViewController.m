@@ -106,10 +106,10 @@
         make.sizeThatFits(CGSizeMake(100, 100)).offset(10);
     }];
 */
+/*
 
-
-//    [VVLayoutAppearance setGlobalViewScale:YES];
-//    [VVLayoutAppearance setGlobalScaleFont:YES];
+    [VVLayoutAppearance setGlobalViewScale:YES];
+    [VVLayoutAppearance setGlobalScaleFont:YES];
 
     NSLog(@"after fontSize-->%f", self.label.font.pointSize);
 
@@ -122,8 +122,7 @@
         make.width.vv_equalTo(200.0f);
         make.heightThatFits(CGFLOAT_MAX);
     }];
-
-
+*/
 /*
     [self.view addSubview:_view1];
 
@@ -230,7 +229,7 @@
 - (UILabel *)label {
     if (!_label) {
         _label = [UILabel new];
-        _label.font = [UIFont vv_systemFontOfSize:14.0f];
+        _label.font = [UIFont systemFontOfSize:14.0f];
         _label.backgroundColor = [UIColor greenColor];
         _label.textColor = [UIColor whiteColor];
         _label.numberOfLines = 0;

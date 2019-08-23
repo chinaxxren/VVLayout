@@ -6,11 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/xcuserdata/jiangmingz.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/xcuserdata/jiangmingz.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="522">
-              <caret line="232" column="33" selection-start-line="232" selection-start-column="33" selection-end-line="232" selection-end-column="33" />
+              <caret line="231" column="30" lean-forward="true" selection-start-line="231" selection-start-column="30" selection-end-line="231" selection-end-column="30" />
               <folding>
                 <element signature="e#125#151#0" expanded="true" />
               </folding>
@@ -290,12 +286,6 @@
               <item name="VVLayout" type="fcab9f18:XcodeViewNode" />
               <item name="Demo" type="fcab9f18:XcodeViewNode" />
             </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="VVLayout" type="1d218c8b:XcodeProjectNode" />
-              <item name="VVLayout" type="fcab9f18:XcodeViewNode" />
-              <item name="Source" type="fcab9f18:XcodeViewNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -357,7 +347,7 @@
       <workItem from="1566440356387" duration="1419000" />
       <workItem from="1566446347317" duration="597000" />
       <workItem from="1566467914335" duration="4183000" />
-      <workItem from="1566494658886" duration="11859000" />
+      <workItem from="1566494658886" duration="12017000" />
     </task>
     <task id="LOCAL-00001" summary="增加检测">
       <created>1565751606814</created>
@@ -569,11 +559,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566544476023</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="增加适配屏幕尺寸">
+      <created>1566545062332</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1566545062332</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88371000" />
+    <option name="totallyTimeSpent" value="88529000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
@@ -964,7 +961,7 @@
     <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
-          <caret line="232" column="33" selection-start-line="232" selection-start-column="33" selection-end-line="232" selection-end-column="33" />
+          <caret line="231" column="30" lean-forward="true" selection-start-line="231" selection-start-column="30" selection-end-line="231" selection-end-column="30" />
           <folding>
             <element signature="e#125#151#0" expanded="true" />
           </folding>
