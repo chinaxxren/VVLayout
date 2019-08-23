@@ -751,8 +751,10 @@
     return ^id(CGSize size) {
         CGFloat scale = [VVLayoutAppearance scale];
         CGSize fitSize = [self.view sizeThatFits:size];
-        CGFloat width = MIN(size.width * scale, fitSize.width);
-        CGFloat height = MIN(size.height * scale, fitSize.height);
+        CGFloat width = size.width >= CGFLOAT_MAX ? CGFLOAT_MAX : size.width * scale;
+        CGFloat height = size.height >= CGFLOAT_MAX ? CGFLOAT_MAX : size.height * scale;
+        width = MIN(width, fitSize.width);
+        height = MIN(height, fitSize.height);
         [self setHighPriorityValue:width withType:VVMakeLayoutTypeWidth];
         [self setHighPriorityValue:height withType:VVMakeLayoutTypeHeight];
         return self;
@@ -764,7 +766,8 @@
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), maxHeight * [VVLayoutAppearance scale])];
+            CGFloat height = maxHeight >= CGFLOAT_MAX ? CGFLOAT_MAX : maxHeight * [VVLayoutAppearance scale];
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), height)];
             CGRect frame = self.newFrame;
             frame.size.height = fitSize.height;
             self.newFrame = frame;
@@ -779,7 +782,8 @@
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(maxWidth * [VVLayoutAppearance scale], CGRectGetHeight(self.newFrame))];
+            CGFloat height = maxWidth >= CGFLOAT_MAX ? CGFLOAT_MAX : maxWidth * [VVLayoutAppearance scale];
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(height, CGRectGetHeight(self.newFrame))];
             CGRect frame = self.newFrame;
             frame.size.width = fitSize.width;
             self.newFrame = frame;

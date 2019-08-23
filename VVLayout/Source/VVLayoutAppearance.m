@@ -50,3 +50,5 @@ static BOOL vv_open_scale;
 
     return vv_scale;
 }
+
+@end
