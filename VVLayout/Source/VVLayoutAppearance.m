@@ -27,10 +27,6 @@ static BOOL vv_scale_font;
     return MAX([VVLayoutAppearance height], [VVLayoutAppearance width]);
 }
 
-+ (void)setOpenScale:(BOOL)open {
-    vv_open_scale = open;
-}
-
 + (BOOL)openScaleFont {
     return vv_scale_font;
 }
@@ -43,8 +39,8 @@ static BOOL vv_scale_font;
     return vv_open_scale;
 }
 
-+ (void)setGlobalScale:(CGFloat)value {
-    vv_global_scale = value;
++ (void)setOpenScale:(BOOL)open {
+    vv_open_scale = open;
 }
 
 + (CGFloat)globalScale {
@@ -58,6 +54,10 @@ static BOOL vv_scale_font;
     });
 
     return vv_global_scale;
+}
+
++ (void)setGlobalScale:(CGFloat)value {
+    vv_global_scale = value;
 }
 
 @end
