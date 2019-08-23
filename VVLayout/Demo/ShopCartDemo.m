@@ -3,11 +3,11 @@
 // Copyright (c) 2019 Tank. All rights reserved.
 //
 
-#import "ShopCartView.h"
+#import "ShopCartDemo.h"
 
 #import "VVLayout.h"
 
-@interface ShopCartView ()
+@interface ShopCartDemo ()
 
 @property(nonatomic, strong) UIView *groundView;
 @property(nonatomic, strong) UIButton *checkBtn;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation ShopCartView
+@implementation ShopCartDemo
 
 - (id)init {
     self = [super init];

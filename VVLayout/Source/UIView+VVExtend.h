@@ -9,7 +9,7 @@
 
 @interface UIView (VVExtend)
 
-@property(nonatomic, readonly) VVMakeLayoutType viewLayoutType;
+@property(nonatomic, assign) VVMakeLayoutType viewLayoutType;
 
 @property(nonatomic, readonly) UIView *vv_width;
 @property(nonatomic, readonly) UIView *vv_height;

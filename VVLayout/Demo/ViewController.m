@@ -9,7 +9,8 @@
 #import "ViewController.h"
 
 #import "VVLayout.h"
-#import "ShopCartView.h"
+#import "ShopCartDemo.h"
+#import "ArrayDemo.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,8 @@
 @property(nonatomic, strong) UIView *view2;
 @property(nonatomic, strong) UILabel *label;
 
-@property(nonatomic, strong) ShopCartView *shopCartView;
+@property(nonatomic, strong) ShopCartDemo *shopCartDemo;
+@property(nonatomic, strong) ArrayDemo *arrayDemo;
 
 @end
 
@@ -26,13 +28,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self testShopCart];
+    [self testArray];
+}
+
+- (void)testArray {
+    self.view.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:self.arrayDemo];
+    [self.arrayDemo makeLayout:^(VVMakeLayout *make) {
+        make.edges.equalTo(self.view);
+    }];
+
+//    [self.arrayDemo horizontalFixSpace];
+//    [self.arrayDemo verticalFixSpace];
+//    [self.arrayDemo horizontalFixItemWidth];
+    [self.arrayDemo verticalFixItemWidth];
 }
 
 - (void)testShopCart {
     self.view.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:self.shopCartView];
-    [self.shopCartView configure];
+    [self.view addSubview:self.shopCartDemo];
+    [self.shopCartDemo configure];
+
+    [self.shopCartDemo makeLayout:^(VVMakeLayout *make) {
+        make.center.equalTo(self.view);
+        make.width.equalTo(self.view);
+        make.height.vv_equalTo(132.0f);
+    }];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -152,18 +173,31 @@
     }];
     */
 
-    [self.shopCartView makeLayout:^(VVMakeLayout *make) {
-        make.center.equalTo(self.view);
-        make.width.equalTo(self.view);
-        make.height.vv_equalTo(132.0f);
+    /*
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.top.equalTo(self.view.vv_top).offset(200.0f);
+        make.centerX.equalTo(self.view);
+        make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
+     */
 }
 
-- (ShopCartView *)shopCartView {
-    if (!_shopCartView) {
-        _shopCartView = [ShopCartView new];
+- (ShopCartDemo *)shopCartDemo {
+    if (!_shopCartDemo) {
+        _shopCartDemo = [ShopCartDemo new];
+        _shopCartDemo.backgroundColor = [UIColor brownColor];
     }
-    return _shopCartView;
+    return _shopCartDemo;
+}
+
+- (ArrayDemo *)arrayDemo {
+    if (!_arrayDemo) {
+        _arrayDemo = [ArrayDemo new];
+        _arrayDemo.backgroundColor = [UIColor brownColor];
+    }
+    return _arrayDemo;
 }
 
 - (UIView *)view1 {

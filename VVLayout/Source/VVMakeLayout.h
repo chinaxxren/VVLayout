@@ -33,6 +33,10 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 
 + (void)configView:(UIView *)view forState:(NSNumber *)state makeLayout:(MakeLayout)makeLayout;
 
+- (VVMakeLayout *)and;
+
+- (VVMakeLayout *)with;
+
 - (VVMakeLayout *)left;
 
 - (VVMakeLayout *)right;

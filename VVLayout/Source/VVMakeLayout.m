@@ -167,6 +167,14 @@
     [self endConfig];
 }
 
+- (VVMakeLayout *)and {
+    return self;
+}
+
+- (VVMakeLayout *)with {
+    return self;
+}
+
 - (VVMakeLayout *)left {
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:VVMakeLayoutTypeLeft];
     [self.makeLayoutInfos addObject:self.makeLayoutInfo];

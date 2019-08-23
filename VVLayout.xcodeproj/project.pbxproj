@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B99CCCB622F94FE1000D517F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CCCB522F94FE1000D517F /* AppDelegate.m */; };
-		B99CCCB922F94FE1000D517F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CCCB822F94FE1000D517F /* ViewController.m */; };
 		B99CCCBC22F94FE1000D517F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99CCCBA22F94FE1000D517F /* Main.storyboard */; };
 		B99CCCBE22F94FE2000D517F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B99CCCBD22F94FE2000D517F /* Assets.xcassets */; };
 		B99CCCC122F94FE2000D517F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B99CCCBF22F94FE2000D517F /* LaunchScreen.storyboard */; };
@@ -17,11 +16,15 @@
 		B99CCCD922F94FE2000D517F /* VVFrameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CCCD822F94FE2000D517F /* VVFrameUITests.m */; };
 		B99CCCF422F95029000D517F /* UIView+VVLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CCCE922F95029000D517F /* UIView+VVLayout.m */; };
 		B99CCCF522F95029000D517F /* VVMakeBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = B99CCCEA22F95029000D517F /* VVMakeBlock.m */; };
+		C3AE606F391E99552363AD99 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6947A87F48285B658F41 /* UIView+Addition.m */; };
+		C3AE62BE3FDD29F28F23EAA2 /* ArrayDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6A99A22D65C70661E604 /* ArrayDemo.m */; };
 		C3AE64F6B800CA47647910B9 /* VVMakeLayoutInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE687859D351CCCA6A4931 /* VVMakeLayoutInfo.m */; };
 		C3AE650B24CA28807A02255F /* VVMakeLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6AF75B159CF407382C50 /* VVMakeLayout.m */; };
+		C3AE657270ED15A99499CC7D /* NSArray+VVAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6A03DB8ACB454B8A0104 /* NSArray+VVAdditions.m */; };
+		C3AE657BCAD5608196828B4D /* ShopCartDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE61A08710F228798C7B40 /* ShopCartDemo.m */; };
 		C3AE65F2F60F38E061390F1D /* UIView+VVExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE693ACBDD054CAFA0B2A1 /* UIView+VVExtend.m */; };
+		C3AE6A63454F8DC0DD2821A4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE62C3B936C000DE6AA110 /* ViewController.m */; };
 		C3AE6B8DAA275AD574848CDF /* VVLayoutUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6DCA10ACEB0BC2322F2E /* VVLayoutUtils.m */; };
-		C3AE6F40667D41F428B89F21 /* ShopCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6E9011E438D6AC1B1D64 /* ShopCartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +48,6 @@
 		B99CCCB122F94FE1000D517F /* VVLayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VVLayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99CCCB422F94FE1000D517F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B99CCCB522F94FE1000D517F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B99CCCB722F94FE1000D517F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B99CCCB822F94FE1000D517F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B99CCCBB22F94FE1000D517F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B99CCCBD22F94FE2000D517F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B99CCCC022F94FE2000D517F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,17 +63,25 @@
 		B99CCCE922F95029000D517F /* UIView+VVLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VVLayout.m"; sourceTree = "<group>"; };
 		B99CCCEA22F95029000D517F /* VVMakeBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVMakeBlock.m; sourceTree = "<group>"; };
 		B99CCCEE22F95029000D517F /* VVMakeBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeBlock.h; sourceTree = "<group>"; };
+		C3AE61A08710F228798C7B40 /* ShopCartDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartDemo.m; sourceTree = "<group>"; };
+		C3AE62C3B936C000DE6AA110 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C3AE63BC5FA8E86C63738547 /* UIView+VVExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+VVExtend.h"; sourceTree = "<group>"; };
+		C3AE63D608783818201E2D76 /* ArrayDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDemo.h; sourceTree = "<group>"; };
+		C3AE65699100743B23A93553 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C3AE656BB0CBBD4FF666427D /* VVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVLayout.h; sourceTree = "<group>"; };
-		C3AE66BF4266717D7E014AEA /* ShopCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartView.h; sourceTree = "<group>"; };
 		C3AE68729C3D78CD25B44968 /* VVLayoutUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVLayoutUtils.h; sourceTree = "<group>"; };
 		C3AE687859D351CCCA6A4931 /* VVMakeLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVMakeLayoutInfo.m; sourceTree = "<group>"; };
 		C3AE693ACBDD054CAFA0B2A1 /* UIView+VVExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VVExtend.m"; sourceTree = "<group>"; };
+		C3AE6947A87F48285B658F41 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
+		C3AE6948102BD4C64E5F2A95 /* ShopCartDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopCartDemo.h; sourceTree = "<group>"; };
+		C3AE699C502B6C4C844A516A /* NSArray+VVAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+VVAdditions.h"; sourceTree = "<group>"; };
 		C3AE69E950098C4F0C9CF8AD /* VVMakeLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeLayoutInfo.h; sourceTree = "<group>"; };
+		C3AE6A03DB8ACB454B8A0104 /* NSArray+VVAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+VVAdditions.m"; sourceTree = "<group>"; };
+		C3AE6A99A22D65C70661E604 /* ArrayDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDemo.m; sourceTree = "<group>"; };
 		C3AE6AF75B159CF407382C50 /* VVMakeLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVMakeLayout.m; sourceTree = "<group>"; };
+		C3AE6D0AF348BE730758F626 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
 		C3AE6DB31C4E508AB0E4614C /* VVMakeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeLayout.h; sourceTree = "<group>"; };
 		C3AE6DCA10ACEB0BC2322F2E /* VVLayoutUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVLayoutUtils.m; sourceTree = "<group>"; };
-		C3AE6E9011E438D6AC1B1D64 /* ShopCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,15 +135,12 @@
 				B99CCCE622F9500F000D517F /* Source */,
 				B99CCCB422F94FE1000D517F /* AppDelegate.h */,
 				B99CCCB522F94FE1000D517F /* AppDelegate.m */,
-				B99CCCB722F94FE1000D517F /* ViewController.h */,
-				B99CCCB822F94FE1000D517F /* ViewController.m */,
 				B99CCCBA22F94FE1000D517F /* Main.storyboard */,
 				B99CCCBD22F94FE2000D517F /* Assets.xcassets */,
 				B99CCCBF22F94FE2000D517F /* LaunchScreen.storyboard */,
 				B99CCCC222F94FE2000D517F /* Info.plist */,
 				B99CCCC322F94FE2000D517F /* main.m */,
-				C3AE6E9011E438D6AC1B1D64 /* ShopCartView.m */,
-				C3AE66BF4266717D7E014AEA /* ShopCartView.h */,
+				C3AE6C89146E23699DB1AA7F /* Demo */,
 			);
 			path = VVLayout;
 			sourceTree = "<group>";
@@ -173,8 +179,25 @@
 				C3AE656BB0CBBD4FF666427D /* VVLayout.h */,
 				C3AE6DCA10ACEB0BC2322F2E /* VVLayoutUtils.m */,
 				C3AE68729C3D78CD25B44968 /* VVLayoutUtils.h */,
+				C3AE6A03DB8ACB454B8A0104 /* NSArray+VVAdditions.m */,
+				C3AE699C502B6C4C844A516A /* NSArray+VVAdditions.h */,
+				C3AE6947A87F48285B658F41 /* UIView+Addition.m */,
+				C3AE6D0AF348BE730758F626 /* UIView+Addition.h */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		C3AE6C89146E23699DB1AA7F /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				C3AE61A08710F228798C7B40 /* ShopCartDemo.m */,
+				C3AE6A99A22D65C70661E604 /* ArrayDemo.m */,
+				C3AE63D608783818201E2D76 /* ArrayDemo.h */,
+				C3AE6948102BD4C64E5F2A95 /* ShopCartDemo.h */,
+				C3AE62C3B936C000DE6AA110 /* ViewController.m */,
+				C3AE65699100743B23A93553 /* ViewController.h */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,7 +330,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B99CCCB922F94FE1000D517F /* ViewController.m in Sources */,
 				B99CCCF522F95029000D517F /* VVMakeBlock.m in Sources */,
 				B99CCCC422F94FE2000D517F /* main.m in Sources */,
 				B99CCCF422F95029000D517F /* UIView+VVLayout.m in Sources */,
@@ -316,7 +338,11 @@
 				C3AE64F6B800CA47647910B9 /* VVMakeLayoutInfo.m in Sources */,
 				C3AE65F2F60F38E061390F1D /* UIView+VVExtend.m in Sources */,
 				C3AE6B8DAA275AD574848CDF /* VVLayoutUtils.m in Sources */,
-				C3AE6F40667D41F428B89F21 /* ShopCartView.m in Sources */,
+				C3AE657270ED15A99499CC7D /* NSArray+VVAdditions.m in Sources */,
+				C3AE606F391E99552363AD99 /* UIView+Addition.m in Sources */,
+				C3AE657BCAD5608196828B4D /* ShopCartDemo.m in Sources */,
+				C3AE62BE3FDD29F28F23EAA2 /* ArrayDemo.m in Sources */,
+				C3AE6A63454F8DC0DD2821A4 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
