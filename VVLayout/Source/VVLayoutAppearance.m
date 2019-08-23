@@ -5,8 +5,9 @@
 
 #import "VVLayoutAppearance.h"
 
-static CGFloat vv_scale;
+static CGFloat vv_global_scale;
 static BOOL vv_open_scale;
+static BOOL vv_scale_font;
 
 @implementation VVLayoutAppearance
 
@@ -30,25 +31,33 @@ static BOOL vv_open_scale;
     vv_open_scale = open;
 }
 
-+ (BOOL)openScale {
++ (BOOL)openScaleFont {
+    return vv_scale_font;
+}
+
++ (void)setScaleFont:(BOOL)scaleFont {
+    vv_scale_font = scaleFont;
+}
+
++ (BOOL)openGlobalScale {
     return vv_open_scale;
 }
 
-+ (void)setScale:(CGFloat)value {
-    vv_scale = value;
++ (void)setGlobalScale:(CGFloat)value {
+    vv_global_scale = value;
 }
 
-+ (CGFloat)scale {
++ (CGFloat)globalScale {
     if (!vv_open_scale) {
         return 1.0f;
     }
 
     static dispatch_once_t once_t;
     dispatch_once(&once_t, ^{
-        vv_scale = [VVLayoutAppearance xMin] / 375.0f;
+        vv_global_scale = [VVLayoutAppearance xMin] / 375.0f;
     });
 
-    return vv_scale;
+    return vv_global_scale;
 }
 
 @end

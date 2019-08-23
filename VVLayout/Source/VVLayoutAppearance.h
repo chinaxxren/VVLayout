@@ -7,12 +7,16 @@
 
 @interface VVLayoutAppearance : NSObject
 
++ (BOOL)openScaleFont;
+
++ (void)setScaleFont:(BOOL)scaleFont;
+
 + (void)setOpenScale:(BOOL)open;
 
-+ (BOOL)openScale;
++ (BOOL)openGlobalScale;
 
-+ (void)setScale:(CGFloat)value;
++ (void)setGlobalScale:(CGFloat)value;
 
-+ (CGFloat)scale;
++ (CGFloat)globalScale;
 
 @end

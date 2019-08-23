@@ -8,4 +8,10 @@
 
 @interface UIFont (VVLayout)
 
++ (UIFont *)vv_systemFontOfSize:(CGFloat)fontSize;
+
++ (UIFont *)vv_boldSystemFontOfSize:(CGFloat)fontSize;
+
++ (UIFont *)vv_italicSystemFontOfSize:(CGFloat)fontSize;
+
 @end

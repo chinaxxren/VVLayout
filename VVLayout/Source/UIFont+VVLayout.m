@@ -3,38 +3,63 @@
 // Copyright (c) 2019 Tank. All rights reserved.
 //
 
+
 #import "UIFont+VVLayout.h"
-#import "VVLayoutAppearance.h"
 
 #import <objc/message.h>
+
+#import "VVLayoutAppearance.h"
 
 @implementation UIFont (VVLayout)
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self swizzleMethod:@selector(systemFontOfSize:) anotherMethod:@selector(vv_systemFontOfSize:)];
-        [self swizzleMethod:@selector(boldSystemFontOfSize:) anotherMethod:@selector(vv_boldSystemFontOfSize:)];
-        [self swizzleMethod:@selector(italicSystemFontOfSize:) anotherMethod:@selector(vv_italicSystemFontOfSize:)];
+        [self swizzleMethod:@selector(_systemFontOfSize_:) originalMethod:@selector(systemFontOfSize:)];
+        [self swizzleMethod:@selector(_boldSystemFontOfSize_:) originalMethod:@selector(boldSystemFontOfSize:)];
+        [self swizzleMethod:@selector(_italicSystemFontOfSize_:) originalMethod:@selector(italicSystemFontOfSize:)];
     });
 }
 
-+ (void)swizzleMethod:(SEL)oneSel anotherMethod:(SEL)anotherSel {
-    Method oneMethod = class_getInstanceMethod(self, oneSel);
-    Method anotherMethod = class_getInstanceMethod(self, anotherSel);
-    method_exchangeImplementations(oneMethod, anotherMethod);
++ (void)swizzleMethod:(SEL)swizzleMethod originalMethod:(SEL)originalMethod {
+    Method newMethod = class_getClassMethod([self class], swizzleMethod);
+    Method method = class_getClassMethod([self class], originalMethod);
+    method_exchangeImplementations(newMethod, method);
+}
+
++ (UIFont *)_systemFontOfSize_:(CGFloat)fontSize {
+    if ([VVLayoutAppearance openScaleFont]) {
+        return [UIFont _systemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
+    }
+
+    return [UIFont _systemFontOfSize_:fontSize];
+}
+
++ (UIFont *)_boldSystemFontOfSize_:(CGFloat)fontSize {
+    if ([VVLayoutAppearance openScaleFont]) {
+        return [UIFont _boldSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
+    }
+    return [UIFont _boldSystemFontOfSize_:fontSize];
+}
+
++ (UIFont *)_italicSystemFontOfSize_:(CGFloat)fontSize {
+    if ([VVLayoutAppearance openScaleFont]) {
+        return [UIFont _italicSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
+    }
+
+    return [UIFont _italicSystemFontOfSize_:fontSize];
 }
 
 + (UIFont *)vv_systemFontOfSize:(CGFloat)fontSize {
-    return [UIFont systemFontOfSize:fontSize * [VVLayoutAppearance scale]];
+    return [UIFont systemFontOfSize:fontSize * [VVLayoutAppearance globalScale]];
 }
 
 + (UIFont *)vv_boldSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont boldSystemFontOfSize:fontSize * [VVLayoutAppearance scale]];
+    return [UIFont boldSystemFontOfSize:fontSize * [VVLayoutAppearance globalScale]];
 }
 
 + (UIFont *)vv_italicSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont italicSystemFontOfSize:fontSize * [VVLayoutAppearance scale]];
+    return [UIFont italicSystemFontOfSize:fontSize * [VVLayoutAppearance globalScale]];
 }
 
 @end

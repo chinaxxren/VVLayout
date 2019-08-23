@@ -49,7 +49,7 @@
 }
 
 - (void)setAttribute:(NSValue *)value {
-    CGFloat scale = [VVLayoutAppearance scale];
+    CGFloat scale = [VVLayoutAppearance globalScale];
     if ([value isKindOfClass:NSNumber.class]) {
         self.value = [(NSNumber *) value floatValue] * scale;
     } else if (strcmp(value.objCType, @encode(CGPoint)) == 0) {
