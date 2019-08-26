@@ -197,6 +197,7 @@
         make.top.offset(100);
     }];
     
+    [self.view1 setNeedsLayout];
     [self.view setNeedsLayout];
 }
 

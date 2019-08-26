@@ -8,10 +8,10 @@
 #pragma mark - Make
 
 - (void)makeLayout:(MakeLayout)makeLayout {
-    if (!self.vv_state) {
+    if (!self.vv_state || [self.vv_state integerValue] != 0) {
         return;
     }
-
+    
     self.vv_state = @0;
     [self layout:makeLayout state:self.vv_state];
 }
