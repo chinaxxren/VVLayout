@@ -41,7 +41,7 @@
 //    [self.arrayDemo horizontalFixSpace];
 //    [self.arrayDemo verticalFixSpace];
 //    [self.arrayDemo horizontalFixItemWidth];
-    [self.arrayDemo verticalFixItemWidth];
+//    [self.arrayDemo verticalFixItemWidth];
 }
 
 - (void)testShopCart {
@@ -60,8 +60,8 @@
     [super viewDidLayoutSubviews];
 
 /*
-    [self.view addSubview:_view1];
-    [self.view addSubview:_view2];
+    [self.view addSubview:self.view1];
+    [self.view addSubview:self.view2];
 
     [self.view1 makeBlock:^(VVMake *make) {
         make.width.vv_equalTo(100);
@@ -70,21 +70,21 @@
         make.centerY.equalTo(_view);
     }];
 
-    NSLog(@"view1->%@", NSStringFromCGRect(_view1.frame));
+    NSLog(@"view1->%@", NSStringFromCGRect(self.view1.frame));
 
     [self.view2 makeBlock:^(VVMake *make) {
         make.width.vv_equalTo(50.0f);
         make.height.vv_equalTo(50.0f);
-        make.bottom.equalTo(_view1.vv_top);
-        make.left.equalTo(_view1.vv_right).offset(20.0f);
+        make.bottom.equalTo(self.view1.vv_top);
+        make.left.equalTo(self.view1.vv_right).offset(20.0f);
     }];
     
-    NSLog(@"view2->%@", NSStringFromCGRect(_view2.frame));
+    NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
  */
 /*
 
-    [self.view addSubview:_view1];
-    [self.view1 addSubview:_view2];
+    [self.view addSubview:self.view1];
+    [self.view1 addSubview:self.view2];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.width.vv_equalTo(100);
@@ -92,15 +92,15 @@
         make.centerX.equalTo(_view);
         make.centerY.equalTo(_view);
     }];
-    NSLog(@"view1->%@", NSStringFromCGRect(_view1.frame));
+    NSLog(@"view1->%@", NSStringFromCGRect(self.view1.frame));
 
     [self.view2 makeLayout:^(VVMakeLayout *make) {
         make.top.vv_equalTo(12.0f);
         make.bottom.vv_equalTo(14.0f);
         make.left.vv_equalTo(16.0f);
-        make.width.equalTo(_view1.vv_height).multipliedBy(0.5f);
+        make.width.equalTo(self.view1.vv_height).multipliedBy(0.5f);
     }];
-    NSLog(@"view2->%@", NSStringFromCGRect(_view2.frame));
+    NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.sizeThatFits(CGSizeMake(100, 100)).offset(10);
@@ -124,7 +124,7 @@
     }];
 */
 /*
-    [self.view addSubview:_view1];
+    [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.centerX.equalTo(_view);
@@ -133,7 +133,7 @@
     }];
 */
 /*
-    [self.view addSubview:_view1];
+    [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
 //        make.edges.vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
@@ -141,7 +141,7 @@
     }];
 */
 /*
-    [self.view addSubview:_view1];
+    [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.center.equalTo(_view);
@@ -155,7 +155,7 @@
     }             forState:@1];
     */
 /*
-    [self.view addSubview:_view1];
+    [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.top.equalTo(@110);
@@ -163,17 +163,9 @@
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
 */
-/*
-    [self.view addSubview:_view1];
 
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.top.offset(300);
-        make.centerX.equalTo(_view);
-        make.size.vv_equalTo(CGSizeMake(100, 100));
-    }];
-    */
 /*
-    [self.view addSubview:_view1];
+    [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.edges.equalTo(_view).insets(UIEdgeInsetsMake(150, 80, 200, 100));
@@ -189,6 +181,15 @@
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
      */
+
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.top.offset(300);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
+        make.size.vv_equalTo(CGSizeMake(100, 100));
+    }];
 }
 
 - (ShopCartDemo *)shopCartDemo {
@@ -238,8 +239,8 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
-    _view1.vv_state = @1;
-    [self.view1 setNeedsLayout];
+    self.view1.vv_state = @1;
+    [self.view setNeedsLayout];
 }
 
 @end

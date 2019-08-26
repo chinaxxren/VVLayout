@@ -360,9 +360,7 @@
     VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
     dispatch_block_t block_t = ^{
         VVStrongify(self);
-        CGFloat x = [self leftXForView:makeInfo.relateView
-                             withValue:makeInfo.value
-                        makeLayoutType:makeLayoutType];
+        CGFloat x = [self leftXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
         CGRect frame = self.newFrame;
         frame.origin.x = x;
         self.newFrame = frame;
@@ -420,14 +418,14 @@
     [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
 }
 
-- (CGFloat)bottomHeightForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
-    CGFloat height = fabs(CGRectGetMinY(self.newFrame) - [self valueForMakeLayoutType:makeLayoutType forView:view]);
-    return height + value;
-}
-
 - (CGFloat)bottomYForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat y = [self valueForMakeLayoutType:makeLayoutType forView:view];
     return y + value - CGRectGetHeight(self.newFrame);
+}
+
+- (CGFloat)bottomHeightForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+    CGFloat height = fabs(CGRectGetMinY(self.newFrame) - [self valueForMakeLayoutType:makeLayoutType forView:view]);
+    return height + value;
 }
 
 #pragma mark Right relations
@@ -450,14 +448,14 @@
     [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityMiddle]];
 }
 
-- (CGFloat)rightWidthForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
-    CGFloat width = fabs(CGRectGetMinX(self.newFrame) - [self valueForMakeLayoutType:makeLayoutType forView:view]);
-    return width + value;
-}
-
 - (CGFloat)rightXForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
     CGFloat x = [self valueForMakeLayoutType:makeLayoutType forView:view];
     return x + value - CGRectGetWidth(self.newFrame);
+}
+
+- (CGFloat)rightWidthForView:(UIView *)view withValue:(CGFloat)value makeLayoutType:(VVMakeLayoutType)makeLayoutType {
+    CGFloat width = fabs(CGRectGetMinX(self.newFrame) - [self valueForMakeLayoutType:makeLayoutType forView:view]);
+    return width + value;
 }
 
 #pragma mark - Low priority
