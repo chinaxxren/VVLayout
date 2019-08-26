@@ -8,7 +8,7 @@
 #pragma mark - Make
 
 - (void)makeLayout:(MakeLayout)makeLayout {
-    if ([self.vv_state integerValue] != 0) {
+    if (!self.vv_state) {
         return;
     }
 
