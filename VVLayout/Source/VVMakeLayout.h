@@ -8,7 +8,7 @@
 #import "VVLayoutUtils.h"
 
 #define vv_equalTo(...)                 equalTo(VVBoxValue((__VA_ARGS__)))
-#define vv_valueOffset(...)             valueOffset(VVBoxValue((__VA_ARGS__)))
+#define vv_offset(...)                  valueOffset(VVBoxValue((__VA_ARGS__)))
 
 @class VVMakeLayout;
 
