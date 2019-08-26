@@ -22,7 +22,7 @@
 - (NSArray *)updateLayouts:(MakeLayout)makeLayout {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view makeLayout:makeLayout state:@(INT16_MAX)];
+        [view layout:makeLayout state:@([view.vv_state integerValue] + 1)];
         [constraints addObject:view];
     }
     return constraints;
@@ -31,7 +31,7 @@
 - (NSArray *)makeLayouts:(MakeLayout)makeLayout state:(NSNumber *)state {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view makeLayout:makeLayout state:state];
+        [view layout:makeLayout state:state];
         [constraints addObject:view];
     }
     return constraints;

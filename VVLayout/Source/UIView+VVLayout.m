@@ -8,10 +8,14 @@
 #pragma mark - Make
 
 - (void)makeLayout:(MakeLayout)makeLayout {
-    [self makeLayout:makeLayout state:@0];
+    [self layout:makeLayout state:@0];
 }
 
-- (void)makeLayout:(MakeLayout)makeLayout state:(NSNumber *)state {
+- (void)updateLayout:(MakeLayout)makeLayout {
+    [self layout:makeLayout state:@([self.vv_state integerValue] + 1)];
+}
+
+- (void)layout:(MakeLayout)makeLayout state:(NSNumber *)state {
     [VVMakeLayout configView:self state:state makeLayout:makeLayout];
 }
 
@@ -24,14 +28,6 @@
 - (NSNumber *)vv_state {
     NSNumber *vv_state = objc_getAssociatedObject(self, @selector(vv_state));
     return (vv_state) ?: @0;
-}
-
-- (void)setScale:(CGFloat)scale {
-    objc_setAssociatedObject(self, @selector(scale), @(scale), OBJC_ASSOCIATION_ASSIGN);
-}
-
-- (CGFloat)scale {
-    return [objc_getAssociatedObject(self, @selector(scale)) floatValue];
 }
 
 @end
