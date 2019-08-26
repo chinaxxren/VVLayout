@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self testShopCart];
+//    [self testShopCart];
 }
 
 - (void)testArray {
@@ -182,16 +182,22 @@
     }];
      */
 
-    /*
      [self.view addSubview:self.view1];
      
      [self.view1 makeLayout:^(VVMakeLayout *make) {
-     make.top.offset(300);
-     make.left.equalTo(self.view);
-     make.right.equalTo(self.view);
-     make.size.vv_equalTo(CGSizeMake(100, 100));
+        make.top.offset(300.0f);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
+        make.height.vv_equalTo(100.0f);
      }];
-     */
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
+    [self.view1 updateLayout:^(VVMakeLayout *make) {
+        make.top.offset(100);
+    }];
+    
+    [self.view setNeedsLayout];
 }
 
 - (ShopCartDemo *)shopCartDemo {
@@ -238,11 +244,6 @@
         _label.numberOfLines = 0;
     }
     return _label;
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
-    self.view1.vv_state = @1;
-    [self.view setNeedsLayout];
 }
 
 @end

@@ -15,6 +15,8 @@ typedef NS_ENUM(NSUInteger, VVAxisType) {
 
 - (NSArray *)makeLayouts:(MakeLayout)makeLayout;
 
+- (NSArray *)remakeLayouts:(MakeLayout)makeLayout;
+
 - (NSArray *)updateLayouts:(MakeLayout)makeLayout;
 
 - (NSArray *)layouts:(MakeLayout)makeLayout state:(NSNumber *)state;

@@ -19,6 +19,15 @@
     return constraints;
 }
 
+- (NSArray *)remakeLayouts:(MakeLayout)makeLayout {
+    NSMutableArray *constraints = [NSMutableArray array];
+    for (UIView *view in self) {
+        [view remakeLayout:makeLayout];
+        [constraints addObject:view];
+    }
+    return constraints;
+}
+
 - (NSArray *)updateLayouts:(MakeLayout)makeLayout {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {

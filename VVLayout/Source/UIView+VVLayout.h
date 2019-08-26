@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)makeLayout:(MakeLayout)makeLayout;
 
+- (void)remakeLayout:(MakeLayout)makeLayout;
+
 - (void)updateLayout:(MakeLayout)makeLayout;
 
 - (void)layout:(MakeLayout)makeLayout state:(NSNumber *)state;
