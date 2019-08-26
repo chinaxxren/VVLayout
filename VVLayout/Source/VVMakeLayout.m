@@ -541,12 +541,12 @@
 
             if (makeInfo.relateView && makeInfo.relateView != self.view) {
                 CGFloat width = [self sizeForView:makeInfo.relateView withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
-                [self setFrameValue:width type:VVMakeLayoutTypeWidth];
+                [self setSizeValue:width type:VVMakeLayoutTypeWidth];
             } else {
                 VVMakeLayoutInfo *heightInfo = [self infoForType:VVMakeLayoutTypeHeight];
                 if (heightInfo && heightInfo.isNum) {
                     CGFloat width = heightInfo.value;
-                    [self setFrameValue:width * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
+                    [self setSizeValue:width * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
 
                 } else if (heightInfo && !heightInfo.isNum) {
                     UIView *tempView = heightInfo.relateView;
@@ -554,7 +554,7 @@
                     VVMakeLayoutType makeType = heightInfo.makeLayoutType;
 
                     CGFloat width = [self sizeForView:tempView withMakeLayoutType:makeType] * (tempMultiplier * makeInfo.multiplied);
-                    [self setFrameValue:width type:VVMakeLayoutTypeWidth];
+                    [self setSizeValue:width type:VVMakeLayoutTypeWidth];
 
                 } else {
                     VVMakeLayoutInfo *topInfo = [self infoForType:VVMakeLayoutTypeTop];
@@ -573,7 +573,7 @@
 
                         CGFloat bottomViewY = [self valueForMakeLayoutType:bottomMakeLayoutType forView:bottomView] - bottomInset;
 
-                        [self setFrameValue:(bottomViewY - topViewY) * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
+                        [self setSizeValue:(bottomViewY - topViewY) * makeInfo.multiplied type:VVMakeLayoutTypeWidth];
                     }
                 }
             }
@@ -598,16 +598,16 @@
         VVMakeLayoutType makeLayoutType = makeInfo.viewLayoutType;
         block_t = ^{
             VVStrongify(self);
-            if (makeInfo.relateView && makeInfo.relateView != self.view) {
+            if (makeInfo.relateView && makeInfo.relateView != self.view) {// 获取的View的值进行设值
                 CGFloat height = [self sizeForView:makeInfo.relateView withMakeLayoutType:makeLayoutType] * makeInfo.multiplied;
-                [self setFrameValue:height type:VVMakeLayoutTypeHeight];
+                [self setSizeValue:height type:VVMakeLayoutTypeHeight];
             } else {
                 VVMakeLayoutInfo *widthInfo = [self infoForType:VVMakeLayoutTypeWidth];
-                if (widthInfo && widthInfo.isNum) {
+                if (widthInfo && widthInfo.isNum) {// 获取输入的数字设值
                     CGFloat height = widthInfo.value;
-                    [self setFrameValue:height * widthInfo.multiplied type:VVMakeLayoutTypeHeight];
+                    [self setSizeValue:height * widthInfo.multiplied type:VVMakeLayoutTypeHeight];
 
-                } else if (widthInfo && !widthInfo.isNum) {
+                } else if (widthInfo && !widthInfo.isNum) {// 与自己的已经确定的宽进行设值
                     VVMakeLayoutInfo *widthToInfo = [self infoForType:VVMakeLayoutTypeWidth];
 
                     UIView *tempView = widthToInfo.relateView;
@@ -615,9 +615,9 @@
                     VVMakeLayoutType makeType = widthToInfo.makeLayoutType;
 
                     CGFloat height = [self sizeForView:tempView withMakeLayoutType:makeType] * (tempMultiplier * makeInfo.multiplied);
-                    [self setFrameValue:height type:VVMakeLayoutTypeHeight];
+                    [self setSizeValue:height type:VVMakeLayoutTypeHeight];
 
-                } else {
+                } else {// 与自己的左右值计算得到的宽进行设值
                     VVMakeLayoutInfo *leftInfo = [self infoForType:VVMakeLayoutTypeLeft];
                     VVMakeLayoutInfo *rightInfo = [self infoForType:VVMakeLayoutTypeRight];
 
@@ -634,7 +634,7 @@
 
                         CGFloat rightViewX = [self valueForMakeLayoutType:rightMakeLayoutType forView:rightView] - rightInset;
 
-                        [self setFrameValue:(rightViewX - leftViewX) * makeInfo.multiplied type:VVMakeLayoutTypeHeight];
+                        [self setSizeValue:(rightViewX - leftViewX) * makeInfo.multiplied type:VVMakeLayoutTypeHeight];
                     }
                 }
             }
@@ -659,7 +659,7 @@
     VVWeakify(self);
     dispatch_block_t block_t = ^{
         VVStrongify(self);
-        [self setFrameValue:value type:type];
+        [self setSizeValue:value type:type];
     };
 
     self.makeLayoutInfo = [VVMakeLayoutInfo infoWithMakeLayoutType:type];
@@ -667,7 +667,7 @@
 }
 
 // 改变Frame的值
-- (void)setFrameValue:(CGFloat)value type:(VVMakeLayoutType)type {
+- (void)setSizeValue:(CGFloat)value type:(VVMakeLayoutType)type {
     CGRect frame = self.newFrame;
     switch (type) {
         case VVMakeLayoutTypeWidth:
