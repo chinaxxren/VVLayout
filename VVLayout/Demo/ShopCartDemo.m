@@ -96,8 +96,8 @@
 
     [self.descLab makeLayout:^(VVMakeLayout *make) {
         make.top.equalTo(self.titleLab.vv_bottom).offset(6.0f);
-        make.right.offset(-12.0f);
         make.left.equalTo(self.titleLab.vv_left);
+        make.right.offset(-12.0f);
         make.heightThatFits(CGFLOAT_MAX);
     }];
 

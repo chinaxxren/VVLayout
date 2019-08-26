@@ -69,10 +69,10 @@
 #pragma mark - Configurate methods
 
 + (void)configView:(UIView *)view makeLayout:(MakeLayout)make {
-    [self configView:view forState:@0 makeLayout:make];
+    [self configView:view state:@0 makeLayout:make];
 }
 
-+ (void)configView:(UIView *)view forState:(NSNumber *)state makeLayout:(MakeLayout)makeLayout {
++ (void)configView:(UIView *)view state:(NSNumber *)state makeLayout:(MakeLayout)makeLayout {
     if (view.vv_state.integerValue == state.integerValue) {
         VVMakeLayout *layout = [VVMakeLayout new];
         layout.view = view;

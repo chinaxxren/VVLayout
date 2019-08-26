@@ -8,11 +8,11 @@
 #pragma mark - Make
 
 - (void)makeLayout:(MakeLayout)makeLayout {
-    [self makeLayout:makeLayout forState:@0];
+    [self makeLayout:makeLayout state:@0];
 }
 
-- (void)makeLayout:(MakeLayout)makeLayout forState:(NSNumber *)state {
-    [VVMakeLayout configView:self forState:state makeLayout:makeLayout];
+- (void)makeLayout:(MakeLayout)makeLayout state:(NSNumber *)state {
+    [VVMakeLayout configView:self state:state makeLayout:makeLayout];
 }
 
 #pragma mark - Runtime

@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    [self testArray];
+    [self testShopCart];
 }
 
 - (void)testArray {
@@ -182,14 +182,16 @@
     }];
      */
 
-    [self.view addSubview:self.view1];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.top.offset(300);
-        make.left.equalTo(self.view);
-        make.right.equalTo(self.view);
-        make.size.vv_equalTo(CGSizeMake(100, 100));
-    }];
+    /*
+     [self.view addSubview:self.view1];
+     
+     [self.view1 makeLayout:^(VVMakeLayout *make) {
+     make.top.offset(300);
+     make.left.equalTo(self.view);
+     make.right.equalTo(self.view);
+     make.size.vv_equalTo(CGSizeMake(100, 100));
+     }];
+     */
 }
 
 - (ShopCartDemo *)shopCartDemo {

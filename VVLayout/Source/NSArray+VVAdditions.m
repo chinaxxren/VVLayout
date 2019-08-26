@@ -19,10 +19,19 @@
     return constraints;
 }
 
-- (NSArray *)makeLayouts:(MakeLayout)makeLayout forState:(NSNumber *)state {
+- (NSArray *)updateLayouts:(MakeLayout)makeLayout {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view makeLayout:makeLayout forState:state];
+        [view makeLayout:makeLayout state:@(INT16_MAX)];
+        [constraints addObject:view];
+    }
+    return constraints;
+}
+
+- (NSArray *)makeLayouts:(MakeLayout)makeLayout state:(NSNumber *)state {
+    NSMutableArray *constraints = [NSMutableArray array];
+    for (UIView *view in self) {
+        [view makeLayout:makeLayout state:state];
         [constraints addObject:view];
     }
     return constraints;

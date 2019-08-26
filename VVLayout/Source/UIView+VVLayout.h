@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)makeLayout:(MakeLayout)makeLayout;
 
-- (void)makeLayout:(MakeLayout)makeLayout forState:(NSNumber *)state;
+- (void)makeLayout:(MakeLayout)makeLayout state:(NSNumber *)state;
 
 NS_ASSUME_NONNULL_END
 

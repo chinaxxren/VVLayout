@@ -8,20 +8,7 @@
 #import "VVLayoutUtils.h"
 
 #define vv_equalTo(...)                 equalTo(VVBoxValue((__VA_ARGS__)))
-// #define vv_greaterThanOrEqualTo(...)    greaterThanOrEqualTo(VVBoxValue((__VA_ARGS__)))
-// #define vv_lessThanOrEqualTo(...)       lessThanOrEqualTo(VVBoxValue((__VA_ARGS__)))
-
-#define vv_offset(...)                  valueOffset(VVBoxValue((__VA_ARGS__)))
-
-#ifdef VV_SHORTHAND_GLOBALS
-
-#define equalTo(...)                     vv_equalTo(__VA_ARGS__)
-// #define greaterThanOrEqualTo(...)        vv_greaterThanOrEqualTo(__VA_ARGS__)
-// #define lessThanOrEqualTo(...)           vv_lessThanOrEqualTo(__VA_ARGS__)
-
-#define offset(...)                      vv_offset(__VA_ARGS__)
-
-#endif
+#define vv_valueOffset(...)             valueOffset(VVBoxValue((__VA_ARGS__)))
 
 @class VVMakeLayout;
 
@@ -31,7 +18,7 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 
 + (void)configView:(UIView *)view makeLayout:(MakeLayout)make;
 
-+ (void)configView:(UIView *)view forState:(NSNumber *)state makeLayout:(MakeLayout)makeLayout;
++ (void)configView:(UIView *)view state:(NSNumber *)state makeLayout:(MakeLayout)makeLayout;
 
 - (VVMakeLayout *)and;
 
@@ -70,10 +57,6 @@ typedef void (^MakeLayout)(VVMakeLayout *make);
 - (VVMakeLayout *(^)(NSValue *))valueOffset;
 
 - (VVMakeLayout *(^)(id))equalTo;
-
-//- (VVMakeLayout *(^)(id))greaterThanOrEqualTo;
-//
-//- (VVMakeLayout *(^)(id))lessThanOrEqualTo;
 
 - (VVMakeLayout *(^)(CGFloat))multipliedBy;
 
