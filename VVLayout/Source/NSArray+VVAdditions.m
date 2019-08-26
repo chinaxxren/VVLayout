@@ -22,13 +22,13 @@
 - (NSArray *)updateLayouts:(MakeLayout)makeLayout {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view layout:makeLayout state:@([view.vv_state integerValue] + 1)];
+        [view updateLayout:makeLayout];
         [constraints addObject:view];
     }
     return constraints;
 }
 
-- (NSArray *)makeLayouts:(MakeLayout)makeLayout state:(NSNumber *)state {
+- (NSArray *)layouts:(MakeLayout)makeLayout state:(NSNumber *)state {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
         [view layout:makeLayout state:state];

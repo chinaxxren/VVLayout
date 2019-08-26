@@ -8,11 +8,13 @@
 #pragma mark - Make
 
 - (void)makeLayout:(MakeLayout)makeLayout {
-    [self layout:makeLayout state:@0];
+    self.vv_state = @0;
+    [self layout:makeLayout state:self.vv_state];
 }
 
 - (void)updateLayout:(MakeLayout)makeLayout {
-    [self layout:makeLayout state:@([self.vv_state integerValue] + 1)];
+    self.vv_state = @([self.vv_state integerValue] + 1);
+    [self layout:makeLayout state:self.vv_state];
 }
 
 - (void)layout:(MakeLayout)makeLayout state:(NSNumber *)state {
