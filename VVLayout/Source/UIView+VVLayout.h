@@ -2,9 +2,9 @@
 #import <UIKit/UIKit.h>
 #import "VVMakeLayout.h"
 
-@interface UIView (VVLayout)
-
 NS_ASSUME_NONNULL_BEGIN
+
+@interface UIView (VVLayout)
 
 /*
     Apply new configuration state without frame updating.
@@ -17,6 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)layout:(MakeLayout)makeLayout state:(NSNumber *)state;
 
-NS_ASSUME_NONNULL_END
-
 @end
+
+NS_ASSUME_NONNULL_END
