@@ -68,11 +68,11 @@
 
 #pragma mark - Configurate methods
 
-+ (void)configView:(UIView *)view makeLayout:(MakeLayout)make {
-    [self configView:view state:@0 makeLayout:make];
++ (void)configView:(UIView *)view layoutMake:(LayoutMake)layoutMake {
+    [self configView:view state:@0 layoutMake:layoutMake];
 }
 
-+ (void)configView:(UIView *)view state:(NSNumber *)state makeLayout:(MakeLayout)makeLayout {
++ (void)configView:(UIView *)view state:(NSNumber *)state layoutMake:(LayoutMake)layoutMake {
     if (view.vv_state.integerValue == state.integerValue) {
         VVMakeLayout *layout = [VVMakeLayout new];
         layout.view = view;
@@ -80,8 +80,8 @@
         [layout startConfig];
 
         // 在Block中进行设置操作
-        if (makeLayout) {
-            makeLayout(layout);
+        if (layoutMake) {
+            layoutMake(layout);
         }
 
         [layout configFrames];

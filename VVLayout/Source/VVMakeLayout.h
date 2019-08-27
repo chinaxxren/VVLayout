@@ -12,13 +12,13 @@
 
 @class VVMakeLayout;
 
-typedef void (^MakeLayout)(VVMakeLayout *make);
+typedef void (^LayoutMake)(VVMakeLayout *make);
 
 @interface VVMakeLayout : NSObject
 
-+ (void)configView:(UIView *)view makeLayout:(MakeLayout)make;
++ (void)configView:(UIView *)view layoutMake:(LayoutMake)layoutMake;
 
-+ (void)configView:(UIView *)view state:(NSNumber *)state makeLayout:(MakeLayout)makeLayout;
++ (void)configView:(UIView *)view state:(NSNumber *)state layoutMake:(LayoutMake)layoutMake;
 
 - (VVMakeLayout *)and;
 

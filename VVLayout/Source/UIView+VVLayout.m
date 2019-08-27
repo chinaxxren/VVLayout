@@ -7,27 +7,27 @@
 
 #pragma mark - Make
 
-- (void)makeLayout:(MakeLayout)makeLayout {
+- (void)makeLayout:(LayoutMake)layoutMake {
     if (!self.vv_state || [self.vv_state integerValue] != 0) {
         return;
     }
     
     self.vv_state = @0;
-    [self layout:makeLayout state:self.vv_state];
+    [self layoutMake:layoutMake state:self.vv_state];
 }
 
-- (void)remakeLayout:(MakeLayout)makeLayout {
+- (void)remakeLayout:(LayoutMake)layoutMake {
     self.vv_state = @0;
-    [self layout:makeLayout state:self.vv_state];
+    [self layoutMake:layoutMake state:self.vv_state];
 }
 
-- (void)updateLayout:(MakeLayout)makeLayout {
+- (void)updateLayout:(LayoutMake)layoutMake {
     self.vv_state = @([self.vv_state integerValue] + 1);
-    [self layout:makeLayout state:self.vv_state];
+    [self layoutMake:layoutMake state:self.vv_state];
 }
 
-- (void)layout:(MakeLayout)makeLayout state:(NSNumber *)state {
-    [VVMakeLayout configView:self state:state makeLayout:makeLayout];
+- (void)layoutMake:(LayoutMake)layoutMake state:(NSNumber *)state {
+    [VVMakeLayout configView:self state:state layoutMake:layoutMake];
 }
 
 #pragma mark - Runtime
