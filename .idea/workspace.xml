@@ -5,7 +5,11 @@
     <bookmark url="file://$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m" line="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="" />
+    <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="186" column="39" selection-start-line="186" selection-start-column="39" selection-end-line="186" selection-end-column="39" />
+            <state relative-caret-position="461">
+              <caret line="72" column="37" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
               <folding>
                 <element signature="e#125#151#0" expanded="true" />
               </folding>
@@ -51,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="641">
-              <caret line="797" column="16" selection-start-line="797" selection-start-column="16" selection-end-line="797" selection-end-column="16" />
+            <state relative-caret-position="871">
+              <caret line="804" lean-forward="true" selection-start-line="804" selection-end-line="804" />
               <folding>
                 <element signature="e#90#114#0" expanded="true" />
                 <element signature="e#599#731#0" expanded="true" />
@@ -139,8 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ShopCartCell</find>
-      <find>MM</find>
       <find>self.</find>
       <find>priceLab</find>
       <find>VVMakeLayoutTypeNone</find>
@@ -169,9 +171,10 @@
       <find>valueOffset</find>
       <find>vv_offset</find>
       <find>viewLayoutInfo</find>
+      <find>_view</find>
+      <find>makeBlock</find>
     </findStrings>
     <replaceStrings>
-      <replace>VVFrame</replace>
       <replace>* 0.5f</replace>
       <replace>VVWeakify(self);</replace>
       <replace>VVStrongify(self);</replace>
@@ -194,13 +197,14 @@
       <replace>VVLog</replace>
       <replace>UIView</replace>
       <replace>VVMakeLayout</replace>
-      <replace>makeLayout</replace>
       <replace>160</replace>
       <replace>[self.</replace>
       <replace>SEL</replace>
       <replace>globalScale</replace>
       <replace>self.view1</replace>
       <replace>self.view2</replace>
+      <replace>self.view</replace>
+      <replace>makeLayout</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -255,11 +259,11 @@
         <option value="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/UIView+VVLayout.m" />
-        <option value="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" />
         <option value="$PROJECT_DIR$/VVLayout/Source/UIView+VVLayout.h" />
         <option value="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.h" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" />
       </list>
     </option>
   </component>
@@ -375,7 +379,7 @@
       <workItem from="1566494658886" duration="12465000" />
       <workItem from="1566660899970" duration="523000" />
       <workItem from="1566786286318" duration="7574000" />
-      <workItem from="1566872853442" duration="2174000" />
+      <workItem from="1566872853442" duration="3010000" />
     </task>
     <task id="LOCAL-00001" summary="增加检测">
       <created>1565751606814</created>
@@ -706,11 +710,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566874994783</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="修改名称">
+      <created>1566875130102</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1566875130102</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99248000" />
+    <option name="totallyTimeSpent" value="100084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -1077,16 +1088,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="186" column="39" selection-start-line="186" selection-start-column="39" selection-end-line="186" selection-end-column="39" />
-          <folding>
-            <element signature="e#125#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -1099,13 +1100,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="797" column="16" selection-start-line="797" selection-start-column="16" selection-end-line="797" selection-end-column="16" />
+        <state relative-caret-position="871">
+          <caret line="804" lean-forward="true" selection-start-line="804" selection-end-line="804" />
           <folding>
             <element signature="e#90#114#0" expanded="true" />
             <element signature="e#599#731#0" expanded="true" />
             <element signature="e#1463#1559#0" expanded="true" />
             <element signature="e#1607#1916#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="72" column="37" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+          <folding>
+            <element signature="e#125#151#0" expanded="true" />
           </folding>
         </state>
       </provider>

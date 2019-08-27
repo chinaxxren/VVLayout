@@ -59,38 +59,32 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
 
-/*
     [self.view addSubview:self.view1];
     [self.view addSubview:self.view2];
 
-    [self.view1 makeBlock:^(VVMake *make) {
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.width.vv_equalTo(100);
         make.height.vv_equalTo(100);
-        make.centerX.equalTo(_view);
-        make.centerY.equalTo(_view);
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
     }];
 
-    NSLog(@"view1->%@", NSStringFromCGRect(self.view1.frame));
-
-    [self.view2 makeBlock:^(VVMake *make) {
+    [self.view2 makeLayout:^(VVMakeLayout *make) {
         make.width.vv_equalTo(50.0f);
         make.height.vv_equalTo(50.0f);
         make.bottom.equalTo(self.view1.vv_top);
         make.left.equalTo(self.view1.vv_right).offset(20.0f);
     }];
-    
-    NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
- */
-/*
 
+/*
     [self.view addSubview:self.view1];
     [self.view1 addSubview:self.view2];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.width.vv_equalTo(100);
         make.height.vv_equalTo(100);
-        make.centerX.equalTo(_view);
-        make.centerY.equalTo(_view);
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
     }];
     NSLog(@"view1->%@", NSStringFromCGRect(self.view1.frame));
 
@@ -127,8 +121,8 @@
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.centerX.equalTo(_view);
-        make.centerY.equalTo(_view);
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
 */
@@ -137,14 +131,14 @@
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
 //        make.edges.vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
-        make.edges.equalTo(_view).vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
+        make.edges.equalTo(self.view).vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
     }];
 */
 /*
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.center.equalTo(_view);
+        make.center.equalTo(self.view);
         make.width.equalTo(@100);
         make.height.equalTo(@160);
 //        make.size.vv_equalTo(CGSizeMake(100, 100));
@@ -168,7 +162,7 @@
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.edges.equalTo(_view).insets(UIEdgeInsetsMake(150, 80, 200, 100));
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(150, 80, 200, 100));
     }];
     */
 
@@ -181,7 +175,7 @@
         make.size.vv_equalTo(CGSizeMake(100, 100));
     }];
      */
-
+/*
      [self.view addSubview:self.view1];
      
      [self.view1 makeLayout:^(VVMakeLayout *make) {
@@ -190,8 +184,10 @@
         make.right.equalTo(self.view);
         make.height.vv_equalTo(100.0f);
      }];
+*/
 }
 
+/*
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
     [self.view1 updateLayout:^(VVMakeLayout *make) {
         make.top.offset(100);
@@ -199,6 +195,7 @@
     
     [self.view setNeedsLayout];
 }
+*/
 
 - (ShopCartDemo *)shopCartDemo {
     if (!_shopCartDemo) {
