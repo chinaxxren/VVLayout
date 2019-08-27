@@ -27,7 +27,7 @@
 }
 
 - (void)layout:(MakeHandler)makeHandler state:(NSNumber *)state {
-    [VVMakeLayout configView:self state:state makeHandler:makeHandler];
+    [VVMakeLayout configView:self state:state handler:makeHandler];
 }
 
 #pragma mark - Runtime

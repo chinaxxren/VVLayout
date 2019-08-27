@@ -16,9 +16,9 @@ typedef void (^MakeHandler)(VVMakeLayout *make);
 
 @interface VVMakeLayout : NSObject
 
-+ (void)configView:(UIView *)view makeHandler:(MakeHandler)makeHandler;
++ (void)configView:(UIView *)view handler:(MakeHandler)handler;
 
-+ (void)configView:(UIView *)view state:(NSNumber *)state makeHandler:(MakeHandler)makeHandler;
++ (void)configView:(UIView *)view state:(NSNumber *)state handler:(MakeHandler)handler;
 
 - (VVMakeLayout *)and;
 
