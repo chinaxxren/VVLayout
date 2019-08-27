@@ -3,11 +3,11 @@
 // Copyright (c) 2019 Tank. All rights reserved.
 //
 
-#import "ShopCartDemo.h"
+#import "ShopCartCell.h"
 
 #import "VVLayout.h"
 
-@interface ShopCartDemo ()
+@interface ShopCartCell ()
 
 @property(nonatomic, strong) UIView *groundView;
 @property(nonatomic, strong) UIButton *checkBtn;
@@ -22,20 +22,14 @@
 
 @end
 
-@implementation ShopCartDemo
+@implementation ShopCartCell
 
-- (id)init {
-    self = [super init];
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self setup];
-    }
-
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+        self.backgroundColor = [UIColor lightGrayColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
         [self setup];
     }
 
@@ -43,8 +37,6 @@
 }
 
 - (void)setup {
-    self.backgroundColor = [UIColor lightGrayColor];
-
     [self addSubview:self.groundView];
     [self.groundView addSubview:self.checkBtn];
     [self.groundView addSubview:self.shopImgView];
@@ -56,9 +48,15 @@
     [self.groundView addSubview:self.minusBtn];
 }
 
-- (void)configure {
-    self.titleLab.text = @"小熊（bear）煮蛋器系列jdq-c31";
-    self.descLab.text = @"单层dq-c311 送1架子 单层dq-c311 单层dq-c311 送1架子 单层dq-c311";
+- (void)configure:(NSString *)text index:(NSInteger)index {
+    self.descLab.text = text;
+    self.countField.text = [NSString stringWithFormat:@"%zd",index];
+}
+
+- (CGSize)sizeThatFits:(CGSize)size {
+    CGFloat width = self.bounds.size.width;
+    CGSize thatFits = [self.descLab sizeThatFits:CGSizeMake(width - 170.0f, CGFLOAT_MAX)];
+    return CGSizeMake(width, thatFits.height + 110);
 }
 
 - (void)layoutSubviews {
@@ -80,13 +78,6 @@
         make.size.vv_equalTo(CGSizeMake(85.0f, 85.0f));
     }];
 
-    [self.priceLab makeLayout:^(VVMakeLayout *make) {
-        make.left.equalTo(self.shopImgView.vv_right).offset(12.0f);
-        make.right.equalTo(self.groundView.vv_right).offset(-12.0f);
-        make.bottom.offset(-23.0f);
-        make.height.vv_equalTo(18.0f);
-    }];
-
     [self.titleLab makeLayout:^(VVMakeLayout *make) {
         make.right.offset(-12.0f);
         make.left.equalTo(self.shopImgView.vv_right).offset(12.0f);
@@ -103,7 +94,7 @@
 
     [self.minusBtn makeLayout:^(VVMakeLayout *make) {
         make.right.offset(-12.0f);
-        make.bottom.offset(-14.0f);
+        make.bottom.offset(-10.0f);
         make.size.vv_equalTo(CGSizeMake(21.0f, 21.0f));
     }];
 
@@ -117,6 +108,13 @@
         make.right.equalTo(self.countField.vv_left);
         make.centerY.equalTo(self.minusBtn.vv_centerY);
         make.size.vv_equalTo(CGSizeMake(21.0f, 21.0f));
+    }];
+
+    [self.priceLab makeLayout:^(VVMakeLayout *make) {
+        make.left.equalTo(self.shopImgView.vv_right).offset(12.0f);
+        make.right.equalTo(self.groundView.vv_right).offset(-12.0f);
+        make.centerY.equalTo(self.minusBtn.vv_centerY);
+        make.height.vv_equalTo(18.0f);
     }];
 }
 
@@ -173,6 +171,7 @@
         _titleLab.font = [UIFont systemFontOfSize:12.0f];
         _titleLab.textColor = [UIColor blackColor];
         _titleLab.numberOfLines = 0;
+        _titleLab.text = @"小熊（bear）煮蛋器系列";
     }
 
     return _titleLab;

@@ -3,17 +3,17 @@
 // Copyright (c) 2019 Tank. All rights reserved.
 //
 
-#import "ArrayDemo.h"
+#import "ArrayView.h"
 #import "VVLayout.h"
 
 
-@interface ArrayDemo ()
+@interface ArrayView ()
 
 @property(nonatomic, strong) NSMutableArray *viewArray;
 
 @end
 
-@implementation ArrayDemo
+@implementation ArrayView
 
 - (NSMutableArray *)viewArray {
     if (!_viewArray) {

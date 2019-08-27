@@ -7,7 +7,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ArrayDemo : UIView
+@interface ArrayView : UIView
 
 // 水平方向排列、固定控件间隔、控件长度不定
 - (void)horizontalFixSpace;

@@ -7,8 +7,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ShopCartDemo : UIView
+@interface ShopCartCell : UITableViewCell
 
-- (void)configure;
+- (void)configure:(NSString *)text index:(NSInteger)index;
 
 @end
