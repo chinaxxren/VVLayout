@@ -10,37 +10,37 @@
 
 @implementation NSArray (VVAdditions)
 
-- (NSArray *)makeLayouts:(MakeHandler)makeHandler {
+- (NSArray *)makeLayouts:(VVViewLayout)layout {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view makeLayout:makeHandler];
+        [view makeLayout:layout];
         [constraints addObject:view];
     }
     return constraints;
 }
 
-- (NSArray *)remakeLayouts:(MakeHandler)makeHandler {
+- (NSArray *)remakeLayouts:(VVViewLayout)layout {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view remakeLayout:makeHandler];
+        [view remakeLayout:layout];
         [constraints addObject:view];
     }
     return constraints;
 }
 
-- (NSArray *)updateLayouts:(MakeHandler)makeHandler {
+- (NSArray *)updateLayouts:(VVViewLayout)layout {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view updateLayout:makeHandler];
+        [view updateLayout:layout];
         [constraints addObject:view];
     }
     return constraints;
 }
 
-- (NSArray *)layouts:(MakeHandler)makeHandler state:(NSNumber *)state {
+- (NSArray *)layouts:(VVViewLayout)layout state:(NSNumber *)state {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view layout:makeHandler state:state];
+        [view layout:layout state:state];
         [constraints addObject:view];
     }
     return constraints;

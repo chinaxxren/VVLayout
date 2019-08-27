@@ -3,16 +3,16 @@
 // Copyright (c) 2019 Tank. All rights reserved.
 //
 
-#import "VVMakeLayoutInfo.h"
+#import "VVViewLayoutInfo.h"
 
 #import "UIView+VVExtend.h"
 #import "VVLayoutAppearance.h"
 
-@interface VVMakeLayoutInfo ()
+@interface VVViewLayoutInfo ()
 
 @end
 
-@implementation VVMakeLayoutInfo
+@implementation VVViewLayoutInfo
 
 - (instancetype)initWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType {
     self = [super init];
@@ -27,7 +27,7 @@
     return self;
 }
 
-+ (instancetype)infoWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType {
++ (instancetype)viewInfoWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType {
     return [[self alloc] initWithMakeLayoutType:makeLayoutType];
 }
 

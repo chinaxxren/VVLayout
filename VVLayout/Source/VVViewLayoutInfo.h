@@ -31,7 +31,7 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
     VVLessThanOrEqualTo,
 };
 
-@interface VVMakeLayoutInfo : NSObject
+@interface VVViewLayoutInfo : NSObject
 
 @property(nonatomic, assign) VVMakeLayoutType makeLayoutType;
 @property(nonatomic, assign) VVMakeLayoutType viewLayoutType;
@@ -48,7 +48,7 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
 
 - (instancetype)initWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType;
 
-+ (instancetype)infoWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType;
++ (instancetype)viewInfoWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType;
 
 - (void)changeAttribute:(id)attribute equalType:(VVEqualType)equalType;
 

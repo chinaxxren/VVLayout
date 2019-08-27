@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0243BD981366592A0C489CE4A7202A9F /* UIView+VVExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = A45E11101C5EE05AA5019D758ADCD62F /* UIView+VVExtend.m */; };
 		0DDBA21796ED56565F10684C025DC78A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FA4C83906F5C7F9B9F736FD2E9A0F8 /* LaunchScreen.storyboard */; };
-		2055751B57F8EA75EA8199D7B2AED039 /* VVMakeLayoutInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C048C258647D2DC88C7029B2B58F65 /* VVMakeLayoutInfo.m */; };
+		2055751B57F8EA75EA8199D7B2AED039 /* VVViewLayoutInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C048C258647D2DC88C7029B2B58F65 /* VVViewLayoutInfo.m */; };
 		2C4726D56746C8AB6A11278C5237A626 /* ShopCartDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 611B57E2E284EF46FC4EDA298D7EBC38 /* ShopCartDemo.m */; };
 		2D955A3F0D840CBA5C9C29C9ADF1B1A1 /* VVLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EE87292BBF216A9A5900AEE8284B46E1 /* VVLayoutTests.m */; };
 		35DE50D3DE505817CD7A479D127471E3 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB05BC76B702ECF6D4799B0FFC80DC5 /* UIView+Addition.m */; };
@@ -55,7 +55,7 @@
 		39CDC1E73B5F3234780FCE4F53CA25B3 /* VVLayoutUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVLayoutUtils.m; sourceTree = "<group>"; };
 		4CA33854975468A5C4248B3DC891DCF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F47B4D657C120479E41E68C8D07C6D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		55C048C258647D2DC88C7029B2B58F65 /* VVMakeLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVMakeLayoutInfo.m; sourceTree = "<group>"; };
+		55C048C258647D2DC88C7029B2B58F65 /* VVViewLayoutInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVViewLayoutInfo.m; sourceTree = "<group>"; };
 		5E374CF42D41157AA2C83A1B21BDD6FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		611B57E2E284EF46FC4EDA298D7EBC38 /* ShopCartDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopCartDemo.m; sourceTree = "<group>"; };
 		6ABEAF4B50FC889DA57C616BCBB11C1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		71239588C598CF07E0483123AC10AC19 /* UIView+VVLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VVLayout.m"; sourceTree = "<group>"; };
 		7A0F924E98C8E27939EBCAD23E25963D /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
 		85209823945DE4AA0F2EA2333FB56E28 /* NSArray+VVAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+VVAdditions.m"; sourceTree = "<group>"; };
-		8554DC110688843B02FB2D8D71577CEF /* VVMakeLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeLayoutInfo.h; sourceTree = "<group>"; };
+		8554DC110688843B02FB2D8D71577CEF /* VVViewLayoutInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVViewLayoutInfo.h; sourceTree = "<group>"; };
 		919244BBCDCC1051CAA69912B4F443B0 /* VVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVLayout.h; sourceTree = "<group>"; };
 		A0F5876B69018CEC0F5DE1E0A6EC3931 /* VVMakeLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVMakeLayout.h; sourceTree = "<group>"; };
 		A45E11101C5EE05AA5019D758ADCD62F /* UIView+VVExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+VVExtend.m"; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 				00919788FD91DC44433181960944C2FF /* VVMakeBlock.m */,
 				A0F5876B69018CEC0F5DE1E0A6EC3931 /* VVMakeLayout.h */,
 				2AA377035C139D9EF623B0E95D1369C3 /* VVMakeLayout.m */,
-				8554DC110688843B02FB2D8D71577CEF /* VVMakeLayoutInfo.h */,
-				55C048C258647D2DC88C7029B2B58F65 /* VVMakeLayoutInfo.m */,
+				8554DC110688843B02FB2D8D71577CEF /* VVViewLayoutInfo.h */,
+				55C048C258647D2DC88C7029B2B58F65 /* VVViewLayoutInfo.m */,
 				C3AE608695949AD81D728E6B /* UIFont+VVLayout.m */,
 				C3AE66BC53A7AEA8A396D894 /* UIFont+VVLayout.h */,
 				C3AE6A5F6070907CA419AF72 /* VVLayoutAppearance.m */,
@@ -358,7 +358,7 @@
 				C81B032744434DA386C2F5447E44308C /* VVLayoutUtils.m in Sources */,
 				904DB56AB32EDB83DD7C3118A44DD3A4 /* VVMakeBlock.m in Sources */,
 				B11DCF37FB9376FDACF2E52E6592E56B /* VVMakeLayout.m in Sources */,
-				2055751B57F8EA75EA8199D7B2AED039 /* VVMakeLayoutInfo.m in Sources */,
+				2055751B57F8EA75EA8199D7B2AED039 /* VVViewLayoutInfo.m in Sources */,
 				609545BF32C41C4A2C27E52E05549409 /* ViewController.m in Sources */,
 				9095608B1849204224CD6054CDC01036 /* main.m in Sources */,
 				C3AE606B9D0E45EC81BD94C9 /* UIFont+VVLayout.m in Sources */,

@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic) NSNumber *vv_state;
 
-- (void)makeLayout:(MakeHandler)makeHandler;
+- (void)makeLayout:(VVViewLayout)layout;
 
-- (void)remakeLayout:(MakeHandler)makeHandler;
+- (void)remakeLayout:(VVViewLayout)layout;
 
-- (void)updateLayout:(MakeHandler)makeHandler;
+- (void)updateLayout:(VVViewLayout)layout;
 
-- (void)layout:(MakeHandler)makeHandler state:(NSNumber *)state;
+- (void)layout:(VVViewLayout)layout state:(NSNumber *)state;
 
 @end
 

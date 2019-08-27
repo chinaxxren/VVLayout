@@ -9,7 +9,7 @@
 #import "UIView+VVLayout.h"
 #import "VVMakeBlock.h"
 #import "VVMakeLayout.h"
-#import "VVMakeLayoutInfo.h"
+#import "VVViewLayoutInfo.h"
 #import "NSArray+VVAdditions.h"
 #import "UIView+Addition.h"
 #import "VVLayoutAppearance.h"

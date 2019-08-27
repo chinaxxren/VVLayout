@@ -13,13 +13,13 @@ typedef NS_ENUM(NSUInteger, VVAxisType) {
 
 @interface NSArray (VVAdditions)
 
-- (NSArray *)makeLayouts:(MakeHandler)makeHandler;
+- (NSArray *)makeLayouts:(VVViewLayout)layout;
 
-- (NSArray *)remakeLayouts:(MakeHandler)makeHandler;
+- (NSArray *)remakeLayouts:(VVViewLayout)layout;
 
-- (NSArray *)updateLayouts:(MakeHandler)makeHandler;
+- (NSArray *)updateLayouts:(VVViewLayout)layout;
 
-- (NSArray *)layouts:(MakeHandler)makeHandler state:(NSNumber *)state;
+- (NSArray *)layouts:(VVViewLayout)layout state:(NSNumber *)state;
 
 
 /**
