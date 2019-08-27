@@ -59,6 +59,101 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
 
+//    [self testDemo1];
+
+//    [self testDemo2];
+
+//    [self testDemo3];
+
+//    [self testDemo4];
+
+//    [self testDemo5];
+
+//    [self testDemo6];
+
+    [self.view addSubview:self.view1];
+    [self.view1 remakeLayout:^(VVMakeLayout *make) {
+        make.top.equalTo(@200);
+        make.centerX.offset(0.0f);
+        make.size.vv_equalTo(CGSizeMake(100, 100));
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
+    [self.view1 updateLayout:^(VVMakeLayout *make) {
+        make.top.offset(100);
+    }];
+}
+
+- (void)testDemo6 {
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.top.equalTo(@110);
+        make.centerX.equalTo(@100);
+        make.size.vv_equalTo(CGSizeMake(100, 100));
+    }];
+}
+
+- (void)testDemo5 {
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.edges.vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
+//        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(150, 80, 200, 100));
+    }];
+}
+
+- (void)testDemo4 {
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+        make.size.vv_equalTo(CGSizeMake(100, 100));
+    }];
+}
+
+- (void)testDemo3 {
+    [VVLayoutAppearance setGlobalViewScale:YES];
+    [VVLayoutAppearance setGlobalScaleFont:YES];
+
+    self.label.text = @"分块下载还有一个比较使用的场景是断点续传，可以将文件分为若干个块，"
+                      "然后维护一个下载状态文件用以记录每一个块的状态，这样即使在网络中断后，"
+                      "也可以恢复中断前的状态，具体实现读者可以自己尝试一下，还是有一些细节需"
+                      "要特别注意的，比如分块大小多少合适？下载到一半的块如何处理？要不要维护"
+                      "一个任务队列";
+    [self.view addSubview:self.label];
+
+    [self.label makeLayout:^(VVMakeLayout *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+        make.width.vv_equalTo(200.0f);
+        make.heightThatFits(CGFLOAT_MAX);
+    }];
+}
+
+- (void)testDemo2 {
+    [self.view addSubview:self.view1];
+    [self.view1 addSubview:self.view2];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.width.vv_equalTo(100);
+        make.height.vv_equalTo(100);
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+    }];
+
+    [self.view2 makeLayout:^(VVMakeLayout *make) {
+        make.top.vv_equalTo(12.0f);
+        make.bottom.vv_equalTo(-14.0f);
+        make.left.vv_equalTo(16.0f);
+        make.width.equalTo(self.view1.vv_height).multipliedBy(0.5f);
+    }];
+}
+
+
+- (void)testDemo1 {
     [self.view addSubview:self.view1];
     [self.view addSubview:self.view2];
 
@@ -75,127 +170,8 @@
         make.bottom.equalTo(self.view1.vv_top);
         make.left.equalTo(self.view1.vv_right).offset(20.0f);
     }];
-
-/*
-    [self.view addSubview:self.view1];
-    [self.view1 addSubview:self.view2];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.width.vv_equalTo(100);
-        make.height.vv_equalTo(100);
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view);
-    }];
-    NSLog(@"view1->%@", NSStringFromCGRect(self.view1.frame));
-
-    [self.view2 makeLayout:^(VVMakeLayout *make) {
-        make.top.vv_equalTo(12.0f);
-        make.bottom.vv_equalTo(14.0f);
-        make.left.vv_equalTo(16.0f);
-        make.width.equalTo(self.view1.vv_height).multipliedBy(0.5f);
-    }];
-    NSLog(@"view2->%@", NSStringFromCGRect(self.view2.frame));
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.sizeThatFits(CGSizeMake(100, 100)).offset(10);
-    }];
-*/
-/*
-
-    [VVLayoutAppearance setGlobalViewScale:YES];
-    [VVLayoutAppearance setGlobalScaleFont:YES];
-
-    NSLog(@"after fontSize-->%f", self.label.font.pointSize);
-
-    self.label.text = @"分块下载还有一个比较使用的场景是断点续传，可以将文件分为若干个块，然后维护一个下载状态文件用以记录每一个块的状态，这样即使在网络中断后，也可以恢复中断前的状态，具体实现读者可以自己尝试一下，还是有一些细节需要特别注意的，比如分块大小多少合适？下载到一半的块如何处理？要不要维护一个任务队列";
-    [self.view addSubview:self.label];
-
-    [self.label makeLayout:^(VVMakeLayout *make) {
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view);
-        make.width.vv_equalTo(200.0f);
-        make.heightThatFits(CGFLOAT_MAX);
-    }];
-*/
-/*
-    [self.view addSubview:self.view1];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view);
-        make.size.vv_equalTo(CGSizeMake(100, 100));
-    }];
-*/
-/*
-    [self.view addSubview:self.view1];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-//        make.edges.vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
-        make.edges.equalTo(self.view).vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
-    }];
-*/
-/*
-    [self.view addSubview:self.view1];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.center.equalTo(self.view);
-        make.width.equalTo(@100);
-        make.height.equalTo(@160);
-//        make.size.vv_equalTo(CGSizeMake(100, 100));
-    }];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.width.equalTo(@50);
-    }             forState:@1];
-    */
-/*
-    [self.view addSubview:self.view1];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.top.equalTo(@110);
-        make.centerX.equalTo(@100);
-        make.size.vv_equalTo(CGSizeMake(100, 100));
-    }];
-*/
-
-/*
-    [self.view addSubview:self.view1];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(150, 80, 200, 100));
-    }];
-    */
-
-    /*
-    [self.view addSubview:self.view1];
-
-    [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.top.equalTo(self.view.vv_top).offset(200.0f);
-        make.centerX.equalTo(self.view);
-        make.size.vv_equalTo(CGSizeMake(100, 100));
-    }];
-     */
-/*
-     [self.view addSubview:self.view1];
-     
-     [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.top.offset(300.0f);
-        make.left.equalTo(self.view);
-        make.right.equalTo(self.view);
-        make.height.vv_equalTo(100.0f);
-     }];
-*/
 }
 
-/*
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
-    [self.view1 updateLayout:^(VVMakeLayout *make) {
-        make.top.offset(100);
-    }];
-    
-    [self.view setNeedsLayout];
-}
-*/
 
 - (ShopCartDemo *)shopCartDemo {
     if (!_shopCartDemo) {
@@ -236,8 +212,8 @@
     if (!_label) {
         _label = [UILabel new];
         _label.font = [UIFont systemFontOfSize:14.0f];
-        _label.backgroundColor = [UIColor greenColor];
-        _label.textColor = [UIColor whiteColor];
+        _label.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        _label.textColor = [UIColor blackColor];
         _label.numberOfLines = 0;
     }
     return _label;
