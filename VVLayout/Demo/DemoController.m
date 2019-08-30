@@ -134,7 +134,7 @@
         make.centerX.equalTo(self.view);
         make.centerY.equalTo(self.view);
         make.width.vv_equalTo(200.0f);
-        make.lessHeightThatFits(50);
+        make.lessHeightThatFits(CGFLOAT_MAX);
     }];
 }
 
