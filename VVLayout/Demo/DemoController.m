@@ -131,8 +131,7 @@
     [self.view addSubview:self.label];
 
     [self.label makeLayout:^(VVMakeLayout *make) {
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view);
+        make.center.equalTo(self.view);
         make.width.vv_equalTo(200.0f);
         make.lessHeightThatFits(CGFLOAT_MAX);
     }];
@@ -145,8 +144,7 @@
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.width.vv_equalTo(100);
         make.height.vv_equalTo(100);
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view);
+        make.center.equalTo(self.view);
     }];
 
     [self.view2 makeLayout:^(VVMakeLayout *make) {
@@ -164,8 +162,7 @@
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.width.vv_equalTo(100);
         make.height.vv_equalTo(100);
-        make.centerX.equalTo(self.view);
-        make.centerY.equalTo(self.view);
+        make.center.equalTo(self.view);
     }];
 
     [self.view2 makeLayout:^(VVMakeLayout *make) {

@@ -6,12 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Demo/ShopCartCell.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/ShopCartCell.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,9 +18,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+              <folding>
+                <element signature="e#126#152#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13906">
+            <state relative-caret-position="11614">
               <caret line="818" column="24" lean-forward="true" selection-start-line="818" selection-start-column="24" selection-end-line="818" selection-end-column="24" />
               <folding>
                 <element signature="e#90#114#0" expanded="true" />
@@ -37,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -49,13 +56,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
+            <state relative-caret-position="670">
+              <caret line="164" column="39" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
               <folding>
                 <element signature="e#125#151#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="37" selection-start-line="37" selection-end-line="37" />
+              <folding>
+                <element signature="e#130#160#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+              <folding>
+                <element signature="e#90#114#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,8 +215,8 @@
         <option value="$PROJECT_DIR$/VVLayout/Demo/ShopCartCell.m" />
         <option value="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" />
-        <option value="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" />
       </list>
     </option>
   </component>
@@ -213,6 +244,12 @@
               <item name="" type="efc3779f:XcodeRootNode" />
               <item name="VVLayout" type="1d218c8b:XcodeProjectNode" />
               <item name="VVLayout" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="VVLayout" type="1d218c8b:XcodeProjectNode" />
+              <item name="VVLayout" type="fcab9f18:XcodeViewNode" />
+              <item name="Demo" type="fcab9f18:XcodeViewNode" />
             </path>
             <path>
               <item name="" type="efc3779f:XcodeRootNode" />
@@ -292,21 +329,7 @@
       <workItem from="1566786286318" duration="7574000" />
       <workItem from="1566872853442" duration="5174000" />
       <workItem from="1566898652691" duration="3957000" />
-      <workItem from="1567131739146" duration="3378000" />
-    </task>
-    <task id="LOCAL-00003" summary="Masonry方式布局">
-      <created>1565946218638</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1565946218638</updated>
-    </task>
-    <task id="LOCAL-00004" summary="增加头文件">
-      <created>1565946406182</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1565946406182</updated>
+      <workItem from="1567131739146" duration="3507000" />
     </task>
     <task id="LOCAL-00005" summary="增加头文件">
       <created>1565947137154</created>
@@ -637,11 +660,25 @@
       <option name="project" value="LOCAL" />
       <updated>1566903459143</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="增加less和great方法">
+      <created>1567135409749</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1567135409749</updated>
+    </task>
+    <task id="LOCAL-00053" summary="增加less和great方法">
+      <created>1567135487590</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1567135487590</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109583000" />
+    <option name="totallyTimeSpent" value="109712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -726,7 +763,8 @@
     <MESSAGE value="0.1.3" />
     <MESSAGE value="修改名称" />
     <MESSAGE value="增加Demo" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加Demo" />
+    <MESSAGE value="增加less和great方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加less和great方法" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVTopBlock.h" />
@@ -965,16 +1003,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-          <folding>
-            <element signature="e#126#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/AppDelegate.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -986,16 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#130#160#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1026,16 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartCell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
-          <folding>
-            <element signature="e#90#114#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ArrayView.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1043,19 +1051,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
+        <state relative-caret-position="420">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
           <folding>
-            <element signature="e#125#151#0" expanded="true" />
+            <element signature="e#90#113#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13906">
+        <state relative-caret-position="11614">
           <caret line="818" column="24" lean-forward="true" selection-start-line="818" selection-start-column="24" selection-end-line="818" selection-end-column="24" />
           <folding>
             <element signature="e#90#114#0" expanded="true" />
@@ -1066,12 +1074,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
+    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        <state relative-caret-position="612">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
           <folding>
-            <element signature="e#90#113#0" expanded="true" />
+            <element signature="e#130#160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="45" column="12" lean-forward="true" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+          <folding>
+            <element signature="e#126#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+          <folding>
+            <element signature="e#90#114#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="164" column="39" selection-start-line="164" selection-start-column="39" selection-end-line="164" selection-end-column="39" />
+          <folding>
+            <element signature="e#125#151#0" expanded="true" />
           </folding>
         </state>
       </provider>
