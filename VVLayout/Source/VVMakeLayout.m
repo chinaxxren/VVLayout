@@ -11,8 +11,6 @@
 #import "UIView+VVExtend.h"
 #import "VVLayoutAppearance.h"
 
-#define MAX_LAYOUT_VALUE 10000.f
-
 #define EmptyMethodExcetion() \
     @throw [NSException exceptionWithName:NSInternalInconsistencyException \
                                    reason:[NSString stringWithFormat:@"This is a empty %@ method.", NSStringFromSelector(_cmd)] \
@@ -747,29 +745,38 @@
     return self;
 }
 
-- (VVMakeLayout *(^)(CGSize size))sizeThatFits {
+- (VVMakeLayout *(^)(CGSize size))lessSizeThatFits {
     return ^id(CGSize size) {
         CGFloat scale = [VVLayoutAppearance globalScale];
-        CGSize fitSize = [self.view sizeThatFits:size];
-        CGFloat width = size.width > MAX_LAYOUT_VALUE ? MAX_LAYOUT_VALUE : size.width * scale;
-        CGFloat height = size.height > MAX_LAYOUT_VALUE ? MAX_LAYOUT_VALUE : size.height * scale;
-        width = MIN(width, fitSize.width);
-        height = MIN(height, fitSize.height);
+        CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+        CGFloat width = MIN(size.width * scale, fitSize.width);
+        CGFloat height = MIN(size.height * scale, fitSize.height);
         [self setHighPriorityValue:width withType:VVMakeLayoutTypeWidth];
         [self setHighPriorityValue:height withType:VVMakeLayoutTypeHeight];
         return self;
     };
 }
 
-- (VVMakeLayout *(^)(CGFloat))heightThatFits {
-    return ^id(CGFloat maxHeight) {
+- (VVMakeLayout *(^)(CGSize size))greatSizeThatFits {
+    return ^id(CGSize size) {
+        CGFloat scale = [VVLayoutAppearance globalScale];
+        CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+        CGFloat width = MAX(size.width * scale, fitSize.width);
+        CGFloat height = MAX(size.height * scale, fitSize.height);
+        [self setHighPriorityValue:width withType:VVMakeLayoutTypeWidth];
+        [self setHighPriorityValue:height withType:VVMakeLayoutTypeHeight];
+        return self;
+    };
+}
+
+- (VVMakeLayout *(^)(CGFloat))lessHeightThatFits {
+    return ^id(CGFloat height) {
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGFloat height = maxHeight > MAX_LAYOUT_VALUE ? MAX_LAYOUT_VALUE : maxHeight * [VVLayoutAppearance globalScale];
-            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), height)];
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), CGFLOAT_MAX)];
             CGRect frame = self.newFrame;
-            frame.size.height = fitSize.height;
+            frame.size.height = MIN(fitSize.height, height * [VVLayoutAppearance globalScale]);
             self.newFrame = frame;
         };
         [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
@@ -777,15 +784,44 @@
     };
 }
 
-- (VVMakeLayout *(^)(CGFloat))widthThatFits {
-    return ^id(CGFloat maxWidth) {
+- (VVMakeLayout *(^)(CGFloat))greatHeightThatFits {
+    return ^id(CGFloat height) {
         VVWeakify(self);
         dispatch_block_t block_t = ^{
             VVStrongify(self);
-            CGFloat height = maxWidth > MAX_LAYOUT_VALUE ? MAX_LAYOUT_VALUE : maxWidth * [VVLayoutAppearance globalScale];
-            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(height, CGRectGetHeight(self.newFrame))];
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGRectGetWidth(self.newFrame), CGFLOAT_MAX)];
             CGRect frame = self.newFrame;
-            frame.size.width = fitSize.width;
+            frame.size.height = MAX(fitSize.height, height * [VVLayoutAppearance globalScale]);
+            self.newFrame = frame;
+        };
+        [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+        return self;
+    };
+}
+
+- (VVMakeLayout *(^)(CGFloat))lessWidthThatFits {
+    return ^id(CGFloat width) {
+        VVWeakify(self);
+        dispatch_block_t block_t = ^{
+            VVStrongify(self);
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGRectGetHeight(self.newFrame))];
+            CGRect frame = self.newFrame;
+            frame.size.width = MIN(fitSize.width, width * [VVLayoutAppearance globalScale]);
+            self.newFrame = frame;
+        };
+        [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];
+        return self;
+    };
+}
+
+- (VVMakeLayout *(^)(CGFloat))greatWidthThatFits {
+    return ^id(CGFloat width) {
+        VVWeakify(self);
+        dispatch_block_t block_t = ^{
+            VVStrongify(self);
+            CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGRectGetHeight(self.newFrame))];
+            CGRect frame = self.newFrame;
+            frame.size.width = MAX(fitSize.width, width * [VVLayoutAppearance globalScale]);
             self.newFrame = frame;
         };
         [self.makeBlcoks addObject:[VVMakeBlock makeBlockT:block_t priority:VVMakeBlockPriorityLow]];

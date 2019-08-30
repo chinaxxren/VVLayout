@@ -70,11 +70,17 @@ typedef void (^VVViewLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *)heightToFit;
 
-- (VVMakeLayout *(^)(CGSize size))sizeThatFits;
+- (VVMakeLayout *(^)(CGSize size))lessSizeThatFits;
 
-- (VVMakeLayout *(^)(CGFloat))heightThatFits;
+- (VVMakeLayout *(^)(CGSize size))greatSizeThatFits;
 
-- (VVMakeLayout *(^)(CGFloat))widthThatFits;
+- (VVMakeLayout *(^)(CGFloat))lessHeightThatFits;
+
+- (VVMakeLayout *(^)(CGFloat))greatHeightThatFits;
+
+- (VVMakeLayout *(^)(CGFloat))lessWidthThatFits;
+
+- (VVMakeLayout *(^)(CGFloat))greatWidthThatFits;
 
 @end
 
