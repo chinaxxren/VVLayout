@@ -44,7 +44,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger row = indexPath.row;
-    if (row == 9) {
+    if (row == [self.textList count] - 1) {
         ShopCartController *shopCartController = [ShopCartController new];
         shopCartController.title = self.textList[indexPath.row];
         [self.navigationController pushViewController:shopCartController animated:YES];

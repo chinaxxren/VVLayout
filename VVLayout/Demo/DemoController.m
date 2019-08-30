@@ -88,7 +88,7 @@
         [self testDemo4];
     } else if (self.index == 5) {
 
-        // 更新Frame
+        // SafeArea
         [self testSafeArea];
     } else {
 
@@ -106,7 +106,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
-    if (self.index == 4) {
+    if (self.index == 5) {
         [self.view1 updateLayout:^(VVMakeLayout *make) {
             make.top.offset(100);
         }];
