@@ -19,8 +19,9 @@
     if (self) {
         self.makeLayoutType = makeLayoutType;
         self.viewLayoutType = makeLayoutType;
-        self.multiplied = 1.0f;
         self.equalType = VVEqualNone;
+        self.multiplied = 1.0f;
+        self.safe = NO;
         self.isNum = NO;
     }
 
@@ -67,6 +68,32 @@
     } else {
         NSAssert(NO, @"attempting to set layout constant with unsupported value: %@", value);
     }
+}
+
+- (CGFloat)value {
+    if (self.safe && self.makeLayoutType == self.viewLayoutType) {
+        UIEdgeInsets safeAreaInsets = [VVLayoutUtils safeAreaInsets];
+        if (self.makeLayoutType == VVMakeLayoutTypeLeft) {
+            return _value + safeAreaInsets.left;
+        } else if (self.makeLayoutType == VVMakeLayoutTypeRight) {
+            return _value - safeAreaInsets.right;
+        } else if (self.makeLayoutType == VVMakeLayoutTypeTop) {
+            return _value + safeAreaInsets.top;
+        } else if (self.makeLayoutType == VVMakeLayoutTypeBottom) {
+            return _value - safeAreaInsets.bottom;
+        }
+    }
+
+    return _value;
+}
+
+- (VVEdgeInsets)insets {
+    if (self.safe && self.makeLayoutType == self.viewLayoutType && self.makeLayoutType == VVMakeLayoutTypeEdges) {
+        UIEdgeInsets safeAreaInsets = [VVLayoutUtils safeAreaInsets];
+        return UIEdgeInsetsMake(_insets.top + safeAreaInsets.top, _insets.left + safeAreaInsets.left, _insets.bottom - safeAreaInsets.bottom, _insets.right - safeAreaInsets.right);
+    }
+
+    return _insets;
 }
 
 @end

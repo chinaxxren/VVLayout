@@ -178,6 +178,11 @@
     return self;
 }
 
+- (VVMakeLayout *)safe {
+    self.viewLayoutInfo.safe = YES;
+    return self;
+}
+
 - (VVMakeLayout *)left {
     self.viewLayoutInfo = [VVViewLayoutInfo viewInfoWithMakeLayoutType:VVMakeLayoutTypeLeft];
     [self.viewLayoutInfos addObject:self.viewLayoutInfo];
@@ -702,8 +707,8 @@
         if (!relateView) {
             relateView = [self.view superview];
         }
-        CGFloat width = CGRectGetWidth(relateView.bounds) - (insets.left + insets.right);
-        CGFloat height = CGRectGetHeight(relateView.bounds) - (insets.top + insets.bottom);
+        CGFloat width = CGRectGetWidth(relateView.bounds) - insets.left + insets.right;
+        CGFloat height = CGRectGetHeight(relateView.bounds) - insets.top + insets.bottom;
         CGRect frame = CGRectMake(insets.left, insets.top, width, height);
         self.newFrame = frame;
     };

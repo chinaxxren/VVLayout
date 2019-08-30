@@ -52,13 +52,13 @@
         make.edges.equalTo(self.view);
     }];
 
-    if (self.index == 5) {
+    if (self.index == 6) {
         [self.arrayView horizontalFixSpace];
-    } else if (self.index == 6) {
-        [self.arrayView verticalFixSpace];
     } else if (self.index == 7) {
-        [self.arrayView horizontalFixItemWidth];
+        [self.arrayView verticalFixSpace];
     } else if (self.index == 8) {
+        [self.arrayView horizontalFixItemWidth];
+    } else if (self.index == 9) {
         [self.arrayView verticalFixItemWidth];
     }
 }
@@ -86,11 +86,23 @@
 
         // 更新Frame
         [self testDemo4];
-    } else {
+    } else if (self.index == 5) {
 
         // 更新Frame
+        [self testSafeArea];
+    } else {
+
+        // Array
         [self testArray];
     }
+}
+
+- (void)testSafeArea {
+    [self.view addSubview:self.view1];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.edges.safe.equalTo(self.view);
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {

@@ -32,6 +32,8 @@ typedef void (^VVViewLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *)bottom;
 
+- (VVMakeLayout *)safe;
+
 - (VVMakeLayout *)centerX;
 
 - (VVMakeLayout *)centerY;

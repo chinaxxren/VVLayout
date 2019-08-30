@@ -42,6 +42,7 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
 
 @property(nonatomic, weak) UIView *relateView;
 @property(nonatomic, assign) CGFloat value;
+@property(nonatomic, assign) BOOL safe;
 @property(nonatomic, assign) CGPoint point;
 @property(nonatomic, assign) CGSize size;
 @property(nonatomic, assign) VVEdgeInsets insets;
