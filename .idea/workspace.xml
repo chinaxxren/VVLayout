@@ -6,11 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="406">
-              <caret line="176" column="70" selection-start-line="176" selection-start-column="70" selection-end-line="176" selection-end-column="70" />
+              <caret line="176" column="68" selection-start-line="176" selection-start-column="68" selection-end-line="176" selection-end-column="68" />
               <folding>
                 <element signature="e#125#151#0" expanded="true" />
               </folding>
@@ -317,14 +313,7 @@
       <workItem from="1567131739146" duration="13273000" />
       <workItem from="1567478613277" duration="1000" />
       <workItem from="1568888141189" duration="2648000" />
-      <workItem from="1568946691855" duration="6491000" />
-    </task>
-    <task id="LOCAL-00012" summary="修复edage和offset的bug">
-      <created>1566270150299</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1566270150299</updated>
+      <workItem from="1568946691855" duration="6592000" />
     </task>
     <task id="LOCAL-00013" summary="修复edage和offset的bug">
       <created>1566271073366</created>
@@ -662,11 +651,18 @@
       <option name="project" value="LOCAL" />
       <updated>1568963229441</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="增加fitsize的offset">
+      <created>1568964902953</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1568964902953</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128618000" />
+    <option name="totallyTimeSpent" value="128719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -1121,7 +1117,7 @@
     <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
-          <caret line="176" column="70" selection-start-line="176" selection-start-column="70" selection-end-line="176" selection-end-column="70" />
+          <caret line="176" column="68" selection-start-line="176" selection-start-column="68" selection-end-line="176" selection-end-column="68" />
           <folding>
             <element signature="e#125#151#0" expanded="true" />
           </folding>
