@@ -25,6 +25,7 @@
 		B9DD1EE62315311E004EE421 /* ShopCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DD1EE52315311E004EE421 /* ShopCartController.m */; };
 		C3AE606B9D0E45EC81BD94C9 /* UIFont+VVLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE608695949AD81D728E6B /* UIFont+VVLayout.m */; };
 		C3AE63EA1FBC86AB5D76582C /* DemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6FA3A34394B9B402E9CC /* DemoController.m */; };
+		C3AE68088BBFA667CF69B2E9 /* VVLayout.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C3AE639FC8131A16724662E1 /* VVLayout.podspec */; };
 		C3AE69A62A79173CA8E6BBB6 /* VVLayoutAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = C3AE6A5F6070907CA419AF72 /* VVLayoutAppearance.m */; };
 		C81B032744434DA386C2F5447E44308C /* VVLayoutUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 39CDC1E73B5F3234780FCE4F53CA25B3 /* VVLayoutUtils.m */; };
 		D10CF7E5DBDD92FC48B8A433F7B4B178 /* UIView+VVLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 71239588C598CF07E0483123AC10AC19 /* UIView+VVLayout.m */; };
@@ -79,6 +80,7 @@
 		BF7F58A6AB3B5684475AAE16F1980221 /* VVFrameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VVFrameUITests.m; sourceTree = "<group>"; };
 		C3AE608695949AD81D728E6B /* UIFont+VVLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+VVLayout.m"; sourceTree = "<group>"; };
 		C3AE6336415BF486C1EB98D1 /* VVLayoutAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVLayoutAppearance.h; sourceTree = "<group>"; };
+		C3AE639FC8131A16724662E1 /* VVLayout.podspec */ = {isa = PBXFileReference; lastKnownFileType = file.podspec; path = VVLayout.podspec; sourceTree = SOURCE_ROOT; };
 		C3AE66BC53A7AEA8A396D894 /* UIFont+VVLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+VVLayout.h"; sourceTree = "<group>"; };
 		C3AE6A5F6070907CA419AF72 /* VVLayoutAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVLayoutAppearance.m; sourceTree = "<group>"; };
 		C3AE6BE9E03E8732CE0B3CE2 /* DemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoController.h; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				5E374CF42D41157AA2C83A1B21BDD6FC /* Info.plist */,
 				B6FA4C83906F5C7F9B9F736FD2E9A0F8 /* LaunchScreen.storyboard */,
 				2E5E7D44F9A77210A2E3BC83FB34C81A /* main.m */,
+				C3AE639FC8131A16724662E1 /* VVLayout.podspec */,
 			);
 			path = VVLayout;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				6CF0837B565D4348C75A5CBFD617D0DB /* Assets.xcassets in Resources */,
 				0DDBA21796ED56565F10684C025DC78A /* LaunchScreen.storyboard in Resources */,
+				C3AE68088BBFA667CF69B2E9 /* VVLayout.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
