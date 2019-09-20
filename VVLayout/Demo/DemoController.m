@@ -174,7 +174,7 @@
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.width.vv_equalTo(100);
         make.height.vv_equalTo(100);
-        make.center.equalTo(self.view);
+        make.center.equalTo(self.view).centerOffset(CGPointMake(0, 100));
     }];
 
     [self.view2 makeLayout:^(VVMakeLayout *make) {

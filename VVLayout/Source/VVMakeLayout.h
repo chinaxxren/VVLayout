@@ -50,6 +50,8 @@ typedef void (^VVViewLayout)(VVMakeLayout *make);
 
 - (VVMakeLayout *(^)(CGFloat))offset;
 
+- (VVMakeLayout *(^)(CGPoint))centerOffset;
+
 - (VVMakeLayout *(^)(VVEdgeInsets))insets;
 
 - (VVMakeLayout *(^)(NSValue *))valueOffset;

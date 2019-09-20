@@ -320,6 +320,14 @@
     };
 }
 
+- (VVMakeLayout *(^)(CGPoint))centerOffset {
+    return ^id(CGPoint point) {
+        CGFloat scale = [VVLayoutAppearance globalScale];
+        self.viewLayoutInfo.point = CGPointMake(point.x * scale, point.y * scale);
+        return self;
+    };
+}
+
 - (VVMakeLayout *(^)(VVEdgeInsets))insets {
     return ^id(VVEdgeInsets insets) {
         CGFloat scale = [VVLayoutAppearance globalScale];
@@ -498,11 +506,11 @@
         VVStrongify(self);
         CGRect frame = self.newFrame;
         if (makeLayoutType == VVMakeLayoutTypeCenter) {
-            frame.origin.x = [self centerXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterX];
-            frame.origin.y = [self centerYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterY];
+            frame.origin.x = [self centerXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterX] + makeInfo.point.x;
+            frame.origin.y = [self centerYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:VVMakeLayoutTypeCenterY] + makeInfo.point.y;
         } else {
-            frame.origin.x = [self centerXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
-            frame.origin.y = [self centerYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType];
+            frame.origin.x = [self centerXForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType] + makeInfo.point.x;
+            frame.origin.y = [self centerYForView:makeInfo.relateView withValue:makeInfo.value makeLayoutType:makeLayoutType] + makeInfo.point.y;
         }
 
         self.newFrame = frame;
