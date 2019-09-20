@@ -320,22 +320,6 @@
     };
 }
 
-- (VVMakeLayout *(^)(CGSize))sizeOffset {
-    return ^id(CGSize size) {
-        CGFloat scale = [VVLayoutAppearance globalScale];
-        self.viewLayoutInfo.size = CGSizeMake(size.width * scale, size.height * scale);
-        return self;
-    };
-}
-
-- (VVMakeLayout *(^)(CGPoint))centerOffset {
-    return ^id(CGPoint point) {
-        CGFloat scale = [VVLayoutAppearance globalScale];
-        self.viewLayoutInfo.point = CGPointMake(point.x * scale, point.y * scale);
-        return self;
-    };
-}
-
 - (VVMakeLayout *(^)(VVEdgeInsets))insets {
     return ^id(VVEdgeInsets insets) {
         CGFloat scale = [VVLayoutAppearance globalScale];
@@ -760,38 +744,6 @@
 
 #pragma mark Container
 
-- (VVMakeLayout *)container {
-    CGRect frame = CGRectZero;
-    for (UIView *subview in [self.view subviews]) {
-        frame = CGRectUnion(frame, subview.frame);
-    }
-
-    [self setMiddlePriorityValue:CGRectGetWidth(frame) withType:VVMakeLayoutTypeWidth];
-    [self setMiddlePriorityValue:CGRectGetHeight(frame) withType:VVMakeLayoutTypeHeight];
-    return self;
-}
-
-#pragma mark Fits
-
-- (VVMakeLayout *)sizeToFit {
-    [self.view sizeToFit];
-    [self setMiddlePriorityValue:CGRectGetWidth(self.view.frame) withType:VVMakeLayoutTypeWidth];
-    [self setMiddlePriorityValue:CGRectGetHeight(self.view.frame) withType:VVMakeLayoutTypeHeight];
-    return self;
-}
-
-- (VVMakeLayout *)widthToFit {
-    [self.view sizeToFit];
-    [self setMiddlePriorityValue:CGRectGetWidth(self.view.frame) withType:VVMakeLayoutTypeWidth];
-    return self;
-}
-
-- (VVMakeLayout *)heightToFit {
-    [self.view sizeToFit];
-    [self setMiddlePriorityValue:CGRectGetHeight(self.view.frame) withType:VVMakeLayoutTypeHeight];
-    return self;
-}
-
 - (VVMakeLayout *(^)(CGSize size))lessSizeThatFits {
     return ^id(CGSize size) {
         self.viewLayoutInfo = [VVViewLayoutInfo viewInfoWithMakeLayoutType:VVMakeLayoutTypeSize];
@@ -803,9 +755,9 @@
 }
 
 - (void)lessSizeWithMakeInfo:(VVViewLayoutInfo *)makeInfo {
-    CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-    CGFloat width = MIN(makeInfo.fitSize.width, fitSize.width);
-    CGFloat height = MIN(makeInfo.fitSize.height, fitSize.height);
+    CGSize size = [self.view sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+    CGFloat width = MIN(makeInfo.fitSize.width, size.width);
+    CGFloat height = MIN(makeInfo.fitSize.height, size.height);
     [self setMiddlePriorityValue:width withType:VVMakeLayoutTypeWidth];
     [self setMiddlePriorityValue:height withType:VVMakeLayoutTypeHeight];
 }
@@ -821,9 +773,9 @@
 }
 
 - (void)greatSizeWithMakeInfo:(VVViewLayoutInfo *)makeInfo {
-    CGSize fitSize = [self.view sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-    CGFloat width = MAX(makeInfo.fitSize.width, fitSize.width);
-    CGFloat height = MAX(makeInfo.fitSize.height, fitSize.height);
+    CGSize size = [self.view sizeThatFits:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+    CGFloat width = MAX(makeInfo.fitSize.width, size.width);
+    CGFloat height = MAX(makeInfo.fitSize.height, size.height);
     [self setMiddlePriorityValue:width withType:VVMakeLayoutTypeWidth];
     [self setMiddlePriorityValue:height withType:VVMakeLayoutTypeHeight];
 }
