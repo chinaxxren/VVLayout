@@ -6,7 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/jiangmingz.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,14 +20,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_4bbecd266bd1401d24c35bc4e49d2cb263af8627" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_f4d7ac8497ea2f92c3ba1ed9546a7d36a58fc6a0" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+            <state relative-caret-position="-5704">
+              <caret line="430" selection-start-line="430" selection-end-line="430" />
+              <folding>
+                <element signature="e#90#114#0" expanded="true" />
+                <element signature="e#1573#1882#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#90#113#0" expanded="true" />
               </folding>
@@ -30,22 +49,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-831">
-              <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+            <state relative-caret-position="420">
+              <caret line="52" column="30" lean-forward="true" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
               <folding>
-                <element signature="e#90#114#0" expanded="true" />
+                <element signature="e#126#152#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
+              <folding>
+                <element signature="e#90#113#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="573">
+              <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+              <folding>
+                <element signature="e#90#118#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+            <state relative-caret-position="405">
+              <caret line="146" column="24" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
               <folding>
                 <element signature="e#125#151#0" expanded="true" />
               </folding>
@@ -57,13 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NSL</find>
-      <find>NSLog</find>
-      <find>MAS_VIEW</find>
-      <find>MASConstraintMaker</find>
-      <find>mas_makeConstraints</find>
-      <find>fixedSpacing</find>
-      <find>150</find>
       <find>80</find>
       <find>CGRect</find>
       <find>[_</find>
@@ -87,6 +123,13 @@
       <find>priceLab</find>
       <find>size</find>
       <find>fabs</find>
+      <find>leftWithMakeInfo</find>
+      <find>VVMakeLayoutTypeWidth</find>
+      <find>setSizeValue</find>
+      <find>lessHeightThatFits</find>
+      <find>greateWidth</find>
+      <find>setHighPriorityValue</find>
+      <find>topYForView</find>
     </findStrings>
     <replaceStrings>
       <replace>self</replace>
@@ -127,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeInfo.h" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMake.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMake.h" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeFrame.h" />
@@ -170,14 +212,15 @@
         <option value="$PROJECT_DIR$/VVLayout/AppDelegate.m" />
         <option value="$PROJECT_DIR$/VVLayout/Demo/ShopCartController.m" />
         <option value="$PROJECT_DIR$/VVLayout/Demo/ShopCartCell.m" />
-        <option value="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h" />
-        <option value="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.h" />
         <option value="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.m" />
         <option value="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" />
-        <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" />
-        <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVThatFits.h" />
         <option value="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h" />
+        <option value="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m" />
       </list>
     </option>
   </component>
@@ -193,6 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -218,16 +262,10 @@
               <item name="VVLayout" type="fcab9f18:XcodeViewNode" />
               <item name="Source" type="fcab9f18:XcodeViewNode" />
             </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="VVLayout" type="1d218c8b:XcodeProjectNode" />
-              <item name="VVLayoutUITests" type="fcab9f18:XcodeViewNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,14 +328,10 @@
       <workItem from="1566786286318" duration="7574000" />
       <workItem from="1566872853442" duration="5174000" />
       <workItem from="1566898652691" duration="3957000" />
-      <workItem from="1567131739146" duration="13052000" />
-    </task>
-    <task id="LOCAL-00009" summary="修复高度问题">
-      <created>1566195104201</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1566195104201</updated>
+      <workItem from="1567131739146" duration="13273000" />
+      <workItem from="1567478613277" duration="1000" />
+      <workItem from="1568888141189" duration="2648000" />
+      <workItem from="1568946691855" duration="4654000" />
     </task>
     <task id="LOCAL-00010" summary="修复edage和offset的bug">
       <created>1566268959804</created>
@@ -635,17 +669,24 @@
       <option name="project" value="LOCAL" />
       <updated>1567154170976</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="增加safe area">
+      <created>1567154540371</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1567154540371</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119257000" />
+    <option name="totallyTimeSpent" value="126781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22405373" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22893773" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -669,7 +710,7 @@
       <window_info anchor="right" x="0" y="0" width="370" height="827" id="Documentation" order="5" side_tool="true" weight="0.32967034" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22405373" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22893773" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -729,8 +770,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="增加safe area" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVBlockTInfo.m" />
-    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVLayout.m" />
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIGeometry.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
@@ -997,40 +1036,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="80" column="47" lean-forward="true" selection-start-line="80" selection-start-column="47" selection-end-line="80" selection-end-column="47" />
-          <folding>
-            <element signature="e#90#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#90#113#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartController.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-          <folding>
-            <element signature="e#130#160#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1051,20 +1060,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ShopCartController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding>
+            <element signature="e#130#160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVThatFits.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVThatFits.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Demo/ViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="16" lean-forward="true" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+        <state relative-caret-position="420">
+          <caret line="52" column="30" lean-forward="true" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
           <folding>
             <element signature="e#126#152#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h">
+    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="43" column="43" lean-forward="true" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+        <state relative-caret-position="405">
+          <caret line="146" column="24" selection-start-line="146" selection-start-column="24" selection-end-line="146" selection-end-column="24" />
+          <folding>
+            <element signature="e#125#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="e#90#113#0" expanded="true" />
           </folding>
@@ -1073,20 +1112,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-831">
-          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+        <state relative-caret-position="-5704">
+          <caret line="430" selection-start-line="430" selection-end-line="430" />
           <folding>
             <element signature="e#90#114#0" expanded="true" />
+            <element signature="e#1573#1882#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="90" column="19" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+        <state relative-caret-position="437">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
-            <element signature="e#125#151#0" expanded="true" />
+            <element signature="e#90#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="e#90#118#0" expanded="true" />
           </folding>
         </state>
       </provider>

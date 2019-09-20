@@ -19,7 +19,7 @@
     if (self) {
         self.makeLayoutType = makeLayoutType;
         self.viewLayoutType = makeLayoutType;
-        self.equalType = VVEqualNone;
+        self.equalType = VVEqualTo;
         self.multiplied = 1.0f;
         self.safe = NO;
         self.isNum = NO;
@@ -94,6 +94,15 @@
     }
 
     return _insets;
+}
+
+- (void)setFitValue:(CGFloat)fitValue {
+    _fitValue = fitValue * [VVLayoutAppearance globalScale];
+}
+
+- (void)setFitSize:(CGSize)fitSize {
+    CGFloat scale = [VVLayoutAppearance globalScale];
+    _fitSize = CGSizeMake(fitSize.width * scale, fitSize.height * scale);
 }
 
 @end

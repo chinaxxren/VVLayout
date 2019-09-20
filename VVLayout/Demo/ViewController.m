@@ -27,11 +27,6 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.textList count];
 }

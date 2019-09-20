@@ -106,7 +106,7 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(nullable UIEvent *)event {
-    if (self.index == 5) {
+    if (self.index == 4) {
         [self.view1 updateLayout:^(VVMakeLayout *make) {
             make.top.offset(100);
         }];
@@ -115,7 +115,7 @@
 
 - (void)testDemo4 {
     [self.view addSubview:self.view1];
-    [self.view1 remakeLayout:^(VVMakeLayout *make) {
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.top.equalTo(@200);
         make.centerX.offset(0.0f);
         make.size.vv_equalTo(CGSizeMake(100, 100));
@@ -126,14 +126,14 @@
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
-        make.edges.vv_equalTo(UIEdgeInsetsMake(150, 80, 200, 100));
-//        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(150, 80, 200, 100));
+//        make.edges.vv_equalTo(UIEdgeInsetsMake(100, 20, -30, -40));
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(100, 20, -30, -40));
     }];
 }
 
 - (void)testDemo2 {
-    [VVLayoutAppearance setGlobalViewScale:YES];
-    [VVLayoutAppearance setGlobalScaleFont:YES];
+//    [VVLayoutAppearance setGlobalViewScale:YES];
+//    [VVLayoutAppearance setGlobalScaleFont:YES];
 
     self.label.text = @"分块下载还有一个比较使用的场景是断点续传，可以将文件分为若干个块，"
                       "然后维护一个下载状态文件用以记录每一个块的状态，这样即使在网络中断后，"
@@ -145,7 +145,7 @@
     [self.label makeLayout:^(VVMakeLayout *make) {
         make.center.equalTo(self.view);
         make.width.vv_equalTo(200.0f);
-        make.lessHeightThatFits(CGFLOAT_MAX);
+        make.lessHeightThatFits(CGFLOAT_MAX).offset(50.0f);
     }];
 }
 
@@ -160,9 +160,9 @@
     }];
 
     [self.view2 makeLayout:^(VVMakeLayout *make) {
-        make.top.vv_equalTo(12.0f);
-        make.bottom.vv_equalTo(-14.0f);
-        make.left.vv_equalTo(16.0f);
+        make.top.offset(12.0f);
+        make.bottom.offset(-14.0f);
+        make.left.offset(16.0f);
         make.width.equalTo(self.view1.vv_height).multipliedBy(0.5f);
     }];
 }
