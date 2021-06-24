@@ -14,6 +14,7 @@
 
 @interface DemoController ()
 
+@property(nonatomic, strong) UIView *bgView;
 @property(nonatomic, strong) UIView *view1;
 @property(nonatomic, strong) UIView *view2;
 @property(nonatomic, strong) UILabel *label;
@@ -42,25 +43,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-- (void)testArray {
+- (void)testDemo7 {
     self.view.backgroundColor = [UIColor greenColor];
     [self.view addSubview:self.arrayView];
     [self.arrayView makeLayout:^(VVMakeLayout *make) {
         make.edges.equalTo(self.view);
     }];
 
-    if (self.index == 6) {
-        [self.arrayView horizontalFixSpace];
-    } else if (self.index == 7) {
-        [self.arrayView verticalFixSpace];
-    } else if (self.index == 8) {
-        [self.arrayView horizontalFixItemWidth];
-    } else if (self.index == 9) {
-        [self.arrayView verticalFixItemWidth];
-    }
+    [self.arrayView horizontalFixSpace];
+}
+
+- (void)testDemo8 {
+    self.view.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:self.arrayView];
+    [self.arrayView makeLayout:^(VVMakeLayout *make) {
+        make.edges.equalTo(self.view);
+    }];
+
+    [self.arrayView verticalFixSpace];
+}
+
+- (void)testDemo9 {
+    self.view.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:self.arrayView];
+    [self.arrayView makeLayout:^(VVMakeLayout *make) {
+        make.edges.equalTo(self.view);
+    }];
+
+    [self.arrayView horizontalFixItemWidth];
+}
+
+- (void)testDemo10 {
+    self.view.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:self.arrayView];
+    [self.arrayView makeLayout:^(VVMakeLayout *make) {
+        make.edges.equalTo(self.view);
+    }];
+
+    [self.arrayView verticalFixItemWidth];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -89,15 +113,27 @@
     } else if (self.index == 5) {
 
         // SafeArea
-        [self testSafeArea];
+        [self testDemo5];
+    } else if (self.index == 6) {
+        // 中心点计算
+        [self testDemo6];
+    } else if (self.index == 7) {
+        // 中心点计算
+        [self testDemo7];
+    } else if (self.index == 8) {
+        // 中心点计算
+        [self testDemo8];
+    } else if (self.index == 9) {
+        // 中心点计算
+        [self testDemo9];
+    } else if (self.index == 10) {
+        // 中心点计算
+        [self testDemo10];
     } else {
-
-        // Array
-        [self testArray];
     }
 }
 
-- (void)testSafeArea {
+- (void)testDemo5 {
     [self.view addSubview:self.view1];
 
     [self.view1 makeLayout:^(VVMakeLayout *make) {
@@ -111,6 +147,33 @@
             make.top.offset(100);
         }];
     }
+}
+
+- (void)testDemo6 {
+    [self.view addSubview:self.bgView];
+    [self.bgView addSubview:self.view1];
+    [self.bgView addSubview:self.view2];
+
+    [self.bgView makeLayout:^(VVMakeLayout *make) {
+        make.width.vv_equalTo(240);
+        make.height.vv_equalTo(120);
+        make.top.offset(12.0f);
+        make.centerX.offset(0.0f);
+    }];
+
+    [self.view1 makeLayout:^(VVMakeLayout *make) {
+        make.width.vv_equalTo(100);
+        make.height.vv_equalTo(100);
+        make.right.equalTo(self.view.vv_centerX).offset(-10);
+        make.centerY.offset(0.0f);
+    }];
+
+    [self.view2 makeLayout:^(VVMakeLayout *make) {
+        make.width.vv_equalTo(100);
+        make.height.vv_equalTo(100);
+        make.left.equalTo(self.view.vv_centerX).offset(10);
+        make.centerY.offset(0.0f);
+    }];
 }
 
 - (void)testDemo4 {
@@ -200,6 +263,15 @@
         _arrayView.backgroundColor = [UIColor brownColor];
     }
     return _arrayView;
+}
+
+- (UIView *)bgView {
+    if (!_bgView) {
+        _bgView = [UIView new];
+        _bgView.tag = 3;
+        _bgView.backgroundColor = [UIColor greenColor];
+    }
+    return _bgView;
 }
 
 - (UIView *)view1 {

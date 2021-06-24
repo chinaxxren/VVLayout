@@ -5,91 +5,19 @@
     <bookmark url="file://$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m" line="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/VVLayout.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.podspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.pbxproj" afterDir="false" />
+    <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="增加fitsize的offset">
+      <change afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/chinaxxren.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/xcuserdata/chinaxxren.xcuserdatad/xcschemes/VVLayout.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_f4d7ac8497ea2f92c3ba1ed9546a7d36a58fc6a0" />
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="846" column="2" selection-start-line="846" selection-start-column="2" selection-end-line="846" selection-end-column="2" />
-              <folding>
-                <element signature="e#90#114#0" expanded="true" />
-                <element signature="e#1573#1882#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/VVLayout.podspec">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-              <folding>
-                <element signature="e#90#113#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
-              <folding>
-                <element signature="e#90#113#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-260">
-              <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
-              <folding>
-                <element signature="e#90#118#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/VVLayout/Demo/DemoController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
-              <folding>
-                <element signature="e#125#151#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_4bbecd266bd1401d24c35bc4e49d2cb263af8627" />
   <component name="FindInProjectRecents">
     <findStrings>
       <find>[_</find>
@@ -222,7 +150,10 @@
     <option name="width" value="1680" />
     <option name="height" value="1027" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1uOAafQCs2QB712Ob0KA3VycHob" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -248,27 +179,24 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="VVLayout" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/VVLayout.xcodeproj" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="stylesheet.code.style.group" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
-    <configuration name="VVFrame" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="VVLayout" TARGET_NAME="VVLayout" CONFIG_NAME="Debug" SCHEME_NAME="VVFrame" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="VVLayout" RUN_TARGET_NAME="VVLayout" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+    <configuration name="VVLayout" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="VVLayout" TARGET_NAME="VVLayout" CONFIG_NAME="Debug" SCHEME_NAME="VVLayout" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="VVLayout" RUN_TARGET_NAME="VVLayout" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
       </EXTENSION>
@@ -278,6 +206,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -311,14 +240,8 @@
       <workItem from="1567131739146" duration="13273000" />
       <workItem from="1567478613277" duration="1000" />
       <workItem from="1568888141189" duration="2648000" />
-      <workItem from="1568946691855" duration="6819000" />
-    </task>
-    <task id="LOCAL-00014" summary="修复edage和offset的bug">
-      <created>1566271323480</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1566271323480</updated>
+      <workItem from="1568946691855" duration="7305000" />
+      <workItem from="1624526332582" duration="814000" />
     </task>
     <task id="LOCAL-00015" summary="支持vv_offset">
       <created>1566271715364</created>
@@ -656,15 +579,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568965069346</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="增加fitsize的offset">
+      <created>1568965232904</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1568965232905</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128946000" />
+    <option name="totallyTimeSpent" value="129432000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22893773" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -715,7 +644,7 @@
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -1117,8 +1046,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/VVLayout.podspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>

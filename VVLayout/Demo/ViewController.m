@@ -59,6 +59,7 @@
         [_textList addObject:@"edges用法"];
         [_textList addObject:@"更新Frame（点击空白触发更新)"];
         [_textList addObject:@"SafeArea"];
+        [_textList addObject:@"中心点计算"];
         [_textList addObject:@"水平方向排列、固定控件间隔、控件长度不定"];
         [_textList addObject:@"垂直方向排列、固定控件间隔、控件高度不定"];
         [_textList addObject:@"水平方向排列、固定控件长度、控件间隔不定"];
