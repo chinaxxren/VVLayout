@@ -4,7 +4,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VVLayout.h"
+#import "VVMakeLayout.h"
 
 typedef NS_ENUM(NSUInteger, VVAxisType) {
     VVAxisTypeHorizontal,

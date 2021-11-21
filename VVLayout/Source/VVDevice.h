@@ -5,15 +5,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VVLayoutAppearance : NSObject
+@interface VVDevice : NSObject
 
 + (CGFloat)width;
 
 + (CGFloat)height;
 
-+ (CGFloat)xMinWidth;
++ (CGFloat)minWidth;
 
-+ (CGFloat)xMaxHeight;
++ (CGFloat)maxHeight;
 
 // 是否全局的字体屏幕适配
 + (BOOL)hasGlobalFontScale;
@@ -25,10 +25,10 @@
 + (BOOL)hasGlobalViewScale;
 
 // 设置全局的View屏幕适配是否开启
-+ (void)setGlobalViewScale:(BOOL)open;
++ (void)setOpenScale:(BOOL)open;
 
 // 设置全局的屏幕适配的比例
-+ (void)setGlobalScale:(CGFloat)value;
++ (void)setGlobalScale:(CGFloat)scale;
 
 // 返回屏幕适配的比例
 + (CGFloat)globalScale;

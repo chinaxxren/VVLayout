@@ -5,7 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "VVViewLayoutInfo.h"
+#import "VVViewInfo.h"
 
 @interface UIView (VVExtend)
 

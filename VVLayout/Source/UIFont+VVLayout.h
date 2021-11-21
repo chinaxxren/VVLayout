@@ -8,10 +8,22 @@
 
 @interface UIFont (VVLayout)
 
-+ (UIFont *)vv_systemFontOfSize:(CGFloat)fontSize;
++ (UIFont *)systemWithSize:(CGFloat)fontSize;
 
-+ (UIFont *)vv_boldSystemFontOfSize:(CGFloat)fontSize;
++ (UIFont *)boldSystemWithSize:(CGFloat)fontSize;
 
-+ (UIFont *)vv_italicSystemFontOfSize:(CGFloat)fontSize;
++ (UIFont *)lightPingFangWithSize:(CGFloat)fontSize;
+
++ (UIFont *)regularPingFangWithSize:(CGFloat)fontSize;
+
++ (UIFont *)mediumPingFangWithSize:(CGFloat)fontSize;
+
++ (UIFont *)semiboldPingFangWithSize:(CGFloat)fontSize;
+
++ (UIFont *)helveticaWithSize:(CGFloat)fontSize;
+
++ (UIFont *)lightHelveticaWithSize:(CGFloat)fontSize;
+
++ (UIFont *)boldHelveticaWithSize:(CGFloat)fontSize;
 
 @end

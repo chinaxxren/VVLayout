@@ -11,14 +11,14 @@
 #import <UIKit/UIKit.h>
 
 #define VV_VIEW UIView
-#define VVEdgeInsets UIEdgeInsets
+#define EdgeInsets UIEdgeInsets
 
 #elif TARGET_OS_MAC
 
 #import <AppKit/AppKit.h>
 
 #define VV_VIEW NSView
-#define VVEdgeInsets NSEdgeInsets
+#define EdgeInsets NSEdgeInsets
 
 #endif
 
@@ -28,6 +28,14 @@ if (@available(iOS 11.0, *)) {\
 isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
 }\
 (isPhoneX);})
+
+extern inline EdgeInsets VVEdgeInsetsMake(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right);
+
+extern inline CGRect VVRectMake(CGFloat x, CGFloat y, CGFloat width, CGFloat height);
+
+extern inline CGSize VVSizeMake(CGFloat width, CGFloat height);
+
+extern inline CGPoint VVPointMake(CGFloat x, CGFloat y);
 
 extern inline id _VVBoxValue(const char *type, ...);
 

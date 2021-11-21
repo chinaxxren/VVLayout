@@ -3,16 +3,16 @@
 // Copyright (c) 2019 Tank. All rights reserved.
 //
 
-#import "VVViewLayoutInfo.h"
+#import "VVViewInfo.h"
 
 #import "UIView+VVExtend.h"
-#import "VVLayoutAppearance.h"
+#import "VVDevice.h"
 
-@interface VVViewLayoutInfo ()
+@interface VVViewInfo ()
 
 @end
 
-@implementation VVViewLayoutInfo
+@implementation VVViewInfo
 
 - (instancetype)initWithMakeLayoutType:(VVMakeLayoutType)makeLayoutType {
     self = [super init];
@@ -50,21 +50,20 @@
 }
 
 - (void)setAttribute:(NSValue *)value {
-    CGFloat scale = [VVLayoutAppearance globalScale];
     if ([value isKindOfClass:NSNumber.class]) {
-        self.value = [(NSNumber *) value floatValue] * scale;
+        self.value = [(NSNumber *) value floatValue] *  [VVDevice globalScale];
     } else if (strcmp(value.objCType, @encode(CGPoint)) == 0) {
         CGPoint point;
         [value getValue:&point];
-        self.point = CGPointMake(point.x * scale, point.y * scale);
+        self.point = VVPointMake(point.x, point.y);
     } else if (strcmp(value.objCType, @encode(CGSize)) == 0) {
         CGSize size;
         [value getValue:&size];
-        self.size = CGSizeMake(size.width * scale, size.height * scale);
-    } else if (strcmp(value.objCType, @encode(VVEdgeInsets)) == 0) {
-        VVEdgeInsets insets;
+        self.size = VVSizeMake(size.width, size.height);
+    } else if (strcmp(value.objCType, @encode(EdgeInsets)) == 0) {
+        EdgeInsets insets;
         [value getValue:&insets];
-        self.insets = UIEdgeInsetsMake(insets.top * scale, insets.left * scale, insets.bottom * scale, insets.right * scale);
+        self.insets = VVEdgeInsetsMake(insets.top, insets.left, insets.bottom, insets.right);
     } else {
         NSAssert(NO, @"attempting to set layout constant with unsupported value: %@", value);
     }
@@ -87,7 +86,7 @@
     return _value;
 }
 
-- (VVEdgeInsets)insets {
+- (EdgeInsets)insets {
     if (self.safe && self.makeLayoutType == self.viewLayoutType && self.makeLayoutType == VVMakeLayoutTypeEdges) {
         UIEdgeInsets safeAreaInsets = [VVLayoutUtils safeAreaInsets];
         return UIEdgeInsetsMake(_insets.top + safeAreaInsets.top, _insets.left + safeAreaInsets.left, _insets.bottom - safeAreaInsets.bottom, _insets.right - safeAreaInsets.right);
@@ -97,11 +96,11 @@
 }
 
 - (void)setFitValue:(CGFloat)fitValue {
-    _fitValue = fitValue * [VVLayoutAppearance globalScale];
+    _fitValue = fitValue * [VVDevice globalScale];
 }
 
 - (void)setFitSize:(CGSize)fitSize {
-    CGFloat scale = [VVLayoutAppearance globalScale];
+    CGFloat scale = [VVDevice globalScale];
     _fitSize = CGSizeMake(fitSize.width * scale, fitSize.height * scale);
 }
 

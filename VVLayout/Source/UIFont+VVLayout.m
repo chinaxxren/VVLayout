@@ -6,61 +6,44 @@
 
 #import "UIFont+VVLayout.h"
 
-#import <objc/message.h>
-
-#import "VVLayoutAppearance.h"
+#import "VVDevice.h"
 
 @implementation UIFont (VVLayout)
 
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self swizzleMethod:@selector(_systemFontOfSize_:) originalMethod:@selector(systemFontOfSize:)];
-        [self swizzleMethod:@selector(_boldSystemFontOfSize_:) originalMethod:@selector(boldSystemFontOfSize:)];
-        [self swizzleMethod:@selector(_italicSystemFontOfSize_:) originalMethod:@selector(italicSystemFontOfSize:)];
-    });
++ (UIFont *)systemWithSize:(CGFloat)fontSize {
+    return [UIFont systemFontOfSize:fontSize * [VVDevice globalScale]];
 }
 
-+ (void)swizzleMethod:(SEL)swizzleMethod originalMethod:(SEL)originalMethod {
-    Method newMethod = class_getClassMethod([self class], swizzleMethod);
-    Method method = class_getClassMethod([self class], originalMethod);
-    method_exchangeImplementations(newMethod, method);
++ (UIFont *)boldSystemWithSize:(CGFloat)fontSize {
+    return [UIFont boldSystemFontOfSize:fontSize * [VVDevice globalScale]];
 }
 
-+ (UIFont *)_systemFontOfSize_:(CGFloat)fontSize {
-    if ([VVLayoutAppearance hasGlobalFontScale]) {
-        return [UIFont _systemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
-    }
-
-    return [UIFont _systemFontOfSize_:fontSize];
++ (UIFont *)lightPingFangWithSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"PingFangSC-Light" size:fontSize * [VVDevice globalScale]];
 }
 
-+ (UIFont *)_boldSystemFontOfSize_:(CGFloat)fontSize {
-    if ([VVLayoutAppearance hasGlobalFontScale]) {
-        return [UIFont _boldSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
-    }
-    
-    return [UIFont _boldSystemFontOfSize_:fontSize];
++ (UIFont *)regularPingFangWithSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"PingFangSC-Regular" size:fontSize * [VVDevice globalScale]];
 }
 
-+ (UIFont *)_italicSystemFontOfSize_:(CGFloat)fontSize {
-    if ([VVLayoutAppearance hasGlobalFontScale]) {
-        return [UIFont _italicSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
-    }
-
-    return [UIFont _italicSystemFontOfSize_:fontSize];
++ (UIFont *)mediumPingFangWithSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"PingFangSC-Medium" size:fontSize * [VVDevice globalScale]];
 }
 
-+ (UIFont *)vv_systemFontOfSize:(CGFloat)fontSize {
-    return [UIFont _systemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
++ (UIFont *)semiboldPingFangWithSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"PingFangSC-Semibold" size:fontSize * [VVDevice globalScale]];
 }
 
-+ (UIFont *)vv_boldSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont _boldSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
++ (UIFont *)helveticaWithSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"Helvetica" size:fontSize * [VVDevice globalScale]];
 }
 
-+ (UIFont *)vv_italicSystemFontOfSize:(CGFloat)fontSize {
-    return [UIFont _italicSystemFontOfSize_:fontSize * [VVLayoutAppearance globalScale]];
++ (UIFont *)lightHelveticaWithSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"Helvetica-Light" size:fontSize * [VVDevice globalScale]];
+}
+
++ (UIFont *)boldHelveticaWithSize:(CGFloat)fontSize {
+    return [UIFont fontWithName:@"Helvetica-Bold" size:fontSize * [VVDevice globalScale]];
 }
 
 @end

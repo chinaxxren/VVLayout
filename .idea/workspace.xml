@@ -5,19 +5,31 @@
     <bookmark url="file://$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m" line="9" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="增加fitsize的offset">
-      <change afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.xcworkspace/xcuserdata/chinaxxren.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/xcuserdata/chinaxxren.xcuserdatad/xcschemes/VVLayout.xcscheme" afterDir="false" />
+    <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/ViewController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/UIView+VVExtend.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/UIView+VVExtend.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayout.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVDevice.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVDevice.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVViewInfo.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVViewInfo.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_4bbecd266bd1401d24c35bc4e49d2cb263af8627" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_" />
   <component name="FindInProjectRecents">
     <findStrings>
       <find>[_</find>
@@ -241,14 +253,9 @@
       <workItem from="1567478613277" duration="1000" />
       <workItem from="1568888141189" duration="2648000" />
       <workItem from="1568946691855" duration="7305000" />
-      <workItem from="1624526332582" duration="814000" />
-    </task>
-    <task id="LOCAL-00015" summary="支持vv_offset">
-      <created>1566271715364</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1566271715364</updated>
+      <workItem from="1624526332582" duration="1508000" />
+      <workItem from="1624543776422" duration="7000" />
+      <workItem from="1637477628441" duration="4518000" />
     </task>
     <task id="LOCAL-00016" summary="优化代码">
       <created>1566273044267</created>
@@ -586,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568965232905</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="增加fitsize的offset">
+      <created>1624527403650</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1624527403650</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TimeTrackingManager">

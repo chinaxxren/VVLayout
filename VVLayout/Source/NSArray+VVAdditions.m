@@ -7,6 +7,8 @@
 
 #import "UIView+VVLayout.h"
 #import "UIView+Addition.h"
+#import "UIView+VVExtend.h"
+#import "VVDevice.h"
 
 @implementation NSArray (VVAdditions)
 
@@ -56,7 +58,7 @@
 
     if (axisType == VVAxisTypeHorizontal) {
         CGFloat width = CGRectGetWidth(tempSuperView.frame);
-        width = (width - leadSpacing + tailSpacing - (self.count - 1) * fixedSpacing) / self.count;
+        width = (width - leadSpacing * [VVDevice globalScale] + tailSpacing * [VVDevice globalScale] - (self.count - 1) * fixedSpacing * [VVDevice globalScale]) / self.count;
 
         UIView *prev;
         for (int i = 0; i < self.count; i++) {
@@ -76,7 +78,7 @@
         }
     } else {
         CGFloat height = CGRectGetHeight(tempSuperView.frame);
-        height = (height - leadSpacing + tailSpacing - (self.count - 1) * fixedSpacing) / self.count;
+        height = (height - leadSpacing * [VVDevice globalScale] + tailSpacing * [VVDevice globalScale] - (self.count - 1) * fixedSpacing * [VVDevice globalScale]) / self.count;
 
         UIView *prev;
         for (int i = 0; i < self.count; i++) {
@@ -107,7 +109,7 @@
 
     if (axisType == VVAxisTypeHorizontal) {
         CGFloat fixedSpacing = CGRectGetWidth(tempSuperView.frame);
-        fixedSpacing = (fixedSpacing - fixedItemLength * self.count - leadSpacing + tailSpacing) / (self.count - 1);
+        fixedSpacing = (fixedSpacing * [VVDevice globalScale] - fixedItemLength * [VVDevice globalScale] * self.count - leadSpacing * [VVDevice globalScale] + tailSpacing * [VVDevice globalScale]) / (self.count - 1);
         UIView *prev;
         for (int i = 0; i < self.count; i++) {
             UIView *v = self[i];
@@ -127,7 +129,7 @@
         }
     } else {
         CGFloat fixedSpacing = CGRectGetHeight(tempSuperView.frame);
-        fixedSpacing = (fixedSpacing - fixedItemLength * self.count - leadSpacing + tailSpacing) / (self.count - 1);
+        fixedSpacing = (fixedSpacing * [VVDevice globalScale] - fixedItemLength * [VVDevice globalScale] * self.count - leadSpacing * [VVDevice globalScale] + tailSpacing * [VVDevice globalScale]) / (self.count - 1);
 
         UIView *prev;
         for (int i = 0; i < self.count; i++) {

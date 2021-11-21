@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
     VVLessThanOrEqualTo,
 };
 
-@interface VVViewLayoutInfo : NSObject
+@interface VVViewInfo : NSObject
 
 @property(nonatomic, assign) VVMakeLayoutType makeLayoutType;
 @property(nonatomic, assign) VVMakeLayoutType viewLayoutType;
@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, VVEqualType) {
 @property(nonatomic, assign) CGFloat value;
 @property(nonatomic, assign) CGPoint point;
 @property(nonatomic, assign) CGSize size;
-@property(nonatomic, assign) VVEdgeInsets insets;
+@property(nonatomic, assign) EdgeInsets insets;
 
 @property(nonatomic, assign) VVEqualType equalType;
 @property(nonatomic, assign) CGFloat fitValue;

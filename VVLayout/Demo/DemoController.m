@@ -43,6 +43,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+//    [VVDevice minWidth] / 375.0f
+    [VVDevice setOpenScale:YES];
+    [VVDevice setGlobalScale:2];
+
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
 }
@@ -195,8 +199,8 @@
 }
 
 - (void)testDemo2 {
-//    [VVLayoutAppearance setGlobalViewScale:YES];
-//    [VVLayoutAppearance setGlobalScaleFont:YES];
+//    [VVDevice setGlobalViewScale:YES];
+//    [VVDevice setGlobalScaleFont:YES];
 
     self.label.text = @"分块下载还有一个比较使用的场景是断点续传，可以将文件分为若干个块，"
                       "然后维护一个下载状态文件用以记录每一个块的状态，这样即使在网络中断后，"
@@ -237,7 +241,7 @@
     [self.view1 makeLayout:^(VVMakeLayout *make) {
         make.width.vv_equalTo(100);
         make.height.vv_equalTo(100);
-        make.center.equalTo(self.view).centerOffset(CGPointMake(0, -200));
+        make.center.equalTo(self.view).centerOffset(CGPointMake(0, 50));
     }];
 
     [self.view2 makeLayout:^(VVMakeLayout *make) {

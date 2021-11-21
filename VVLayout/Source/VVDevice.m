@@ -3,13 +3,13 @@
 // Copyright (c) 2019 Tank. All rights reserved.
 //
 
-#import "VVLayoutAppearance.h"
+#import "VVDevice.h"
 
 static CGFloat vv_global_scale;
 static BOOL vv_open_view_scale;
 static BOOL vv_font_scale;
 
-@implementation VVLayoutAppearance
+@implementation VVDevice
 
 + (CGFloat)width {
     return [[UIScreen mainScreen] bounds].size.width;
@@ -19,12 +19,12 @@ static BOOL vv_font_scale;
     return [[UIScreen mainScreen] bounds].size.height;
 }
 
-+ (CGFloat)xMinWidth {
-    return MIN([VVLayoutAppearance height], [VVLayoutAppearance width]);
++ (CGFloat)minWidth {
+    return MIN([VVDevice height], [VVDevice width]);
 }
 
-+ (CGFloat)xMaxHeight {
-    return MAX([VVLayoutAppearance height], [VVLayoutAppearance width]);
++ (CGFloat)maxHeight {
+    return MAX([VVDevice height], [VVDevice width]);
 }
 
 + (BOOL)hasGlobalFontScale {
@@ -39,7 +39,7 @@ static BOOL vv_font_scale;
     return vv_open_view_scale;
 }
 
-+ (void)setGlobalViewScale:(BOOL)open {
++ (void)setOpenScale:(BOOL)open {
     vv_open_view_scale = open;
 }
 
@@ -48,16 +48,11 @@ static BOOL vv_font_scale;
         return 1.0f;
     }
 
-    static dispatch_once_t once_t;
-    dispatch_once(&once_t, ^{
-        vv_global_scale = [VVLayoutAppearance xMinWidth] / 375.0f;
-    });
-
     return vv_global_scale;
 }
 
-+ (void)setGlobalScale:(CGFloat)value {
-    vv_global_scale = value;
++ (void)setGlobalScale:(CGFloat)scale {
+    vv_global_scale = scale;
 }
 
 @end
