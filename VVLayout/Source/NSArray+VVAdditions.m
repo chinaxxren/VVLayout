@@ -15,7 +15,7 @@
 - (NSArray *)makeLayouts:(VVViewLayout)layout {
     NSMutableArray *constraints = [NSMutableArray array];
     for (UIView *view in self) {
-        [view makeLayout:layout]
+        [view makeLayout:layout];
         [constraints addObject:view];
     }
     return constraints;
