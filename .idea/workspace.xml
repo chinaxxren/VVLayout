@@ -6,23 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="236af214-8b1e-4671-bd0e-67003472e014" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Demo/DemoController.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VVLayout.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout.podspec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/NSArray+VVAdditions.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/UIFont+VVLayout.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/UIView+VVExtend.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/UIView+VVExtend.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayout.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVDevice.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutAppearance.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVDevice.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVLayoutUtils.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVMakeLayout.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVViewInfo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VVLayout/Source/VVViewLayoutInfo.m" beforeDir="false" afterPath="$PROJECT_DIR$/VVLayout/Source/VVViewInfo.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,6 +190,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/VVLayout.xcodeproj" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="stylesheet.code.style.group" />
   </component>
   <component name="RunManager">
@@ -255,14 +241,7 @@
       <workItem from="1568946691855" duration="7305000" />
       <workItem from="1624526332582" duration="1508000" />
       <workItem from="1624543776422" duration="7000" />
-      <workItem from="1637477628441" duration="4518000" />
-    </task>
-    <task id="LOCAL-00016" summary="优化代码">
-      <created>1566273044267</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1566273044267</updated>
+      <workItem from="1637477628441" duration="4835000" />
     </task>
     <task id="LOCAL-00017" summary="优化代码">
       <created>1566358188319</created>
@@ -600,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624527403650</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="增加fitsize的offset">
+      <created>1637483348738</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1637483348739</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
