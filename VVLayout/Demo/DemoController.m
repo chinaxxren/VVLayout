@@ -44,8 +44,8 @@
     [super viewDidLoad];
 
 //    [VVDevice minWidth] / 375.0f
-    [VVDevice setOpenScale:YES];
-    [VVDevice setGlobalScale:2];
+//    [VVDevice setOpenScale:YES];
+//    [VVDevice setGlobalScale:2];
 
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = [UIColor whiteColor];
